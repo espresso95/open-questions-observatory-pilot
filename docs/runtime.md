@@ -8,6 +8,8 @@ New streamflow freezes now run a predictor-only station-support gate before crea
 
 The seven-day supervisor uses SQLite transactional claims, immutable job identities, attempt counts, leases, conservative post-crash resource accounting, bounded retries and dead letters. Only fixed integrity checks, approved frozen reproductions, a known public metadata probe, backups and fault exercises are registered. Source text cannot introduce a command or a new job kind. Research containers receive no network, host mounts or publication credentials.
 
+Backup jobs commit a checksummed receipt for the scheduler database, configuration and frozen experiment files. Retried jobs validate and reuse completed snapshots; partial snapshots are preserved before replacement. The restore exercise loads the saved scheduler state into an isolated directory, recovers its expired in-flight backup lease, completes that replay without duplicating the backup, and reproduces a frozen experiment from the recovered files. This exercise is separate from opening a database and checking its integrity. It does not reset the live trial start or qualify physical reboot recovery.
+
 The launch agent is `org.oqo.pilot.supervisor`. It uses the current non-root account and the isolated `oqopilot` VM. It does not qualify a dedicated OS account, physical reboot, FileVault recovery or new-question admission without review. `caffeinate -i` prevents idle system sleep during the bounded trial. Successful termination at its seven-day boundary stops the assertion; launchd restarts unexpected failures. A daily native Codex heartbeat checks actual state and records, rather than keeping a chat process asleep for seven days.
 
 Inspect local state with:
