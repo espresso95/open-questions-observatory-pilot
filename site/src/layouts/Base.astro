@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+const { title, description = 'An evidence-linked, reproducible research pilot.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} · Open Questions Observatory</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar"><a class="brand" href="/"><span class="mark" aria-hidden="true">◌</span> Open Questions<br /><small>OBSERVATORY</small></a><nav aria-label="Main navigation"><a href="/questions/">Questions</a><a href="/methodology/">Methodology</a><a href="/about/">About this pilot</a></nav><span class="private">LOCAL REVIEW · PRIVATE DRAFT</span></header>
+    <main id="main"><slot /></main>
+    <footer><p>Evidence before conclusions.</p><span>One question · One frozen investigation · No scientific resolution claimed</span><a href="/data/v1/manifest.json">Data manifest ↗</a></footer>
+  </body>
+</html>

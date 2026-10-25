@@ -1,0 +1,11 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import pilot from '../../content/pilot.json';
+export async function getStaticPaths() { return (await getCollection('reports')).map(report=>({params:{id:report.id.replace(/^r-/, 'R-')},props:{report}})); }
+const { report } = Astro.props;
+const { Content } = await render(report);
+const primary = pilot.result.scores.spring_initialized;
+const primaryAlt = `Primary spring forecast RMSE: persistence ${primary.persistence.rmse.toFixed(3)} degrees C, non-seasonal AR6 ${primary.ar6.rmse.toFixed(3)}, and season-aware AR6 ${primary.seasonal_ar6.rmse.toFixed(3)}. Lower is better.`;
+---
+<Base title={report.data.title}><article class="article" data-pagefind-body><span hidden data-pagefind-filter="discipline:statistics"></span><p class="eyebrow" data-pagefind-filter="discipline:climate-science">RESEARCH NOTE / {pilot.run_id}</p><div class="badges"><span class="badge">Computationally reproduced</span><span class="badge">No external scientific review</span><span class="badge">Private draft</span></div><figure><img src="/figures/primary-rmse.svg" alt={primaryAlt} width="800" height="370" /><figcaption>The season-aware model beats persistence but does not improve on ordinary AR6.</figcaption></figure><Content /><figure><img src="/figures/holdout-series.svg" alt="Observed Niño 3.4 anomalies and both fixed models across every holdout target month, with prediction values available in results JSON." width="800" height="420" /><figcaption>All holdout predictions are retained, including large misses.</figcaption></figure><section class="downloads"><h2>Inspect and reproduce</h2><a class="button" href="/downloads/oqo-pilot-reproduction.zip" download>Download complete package ↓</a><div class="download-links"><a href="/data/v1/results.json">Every result</a><a href="/data/v1/plan.json">Frozen plan</a><a href="/data/v1/validation.json">Computational checks</a><a href="/data/v1/sources.json">Source provenance</a></div><p class="muted">Bundle SHA-256: <code>{pilot.manifest.sha256}</code></p></section></article></Base>

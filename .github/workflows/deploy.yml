@@ -1,0 +1,51 @@
+name: Publish approved static pilot
+on:
+  workflow_dispatch:
+    inputs:
+      approved_bundle_sha256:
+        description: Exact locally reviewed publication bundle SHA-256
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: python3 -m engine.public_validate
+        env:
+          EXPECTED_BUNDLE_SHA: ${{ inputs.approved_bundle_sha256 }}
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: site
+      - run: node scripts/check-markdown.mjs
+        working-directory: site
+      - run: npm run build
+        working-directory: site
+        env:
+          SITE_BASE: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: site/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy static artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

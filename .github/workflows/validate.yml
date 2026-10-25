@@ -1,0 +1,25 @@
+name: Validate static publication
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: python3 -m engine.public_validate
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: site
+      - run: node scripts/check-markdown.mjs
+        working-directory: site
+      - run: npm run build
+        working-directory: site
+        env:
+          SITE_BASE: /${{ github.event.repository.name }}/

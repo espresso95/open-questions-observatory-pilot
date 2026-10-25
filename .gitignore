@@ -1,0 +1,14 @@
+.private/
+.venv/
+__pycache__/
+*.pyc
+site/node_modules/
+site/dist/
+site/.astro/
+site/public/data/
+site/public/downloads/
+site/src/content/
+output/
+review-bundle/
+.DS_Store
+.playwright-cli/
