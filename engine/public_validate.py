@@ -27,7 +27,7 @@ def main():
             if p.is_file() and p.relative_to(ROOT).as_posix() not in protected:
                 raise SystemExit('Scientific file absent from approved release: '+str(p.relative_to(ROOT)))
     for p in (ROOT/'catalog/questions').rglob('question.json'):validate_question(read_json(p))
-    validate_sources(read_json(ROOT/'catalog/sources.json'))
+    for p in (ROOT/'catalog').glob('sources*.json'):validate_sources(read_json(p))
     for p in (ROOT/'research').glob('*/artifacts.sha256.json'):
         for relative,h in read_json(p).items():
             if digest((p.parent/relative).read_bytes())!=h:raise SystemExit('Research artifact mismatch')

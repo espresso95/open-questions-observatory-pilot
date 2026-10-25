@@ -58,10 +58,14 @@ class Broker:
     def event(self,url,outcome,detail):
         self.db.execute('INSERT INTO events(time,url,outcome,detail) VALUES(?,?,?,?)',(now(),url,outcome,detail));self.db.commit()
 
-    def fetch(self,url,kind='metadata',items=1,rights=None,refresh=False):
+    def fetch(self,url,kind='metadata',items=1,rights=None,refresh=False,byte_range=None):
         if not rights or not rights.get('analyze'):raise RetrievalDenied('Missing analysis-rights decision')
+        if byte_range is not None:
+            if not isinstance(byte_range,tuple) or len(byte_range)!=2 or any(type(x)!=int for x in byte_range) or not 0<=byte_range[0]<=byte_range[1] or byte_range[1]-byte_range[0]+1>self.policy['budgets']['max_response_bytes']:
+                raise RetrievalDenied('Invalid or over-budget byte range')
+        cache_key=url if byte_range is None else url+'#bytes='+str(byte_range[0])+'-'+str(byte_range[1])
         if not refresh:
-            row=self.db.execute('SELECT path,record FROM snapshots WHERE url=? ORDER BY rowid DESC LIMIT 1',(url,)).fetchone()
+            row=self.db.execute('SELECT path,record FROM snapshots WHERE url=? ORDER BY rowid DESC LIMIT 1',(cache_key,)).fetchone()
             if row:
                 record=json.loads(row[1]);data=(self.root/row[0]).read_bytes()
                 if digest(data)!=record['sha256']:raise ValueError('Cached snapshot integrity failure')
@@ -74,11 +78,12 @@ class Broker:
             headers=self.root/(token+'.headers')
             observed_bytes=0
             try:
+                range_args=[] if byte_range is None else ['--range',str(byte_range[0])+'-'+str(byte_range[1])]
                 p=subprocess.run(['curl','--disable','--silent','--show-error','--proto','=https','--tlsv1.2',
                   '--max-time',str(self.policy['budgets']['request_seconds']),
                   '--max-filesize',str(capacity),
                   '--resolve',host+':443:'+('['+ip+']' if ':' in ip else ip),
-                  '--dump-header',str(headers),'--user-agent','OpenQuestionsObservatory/0.2 research-pilot',url],capture_output=True,timeout=50)
+                  '--dump-header',str(headers),'--user-agent','OpenQuestionsObservatory/0.2 research-pilot',*range_args,url],capture_output=True,timeout=50)
                 observed_bytes=len(p.stdout)
                 if p.returncode:raise ProviderUnavailable('Bounded request failed: '+str(p.returncode))
                 raw_headers=headers.read_text(errors='replace');statuses=re.findall(r'^HTTP/\S+\s+(\d+)',raw_headers,re.M)
@@ -88,17 +93,24 @@ class Broker:
                     url=urljoin(url,fields.get('location',''))
                     if redirect==2:raise ProviderUnavailable('Redirect limit exceeded')
                     continue
-                if status!=200:
+                expected_status=200 if byte_range is None else 206
+                if status!=expected_status:
                     self.event(original,'http_error',str(status))
                     raise ProviderUnavailable(f'HTTP {status}; not an empty scientific search')
                 data=p.stdout
                 if not data or len(data)>capacity:raise ProviderUnavailable('Invalid response size')
+                content_range=fields.get('content-range')
+                if byte_range is not None:
+                    match=re.fullmatch(r'bytes (\d+)-(\d+)/(\d+)',content_range or '')
+                    if not match or tuple(map(int,match.groups()[:2]))!=byte_range or int(match[3])<=byte_range[1] or len(data)!=byte_range[1]-byte_range[0]+1:
+                        raise ProviderUnavailable('Server returned a mismatched or incomplete byte range')
                 h=digest(data);path=self.root/'objects'/h
                 path.parent.mkdir(exist_ok=True);path.write_bytes(data)
                 record={'url':original,'final_url':url,'sha256':h,'retrieved_at':now(),'bytes':len(data),
                   'content_type':fields.get('content-type'),'etag':fields.get('etag'),'last_modified':fields.get('last-modified'),
-                  'kind':kind,'rights':rights,'path':str(path.relative_to(self.root))}
-                self.db.execute('INSERT OR IGNORE INTO snapshots VALUES(?,?,?,?)',(original,h,record['path'],json.dumps(record,sort_keys=True)))
+                  'kind':kind,'rights':rights,'path':str(path.relative_to(self.root)),
+                  'byte_range':list(byte_range) if byte_range is not None else None,'content_range':content_range}
+                self.db.execute('INSERT OR IGNORE INTO snapshots VALUES(?,?,?,?)',(cache_key,h,record['path'],json.dumps(record,sort_keys=True)))
                 self.db.commit()
                 self.event(original,'success',h)
                 return data,record

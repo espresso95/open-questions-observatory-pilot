@@ -1,8 +1,9 @@
 {
   "schema_version":"1.0",
   "authorization":"User requested the cross-disciplinary discovery and pilot work; public read-only acquisition only, no paid services or credentials.",
-  "allowed_hosts":["arxiv.org","export.arxiv.org","www.ebi.ac.uk","psl.noaa.gov","www.sciencedirect.com","exoplanetarchive.ipac.caltech.edu"],
-  "budgets":{"requests_per_day":100,"metadata_items_per_day":100,"fulltexts_per_day":20,"bytes_per_day":50000000,"max_response_bytes":5000000,"request_seconds":45},
+  "allowed_hosts":["arxiv.org","export.arxiv.org","www.ebi.ac.uk","psl.noaa.gov","www.sciencedirect.com","exoplanetarchive.ipac.caltech.edu","zenodo.org"],
+  "budgets":{"requests_per_day":100,"metadata_items_per_day":100,"fulltexts_per_day":20,"bytes_per_day":250000000,"max_response_bytes":5000000,"request_seconds":45},
+  "budget_basis":"Bounded pilot setup allocation: at most 250 MB per UTC day, sufficient for about 200 MB of compressed saved ensemble predictions and observations from CC-BY-4.0 Zenodo record 23142989. No training models, paid calls or full archive mirror. Trial acquisition will use a separate lower budget.",
   "paid_usage_enabled":false,
   "redirects":"Only HTTPS, public IPs and configured hosts; at most two redirects, each destination revalidated. No credentials are forwarded."
 }

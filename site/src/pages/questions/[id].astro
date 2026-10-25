@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import { newQuestions } from '../../lib/newQuestions';
+import { publicationFor } from '../../lib/publication';
+export function getStaticPaths() { return newQuestions.map(q => ({ params: { id: q.id }, props: { q } })); }
+const { q } = Astro.props;
+const release = publicationFor(q.id);
+const statuses = { ...q.statuses, publication: release?.publication_status || q.statuses.publication };
+---
+<Base title={q.title}><article class="article" data-pagefind-body>
+{q.disciplines.map((d: string) => <span hidden data-pagefind-filter={'discipline:'+d}></span>)}
+<p class="eyebrow">{q.id} / {q.disciplines.join(' · ')}</p><h1 data-pagefind-meta="title">{q.title}</h1>
+<div class="badges">{Object.entries(statuses).map(([key,value]) => <span class="badge">{key}: {String(value).replaceAll('_',' ')}</span>)}</div>
+<h2>What would be investigated?</h2><p>{q.scope}</p>
+<h2>Source evidence</h2>{q.source_evidence.map((e: any) => <><blockquote>{e.quote}<cite><a href={e.url}>{e.title}</a></cite></blockquote><p class="muted">{e.location}. This is a short source passage; the question above may be a narrower follow-up formulated by the agent.</p></>)}
+<h2>What the literature check found</h2><p>{q.literature.assessment}</p><p class="muted">{q.literature.decision_wording}</p><ul>{q.literature.coverage_limits.map((s: string) => <li>{s}</li>)}</ul>
+<h2>Feasibility</h2><p>{q.assessment.score}/100 heuristic readiness score. This is not a probability of a correct or useful answer.</p>
+{q.assessment.blockers.length > 0 && <ul>{q.assessment.blockers.map((s: string) => <li>{s}</li>)}</ul>}
+<p>{q.assessment.scientific_value}</p>
+{q.run_ids.length > 0 && <section><h2>Research record</h2>{q.report_run_id && <a class="button" href={'/research/'+q.report_run_id+'/'}>Read the investigation ↗</a>}<p>{q.outcome_summary}</p></section>}
+<p class="muted">AI-assisted source assessment and computation. No independent expert review or novelty certification is claimed.</p>
+<a href="/data/v2/catalog.json">Current catalog JSON ↗</a>
+</article></Base>
