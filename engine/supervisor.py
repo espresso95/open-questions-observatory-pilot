@@ -12,6 +12,8 @@ import os
 import re
 import signal
 import shutil
+import uuid
+from contextlib import closing
 import sqlite3
 import time
 from datetime import datetime,timedelta,timezone
@@ -87,7 +89,7 @@ class Supervisor:
             row=self.db.execute("SELECT id,kind,entity_version,attempts FROM jobs WHERE state='queued' AND eligible<=? ORDER BY priority,id LIMIT 1",(timestamp,)).fetchone()
             if not row:self.db.rollback();return None
             identifier,kind,entity,attempts=row
-            reservation=120 if kind=='reproduce' else 5
+            reservation=120 if kind in ('reproduce','restore-check') else 5
             self.db.execute('INSERT OR IGNORE INTO usage(day) VALUES(?)',(day,))
             spent,reserved=self.db.execute('SELECT seconds,reserved FROM usage WHERE day=?',(day,)).fetchone()
             if spent+reserved+reservation>config['daily_execution_seconds']:self.db.rollback();return None
@@ -145,21 +147,111 @@ class Supervisor:
             raw,snapshot=Broker(self.root/'broker',policy).fetch(config['source_probe'],kind='metadata',items=2,rights={'analyze':True,'export':'Metadata and short evidence only','license':'arXiv metadata; no full text redistribution'},refresh=True)
             return {'bytes':len(raw),'sha256':snapshot['sha256'],'retrieved_at':snapshot['retrieved_at'],'scientific_resolution_inferred':False}
         if kind=='backup':return self.backup(job['entity'])
+        if kind=='restore-check':return self.restore_check(job['entity'],job['attempt'])
         raise ValueError('Unregistered job kind')
 
-    def backup(self,day):
-        directory=self.root/'backups';directory.mkdir(exist_ok=True);path=directory/(day+'.sqlite3')
-        if path.exists():raise ValueError('Backup already exists')
-        with sqlite3.connect(path) as dest:self.db.backup(dest)
-        with sqlite3.connect(path) as restored:
+    def snapshot_counts(self,path):
+        # A committed snapshot must be usable without any WAL or SHM sidecar.
+        with closing(sqlite3.connect(path.resolve().as_uri()+'?mode=ro&immutable=1',uri=True)) as restored:
             if restored.execute('PRAGMA integrity_check').fetchone()[0]!='ok':raise ValueError('Restored database integrity failure')
-            counts={t:restored.execute('SELECT COUNT(*) FROM '+t).fetchone()[0] for t in ('jobs','events','usage')}
-        contexts=directory/(day+'-contexts');contexts.mkdir()
+            return {t:restored.execute('SELECT COUNT(*) FROM '+t).fetchone()[0] for t in ('jobs','events','usage')}
+
+    def snapshot_files(self,path,contexts):
+        if path.is_symlink() or contexts.is_symlink() or not contexts.is_dir():raise ValueError('Invalid backup layout')
+        directory=path.parent;configuration=path.with_name(path.stem+'.config.json')
+        files={path.name:digest(path.read_bytes()),configuration.name:digest(configuration.read_bytes())}
+        for p in contexts.rglob('*'):
+            if p.is_symlink():raise ValueError('Symlink in backup')
+            if p.is_file():files[p.relative_to(directory).as_posix()]=digest(p.read_bytes())
+        for h in read_json(configuration)['plans'].values():
+            if not re.fullmatch('[0-9a-f]{64}',h):raise ValueError('Invalid backed-up plan ID')
+            verify_frozen(contexts/h)
+        return files
+
+    def verify_snapshot(self,day,record):
+        directory=self.root/'backups';path=directory/(day+'.sqlite3');contexts=directory/(day+'-contexts')
+        for relative,expected in record['files'].items():
+            member=directory/relative
+            if member.is_symlink() or not member.resolve().is_relative_to(directory.resolve()) or not member.is_file() or digest(member.read_bytes())!=expected:raise ValueError('Committed backup checksum mismatch')
+        if self.snapshot_files(path,contexts)!=record['files']:raise ValueError('Committed backup checksum mismatch')
+        if self.snapshot_counts(path)!=record['restored_table_counts']:raise ValueError('Restored table counts changed')
+        return {**record,'backup':str(path),'reused_verified_snapshot':True}
+
+    def backup(self,day):
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}',day):raise ValueError('Invalid backup identity')
+        directory=self.root/'backups';directory.mkdir(exist_ok=True);path=directory/(day+'.sqlite3')
+        marker=directory/(day+'.manifest.json');contexts=directory/(day+'-contexts')
+        if marker.exists():return self.verify_snapshot(day,read_json(marker))
+        legacy=None
+        if path.exists() and contexts.exists():
+            for raw, in self.db.execute("SELECT detail FROM events WHERE kind='backup_restore_passed' ORDER BY id DESC"):
+                candidate=json.loads(raw)
+                if Path(candidate['backup']).name==path.name and candidate['sha256']==digest(path.read_bytes()):
+                    legacy=candidate;break
+        if legacy:
+            if self.snapshot_counts(path)!=legacy['restored_table_counts']:raise ValueError('Legacy backup count mismatch')
+            with closing(sqlite3.connect(path.resolve().as_uri()+'?mode=ro&immutable=1',uri=True)) as old:
+                configuration=old.execute("SELECT detail FROM events WHERE kind='trial_initialized' ORDER BY id LIMIT 1").fetchone()
+            if not configuration:raise ValueError('Legacy backup has no configuration evidence')
+            write_json(directory/(day+'.config.json'),json.loads(configuration[0]))
+            record={**legacy,'receipt_version':'2.0','files':self.snapshot_files(path,contexts),'legacy_snapshot_preserved':True}
+            temporary=marker.with_suffix('.tmp');temporary.write_bytes(canonical(record));os.replace(temporary,marker)
+            self.event('backup_receipt_migrated',{'day':day,'sha256':record['sha256']})
+            return self.verify_snapshot(day,record)
+        # Preserve an interrupted, uncommitted backup before retrying its job.
+        if path.exists() or contexts.exists():
+            archive=directory/('incomplete-'+day+'-'+uuid.uuid4().hex[:8]);archive.mkdir()
+            for p in [path,contexts,directory/(day+'.config.json'),path.with_name(path.name+'-wal'),path.with_name(path.name+'-shm')]:
+                if p.exists():p.rename(archive/p.name)
+            self.event('incomplete_backup_preserved',{'directory':str(archive)})
+        shutil.copy2(self.root/'config.json',directory/(day+'.config.json'))
+        with closing(sqlite3.connect(path)) as dest:
+            self.db.backup(dest);dest.execute('PRAGMA journal_mode=DELETE');dest.commit()
+        counts=self.snapshot_counts(path);contexts.mkdir()
         for h in read_json(self.root/'config.json')['plans'].values():
             source=PRIVATE/'experiments'/h;verify_frozen(source)
             target=contexts/h;shutil.copytree(source,target);verify_frozen(target)
-        result={'backup':str(path.relative_to(PRIVATE)),'sha256':digest(path.read_bytes()),'restored_integrity_check':'ok','restored_table_counts':counts,'restored_context_hashes_checked':True}
+        result={'receipt_version':'2.0','backup':str(path),'sha256':digest(path.read_bytes()),'restored_integrity_check':'ok','restored_table_counts':counts,'restored_context_hashes_checked':True,'files':self.snapshot_files(path,contexts)}
+        temporary=marker.with_suffix('.tmp');temporary.write_bytes(canonical(result));os.replace(temporary,marker)
         self.event('backup_restore_passed',result);return result
+
+    def restore_check(self,day,attempt):
+        snapshot=self.backup(day);directory=self.root/'backups';marker=directory/(day+'.manifest.json')
+        target=self.root/'restore-checks'/day/('attempt-'+str(attempt));target.mkdir(parents=True,exist_ok=False)
+        shutil.copy2(directory/(day+'.sqlite3'),target/'state.sqlite3');shutil.copy2(directory/(day+'.config.json'),target/'config.json')
+        for relative in snapshot['files']:
+            destination=target/'backups'/relative;destination.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(directory/relative,destination)
+        shutil.copy2(marker,target/'backups'/marker.name)
+        (target/'backups'/(day+'-contexts')).mkdir(parents=True,exist_ok=True)
+        restored=Supervisor(target)
+        try:
+            rows=restored.db.execute("SELECT kind,state,lease FROM jobs WHERE kind='backup' AND entity_version=?",(day,)).fetchall()
+            if not rows or rows[0][1]!='running' or rows[0][2]>=time.time():raise ValueError('Restore exercise needs a real expired in-flight backup checkpoint')
+            restored.recover(time.time());job=restored.claim(time.time())
+            if not job or job['kind']!='backup' or job['entity']!=day:raise ValueError('Restored checkpoint did not resume its backup job')
+            started=time.monotonic();result=restored.perform(job)
+            if not result.get('reused_verified_snapshot'):raise ValueError('Restore replay did not reuse its committed snapshot')
+            restored.finish(job,result,None,time.monotonic()-started)
+            configuration=read_json(target/'config.json')
+            if configuration['started_at']!=read_json(self.root/'config.json')['started_at']:raise ValueError('Restored trial start changed')
+            h=configuration['plans']['prefix'];copy=target/'restored-experiments'/h
+            shutil.copytree(target/'backups'/(day+'-contexts')/h,copy)
+            receipt=execute(copy,'restored-checkpoint-proof')
+            expected=read_json(copy/'run-primary.json')['results_sha256']
+            if receipt['outcome']!='completed' or receipt['results_sha256']!=expected:raise ValueError('Restored frozen input did not reproduce')
+            proof={'source_day':day,'restored_backup_job_completed':True,'resumed_attempt':job['attempt'],
+              'frozen_results_identical':True,'resource':receipt['resource'],'live_trial_start_unchanged':True,
+              'proof_directory':str(target)}
+            write_json(target/'restore-proof.json',proof);self.event('checkpoint_resume_passed',proof);return proof
+        finally:restored.db.close()
+
+    def finish(self,job,result,error,elapsed):
+        config=read_json(self.root/'config.json')
+        state='completed' if error is None else ('dead_letter' if job['attempt']>=config['max_attempts'] else 'queued')
+        retry=time.time()+min(3600,60*2**job['attempt'])
+        self.db.execute('UPDATE usage SET seconds=seconds+?,reserved=reserved-? WHERE day=?',(elapsed,job['reserved'],job['day']))
+        self.db.execute('UPDATE jobs SET state=?,eligible=?,lease=NULL,reserved_seconds=0,checkpoint=? WHERE id=?',(state,retry,json.dumps({'result':result,'error':error,'finished_at':now()}),job['id']));self.db.commit()
+        self.event('job_finished',{'id':job['id'],'kind':job['kind'],'state':state,'attempt':job['attempt'],'elapsed_seconds':elapsed,'error':error})
 
     def tick(self):
         config=read_json(self.root/'config.json');timestamp=time.time()
@@ -169,23 +261,23 @@ class Supervisor:
         day=datetime.fromtimestamp(timestamp,timezone.utc).date().isoformat()
         for kind,entity,priority in [('integrity',day,10),('provider',day,30),('backup',day,99)]:self.enqueue(kind,entity,priority,timestamp)
         for h in config['plans'].values():self.enqueue('reproduce',h+':'+day,20,timestamp)
+        backup=self.db.execute("SELECT entity_version,checkpoint FROM jobs WHERE kind='backup' AND state='completed' ORDER BY entity_version LIMIT 1").fetchone()
+        if backup:
+            finished=datetime.fromisoformat(json.loads(backup[1])['finished_at']).timestamp()
+            self.enqueue('restore-check',backup[0],40,finished+config['lease_seconds']+60)
         job=self.claim(timestamp)
         if job:
             started=time.monotonic();result=None;error=None
             try:result=self.perform(job)
             except Exception as e:error={'type':type(e).__name__,'message':str(e)[:1000]}
             elapsed=time.monotonic()-started
-            state='completed' if error is None else ('dead_letter' if job['attempt']>=config['max_attempts'] else 'queued')
-            retry=timestamp+min(3600,60*2**job['attempt'])
-            self.db.execute('UPDATE usage SET seconds=seconds+?,reserved=reserved-? WHERE day=?',(elapsed,job['reserved'],job['day']))
-            self.db.execute('UPDATE jobs SET state=?,eligible=?,lease=NULL,reserved_seconds=0,checkpoint=? WHERE id=?',(state,retry,json.dumps({'result':result,'error':error,'finished_at':now()}),job['id']));self.db.commit()
-            self.event('job_finished',{'id':job['id'],'kind':job['kind'],'state':state,'attempt':job['attempt'],'elapsed_seconds':elapsed,'error':error})
+            self.finish(job,result,error,elapsed)
         self.summarize()
 
     def summarize(self):
         config=read_json(self.root/'config.json');started=datetime.fromisoformat(config['started_at']).timestamp();elapsed=time.time()-started
         states=dict(self.db.execute('SELECT state,COUNT(*) FROM jobs GROUP BY state'))
-        faults={name:bool(self.db.execute('SELECT COUNT(*) FROM events WHERE kind=?',(name,)).fetchone()[0]) for name in ['fault_crash_passed','fault_network_passed','fault_quota_passed','fault_malicious_passed','backup_restore_passed']}
+        faults={name:bool(self.db.execute('SELECT COUNT(*) FROM events WHERE kind=?',(name,)).fetchone()[0]) for name in ['fault_crash_passed','fault_network_passed','fault_quota_passed','fault_malicious_passed','backup_restore_passed','checkpoint_resume_passed']}
         gaps=self.db.execute("SELECT COUNT(*) FROM events WHERE kind='heartbeat_gap'").fetchone()[0]
         completed_reproductions=self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='reproduce' AND state='completed'").fetchone()[0]
         completed_probes=self.db.execute("SELECT COUNT(*) FROM jobs WHERE kind='provider' AND state='completed'").fetchone()[0]
