@@ -1,0 +1,66 @@
+{
+  "policy": "Frozen scientific artifacts keep their approval hashes; current publication and review state are separate, dated records. Trusted implementation maintenance is reviewed through PRs. New scientific content requires exact-bundle disclosure approval before any public push.",
+  "releases": [
+    {
+      "approved_bundle_sha256": "d3a6662c4ffb9611c8d4b0f0920e3872bea1b51da8e44747bab14ee30c5c21e2",
+      "approved_manifest": "manifest.json",
+      "commit": "99c4976f699b571e82906638316588afd4cf903f",
+      "human_disclosure_approval": true,
+      "id": "pilot-v1",
+      "immutable_paths": [
+        "catalog/questions/Q-ENSO-001/question.json",
+        "catalog/sources.json",
+        "research/R-37cd1717a83c/CITATION.cff",
+        "research/R-37cd1717a83c/analysis.py",
+        "research/R-37cd1717a83c/artifacts.sha256.json",
+        "research/R-37cd1717a83c/data-manifest.json",
+        "research/R-37cd1717a83c/environment.lock",
+        "research/R-37cd1717a83c/figures/holdout-series.png",
+        "research/R-37cd1717a83c/figures/holdout-series.svg",
+        "research/R-37cd1717a83c/figures/primary-rmse.png",
+        "research/R-37cd1717a83c/figures/primary-rmse.svg",
+        "research/R-37cd1717a83c/independent-verification.json",
+        "research/R-37cd1717a83c/literature-search.json",
+        "research/R-37cd1717a83c/nino34.data",
+        "research/R-37cd1717a83c/plan.json",
+        "research/R-37cd1717a83c/references.bib",
+        "research/R-37cd1717a83c/report.md",
+        "research/R-37cd1717a83c/reproduce.py",
+        "research/R-37cd1717a83c/reproduce.sh",
+        "research/R-37cd1717a83c/results.json",
+        "research/R-37cd1717a83c/validation.json",
+        "site/public/data/v1/catalog.json",
+        "site/public/data/v1/manifest.json",
+        "site/public/data/v1/plan.json",
+        "site/public/data/v1/results.json",
+        "site/public/data/v1/sources.json",
+        "site/public/data/v1/validation.json",
+        "site/public/downloads/oqo-pilot-reproduction.zip",
+        "site/public/figures/holdout-series.png",
+        "site/public/figures/holdout-series.svg",
+        "site/public/figures/primary-rmse.png",
+        "site/public/figures/primary-rmse.svg",
+        "site/src/content/pilot.json",
+        "site/src/content/reports/R-37cd1717a83c.md"
+      ],
+      "publication_status": "published",
+      "published_at": "2026-10-25T17:52:58+00:00",
+      "question_ids": [
+        "Q-ENSO-001"
+      ],
+      "review": {
+        "disposition": "accept_bounded_negative_interpretation",
+        "expert_credentials_asserted": false,
+        "external_peer_review": false,
+        "novelty_certified": false,
+        "reviewed_at": "2026-10-25T18:22:48+00:00",
+        "type": "human_operator"
+      },
+      "run_ids": [
+        "R-37cd1717a83c"
+      ],
+      "url": "https://espresso95.github.io/open-questions-observatory-pilot/"
+    }
+  ],
+  "schema_version": "1.0"
+}

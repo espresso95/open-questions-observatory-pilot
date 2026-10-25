@@ -1,0 +1,17 @@
+name: Reproduce approved pilot on a separate machine
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate approved scientific files
+        run: python3 -m engine.public_validate
+      - name: Reproduce exact approved download in a restricted container
+        run: python3 -m engine.remote_reproduce

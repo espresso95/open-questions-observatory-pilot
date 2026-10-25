@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { releases } from '../lib/publication';
 const { title, description = 'An evidence-linked, reproducible research pilot.' } = Astro.props;
 ---
 <!doctype html>
@@ -13,8 +14,8 @@ const { title, description = 'An evidence-linked, reproducible research pilot.' 
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header class="topbar"><a class="brand" href="/"><span class="mark" aria-hidden="true">◌</span> Open Questions<br /><small>OBSERVATORY</small></a><nav aria-label="Main navigation"><a href="/questions/">Questions</a><a href="/methodology/">Methodology</a><a href="/about/">About this pilot</a></nav><span class="private">LOCAL REVIEW · PRIVATE DRAFT</span></header>
+    <header class="topbar"><a class="brand" href="/"><span class="mark" aria-hidden="true">◌</span> Open Questions<br /><small>OBSERVATORY</small></a><nav aria-label="Main navigation"><a href="/questions/">Questions</a><a href="/methodology/">Methodology</a><a href="/about/">About this pilot</a></nav><span class="private">PUBLISHED RESEARCH PILOT</span></header>
     <main id="main"><slot /></main>
-    <footer><p>Evidence before conclusions.</p><span>One question · One frozen investigation · No scientific resolution claimed</span><a href="/data/v1/manifest.json">Data manifest ↗</a></footer>
+    <footer><p>Evidence before conclusions.</p><span>One question · One frozen investigation · No scientific resolution claimed</span><a href="/data/v1/manifest.json">Frozen data manifest ↗</a></footer>
   </body>
 </html>
