@@ -1,0 +1,20 @@
+{
+  "changes": "None; exact downloaded snapshot retained",
+  "dataset": {
+    "bytes": 8362,
+    "extraction_method": "html.parser normalized whitespace v1",
+    "id": "D-NINO34",
+    "kind": "data",
+    "retrieved_at": "2026-10-25T17:23:07+00:00",
+    "rights": {
+      "analyze": true,
+      "credit": "NOAA Climate Prediction Center; provided by NOAA Physical Sciences Laboratory, Boulder, Colorado, USA",
+      "export": "attributed_government_data",
+      "license": "US government public data"
+    },
+    "sha256": "879cf3cb31d71e576f639ea88af9498f622662bbcaf6c74e79ad5394614696dd",
+    "title": "NOAA CPC ERSSTv5 monthly Niño 3.4 anomalies (1981–2010 base)",
+    "url": "https://psl.noaa.gov/data/correlation/nina34.anom.data",
+    "version": "ERSSTv5 / snapshot_at_retrieval"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "assessment": {
+    "blockers": [],
+    "dispatch_eligible": true,
+    "evidence": {
+      "implementation_readiness": "Small standard-library adapter with bounded container resources",
+      "input_readiness": "NOAA format, units, rights and content hash checked",
+      "local_compute_fit": [
+        0.2791,
+        0.2492
+      ],
+      "question_precision": "Frozen exact six-month metric and comparator contract",
+      "validation_readiness": "Temporal holdout, paired block uncertainty, residual check and clean reproduction; few climate cycles and revised data are limitations"
+    },
+    "hardware": {
+      "host_architecture": "arm64",
+      "vm_cpu_count": 2,
+      "vm_memory_gib": 2,
+      "vm_profile": "oqopilot"
+    },
+    "meaning": "Heuristic readiness score; not a probability of success or correctness",
+    "ratings": {
+      "implementation_readiness": 4,
+      "input_readiness": 4,
+      "local_compute_fit": 4,
+      "question_precision": 4,
+      "validation_readiness": 3
+    },
+    "rubric_version": "1.0",
+    "score": 93.75,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T17:25:33+00:00",
+  "disciplines": [
+    "climate-science",
+    "statistics"
+  ],
+  "id": "Q-ENSO-001",
+  "literature_search": {
+    "assessed_sources": [
+      {
+        "coverage": "full HTML; sections III-C and IV",
+        "finding": "Recent preprint identifies persistent spring skill limitations and suggests extending predictor information; it does not evaluate this small model or the 2015–2026 comparison.",
+        "relationship": "motivates bounded follow-up",
+        "url": "https://arxiv.org/html/2601.02050v1"
+      },
+      {
+        "coverage": "search-provider extracted passages; direct full text unavailable (HTTP error)",
+        "finding": "2026 score-driven seasonal forecasting study compares AR benchmarks on 1982–2024 OISST with additional predictors. Strong evidence this general method family is established; no claim of a new algorithm is justified.",
+        "relationship": "closely related, not exact answer",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0169207026001019"
+      },
+      {
+        "coverage": "abstract and search-provider extracted passages",
+        "finding": "Studies similarity of persistence and predictability barriers with observations and dynamical models; does not answer the exact frozen comparison.",
+        "relationship": "related barrier characterization",
+        "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL111885"
+      },
+      {
+        "coverage": "abstract and search-provider extracted passages",
+        "finding": "Shows persistence is not equivalent to predictability. The pilot must not interpret its persistence benchmark as a bound on physical predictability.",
+        "relationship": "related mechanism and earlier statistical theory",
+        "url": "https://journals.ametsoc.org/view/journals/clim/35/18/JCLI-D-22-0013.1.xml"
+      }
+    ],
+    "decision": "no_answer_found_within_documented_coverage",
+    "exact_question": "Does a fixed season-aware direct six-month AR6 forecast improve February–April initialized Niño 3.4 RMSE by at least 5% over both persistence and non-seasonal AR6 in the 2015–2026 observational record, with positive paired skill intervals under prespecified 2–4-year block bootstraps?",
+    "extraction_template_version": "oqo-pilot-source-gap-v1",
+    "limitations": [
+      "English-language web search only, five targeted query formulations; no exhaustive scholarly corpus or citation graph.",
+      "Some related full texts were inaccessible; titles and abstracts cannot establish absence of an answer.",
+      "The precise model/data-window comparison appears unanswered in this coverage, but independent scientific novelty is not established.",
+      "Seasonal autoregression and ENSO benchmarking are well established; a positive result would be a bounded empirical finding, not a new forecasting method."
+    ],
+    "model_identifier": "GPT-6 family; exact runtime build not exposed",
+    "operator": "Codex, agent-assisted web search and full-text reading",
+    "parent_problem": "ENSO spring predictability barrier; the pilot does not attempt to resolve the full physical problem.",
+    "queries": [
+      "ENSO spring predictability barrier remains challenge 2024 2025 review",
+      "ENSO spring predictability barrier seasonal autoregressive model 2025 2026 persistence out of sample",
+      "\"Niño\" \"2015\" \"2026\" \"seasonal\" autoregressive spring forecast",
+      "\"ENSO\" \"spring\" \"autoregressive\" \"calendar\" forecast 2026",
+      "\"ENSO\" \"seasonal autoregressive\" six month forecast persistence"
+    ],
+    "rejected_candidates": [
+      {
+        "reason": "Later SILSO observations explicitly answer the question; user requires an unanswered question.",
+        "topic": "Solar Cycle 25 amplitude forecast"
+      },
+      {
+        "reason": "A 2026 paper supplies calibration, making an unqualified no-answer claim inappropriate.",
+        "topic": "General WSO/HMI scalar calibration gap",
+        "url": "https://doi.org/10.3847/1538-4357/ae4d38"
+      }
+    ],
+    "schema_version": "1.0",
+    "searched_at": "2026-10-25"
+  },
+  "resolved": false,
+  "run_ids": [
+    "R-37cd1717a83c"
+  ],
+  "schema_version": "1.0",
+  "scope": {
+    "claim": "A fixed season-aware direct six-month ridge AR6 forecast reduces February–April initialized Niño 3.4 RMSE by at least 5% against both persistence and fixed non-seasonal ridge AR6 on held-out issue dates from 2015 onward through the October 25, 2026 data cutoff, with positive paired skill intervals under all prespecified block lengths.",
+    "data_window": "Train targets through 2014; holdout issue dates 2015 onward, observed targets through 2026-09",
+    "parent_problem": "ENSO spring predictability barrier",
+    "relationship": "Bounded agent-formulated follow-up, motivated by source; not a verbatim author question",
+    "system": "Niño 3.4 monthly SST anomaly, 5N–5S / 170–120W"
+  },
+  "source_evidence": [
+    {
+      "end": 2961,
+      "location": "Abstract, final sentence; normalized text character offsets retained privately",
+      "quote": "These results suggest that incorporating additional ocean-atmosphere variables may help transcend SPB limitations and advance long-range ENSO prediction.",
+      "source_hash": "6c99bcfff0d521b89ec20a30ab9b6e6442f725e4e2a55e4853dd9d18a5904182",
+      "source_id": "S-PAPER",
+      "start": 2808,
+      "text_hash": "bf6f2a8e969b54943fd2b159b16ab839b801beb676b298d831a209bb8a539f72"
+    }
+  ],
+  "statuses": {
+    "feasibility": "pilot_ready",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "inconclusive",
+    "validation": "computationally_reproduced"
+  },
+  "title": "Can calendar information improve six-month spring ENSO forecasts?"
+}

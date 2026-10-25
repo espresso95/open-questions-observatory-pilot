@@ -1,0 +1,32 @@
+{
+  "build_time": "2026-10-25T17:34:42+00:00",
+  "files": {
+    "catalog/questions/Q-ENSO-001/question.json": "f75d0f50d94fd5c5db6356928d9be2fb41e83a913215da9634e2000c080c00a2",
+    "catalog/sources.json": "16259bb005d2d037ad82defaf7476a08660b3bc092d47ad19737807f1945b17d",
+    "research/R-37cd1717a83c/CITATION.cff": "7487b7be78c5b8841d04288b497c1a9ccfcfedb2b27d16e8cbb1b4890377ddb1",
+    "research/R-37cd1717a83c/analysis.py": "2b6490c5aa8ba2ab4d6839982644564b1fc977355fce1b131720f3e221ea7f92",
+    "research/R-37cd1717a83c/artifacts.sha256.json": "e8a980488df90c2514fe8b310b06add70f1a3713bcbc6a7614fa39b046d3e5d1",
+    "research/R-37cd1717a83c/data-manifest.json": "b1843510553af89214b0f733641e65601e0f45f44a473dd310a30c10b706cb82",
+    "research/R-37cd1717a83c/environment.lock": "e9196a9f16b9db21ce58cf3e0a31f27c61c740f36b0a7e5dc3bb3831f301ba16",
+    "research/R-37cd1717a83c/figures/holdout-series.png": "9a63c165818102692a4b6f03bd841edd468fde2f714e7f84277ad64379fbcca7",
+    "research/R-37cd1717a83c/figures/holdout-series.svg": "b962e763a0bad2c3d8168631c319a1e7c8fad671ce8753581cf3608f2a7223c9",
+    "research/R-37cd1717a83c/figures/primary-rmse.png": "5605485e1460c8db71ceb2449d34dcd44607a60ebd58c68d80a3fafc06e7328a",
+    "research/R-37cd1717a83c/figures/primary-rmse.svg": "1f6d2278803f7315bfee807b87f224729eea2be6b35976c7983fa4b5ed5afd88",
+    "research/R-37cd1717a83c/independent-verification.json": "c79dd112c6aaf1590fd258978f7ad970ba1d24f5fcf75f7ed3e6cb7b122817a5",
+    "research/R-37cd1717a83c/literature-search.json": "742a82070d28ed8e896739e5784102b8ca3af2780002379c1f80f4690fbe5089",
+    "research/R-37cd1717a83c/nino34.data": "879cf3cb31d71e576f639ea88af9498f622662bbcaf6c74e79ad5394614696dd",
+    "research/R-37cd1717a83c/plan.json": "37cd1717a83cf4d252e24f57b2e19474e1d628beee2e275738988ee099b8b6f5",
+    "research/R-37cd1717a83c/references.bib": "ebc2ce8ed83eb449c0b51ae7fc42480bda85e5e4b0fef5e0a840cd0ef96cb41c",
+    "research/R-37cd1717a83c/report.md": "ecd63dd088ac63bf8dddf53cba941006d06cff4bb10a864c51a1c198a0a70b06",
+    "research/R-37cd1717a83c/reproduce.py": "2268987b62bb0159e04672c7da6147fe57f2533fe5d0aa93acc2c4f5806b0d7f",
+    "research/R-37cd1717a83c/reproduce.sh": "33292d28a3abab25b198299cae7d76a9df92bcf8403dce5d027635d9d19d03b9",
+    "research/R-37cd1717a83c/results.json": "be505ef18d840781f8770baec9ace1276fd3498f1a4b25452e928a2d4909f8d0",
+    "research/R-37cd1717a83c/validation.json": "40505c831c3d35ee4b764ce5e7af7b3a722be89574e4bef8e9454d784ebf1ac0"
+  },
+  "human_disclosure_approval": false,
+  "publication_status": "private_draft",
+  "record_count": 1,
+  "run_id": "R-37cd1717a83c",
+  "schema_version": "1.0",
+  "sha256": "4930b91376c38717bbac90126bd5d7b0d1ca3dbaa98bbfc5c6be2267ce6e2ae7"
+}

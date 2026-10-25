@@ -1,0 +1,57 @@
+{
+  "analysis_sha256": "2b6490c5aa8ba2ab4d6839982644564b1fc977355fce1b131720f3e221ea7f92",
+  "base_image": "python@sha256:35caba83af2fe6da9a5d922f9b0156f21d1246a48278c58a08bd253303ba42e8",
+  "bootstrap_block_years": [
+    2,
+    3,
+    4
+  ],
+  "bootstrap_repeats": 2000,
+  "budget": {
+    "cpus": 1,
+    "memory_mib": 128,
+    "network": "none",
+    "wall_seconds_per_container": 45
+  },
+  "claim": "A fixed season-aware direct six-month ridge AR6 forecast reduces February–April initialized Niño 3.4 RMSE by at least 5% against both persistence and fixed non-seasonal ridge AR6 on held-out issue dates from 2015 onward through the October 25, 2026 data cutoff, with positive paired skill intervals under all prespecified block lengths.",
+  "data_cutoff": "2026-09",
+  "exclusions": "Exclude missing sentinel values; internal missing months, duplicate dates, non-finite values, insufficient coverage or missing source evidence stop the run. Use only targets available by cutoff. No imputation.",
+  "frozen_at": "2026-10-25T17:25:33+00:00",
+  "inputs": {
+    "nino34.data": "879cf3cb31d71e576f639ea88af9498f622662bbcaf6c74e79ad5394614696dd"
+  },
+  "interpretation": "Retrospective pseudo-out-of-sample experiment; no historical-vintage reconstruction, no external preregistration, no physical causal claim. Failure to meet the frozen rule is inconclusive or no demonstrated advantage. Do not change models after inspecting outcomes.",
+  "lags": 6,
+  "lead_months": 6,
+  "literature_search_sha256": "d8fcd3bcf3f3bc89f10e6225479dadfb92ccae784eda67200d8d615a33bba84d",
+  "maximum_fitted_variants": 2,
+  "minimum_relative_rmse_improvement": 0.05,
+  "primary_issue_months": [
+    2,
+    3,
+    4
+  ],
+  "question_id": "Q-ENSO-001",
+  "registration": "Internal timestamped protocol; not external preregistration",
+  "ridge": 1.0,
+  "schema_version": "1.0",
+  "seasonal_features": [
+    "sin(issue_month)",
+    "cos(issue_month)",
+    "latest_anomaly*sin(issue_month)",
+    "latest_anomaly*cos(issue_month)"
+  ],
+  "seed": 20261025,
+  "stop_conditions": [
+    "input hash mismatch",
+    "unverified source quotation",
+    "unknown input rights",
+    "resource limit",
+    "invalid data",
+    "reproduction mismatch"
+  ],
+  "test_issue_start": "2015-01",
+  "train_start": "1950-06",
+  "train_target_end": "2014-12",
+  "validation": "Temporal label cutoff, no model selection using holdout, linear-system residual checks, fresh container reproduction, independent host numerical recomputation and safety probes."
+}

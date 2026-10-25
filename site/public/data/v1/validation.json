@@ -1,0 +1,24 @@
+{
+  "analysis_image_id": "sha256:735dbd4f9a9bd259ea33d8d461508c79d45b87d248193017a4380cbd6a25344b",
+  "base_image": "python@sha256:35caba83af2fe6da9a5d922f9b0156f21d1246a48278c58a08bd253303ba42e8",
+  "external_scientific_review": false,
+  "fresh_container_reproduction": true,
+  "identical_structured_outputs": true,
+  "isolation": {
+    "credential_env_absent": true,
+    "docker_socket_absent": true,
+    "elapsed_seconds": 0.1408,
+    "external_network_denied": true,
+    "host_home_absent": true,
+    "interfaces": [
+      "lo"
+    ],
+    "root_write_denied": true,
+    "uid": 65534
+  },
+  "review_type": "automated_computational_checks",
+  "run_seconds": [
+    0.2791,
+    0.2492
+  ]
+}
