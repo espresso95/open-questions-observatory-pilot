@@ -64,6 +64,7 @@
     {
       "approved_bundle_sha256": "958f79eeb914fca5f0809b22ad41a8e8cac796c23aa5daf90292bc3f91c834a0",
       "approved_manifest": "publication/phase2-2026-10-25.manifest.json",
+      "commit": "12b127b863ba9535e12dc5e2db8cf818c8d4abaf",
       "disclosure_approved_at": "2026-10-25T19:37:15+00:00",
       "human_disclosure_approval": true,
       "id": "phase2-2026-10-25",
@@ -143,7 +144,8 @@
         "site/src/content/reports/R-1afd1ba41d69.md",
         "site/src/content/reports/R-b6204486e393.md"
       ],
-      "publication_status": "public_candidate",
+      "publication_status": "published",
+      "published_at": "2026-10-25T19:40:21Z",
       "question_ids": [
         "Q-AST-001",
         "Q-AST-002",
