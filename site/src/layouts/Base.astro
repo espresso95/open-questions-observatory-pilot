@@ -5,6 +5,7 @@ import { publicationFor } from '../lib/publication';
 const questionCount=1+newQuestions.length;
 const reportCount=Object.keys(import.meta.glob('../content/reports/*.md')).length;
 const privatePreview=newQuestions.some(q=>!publicationFor(q.id));
+const publicCandidate=newQuestions.some(q=>publicationFor(q.id)?.publication_status==='public_candidate');
 const { title, description = 'An evidence-linked, reproducible research pilot.' } = Astro.props;
 ---
 <!doctype html>
@@ -18,7 +19,7 @@ const { title, description = 'An evidence-linked, reproducible research pilot.' 
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header class="topbar"><a class="brand" href="/"><span class="mark" aria-hidden="true">◌</span> Open Questions<br /><small>OBSERVATORY</small></a><nav aria-label="Main navigation"><a href="/questions/">Questions</a><a href="/methodology/">Methodology</a><a href="/about/">About this pilot</a></nav><span class="private">{privatePreview ? 'PRIVATE REVIEW PREVIEW' : 'PUBLISHED RESEARCH PILOT'}</span></header>
+    <header class="topbar"><a class="brand" href="/"><span class="mark" aria-hidden="true">◌</span> Open Questions<br /><small>OBSERVATORY</small></a><nav aria-label="Main navigation"><a href="/questions/">Questions</a><a href="/methodology/">Methodology</a><a href="/about/">About this pilot</a></nav><span class="private">{privatePreview ? 'PRIVATE REVIEW PREVIEW' : publicCandidate ? 'APPROVED PUBLICATION CANDIDATE' : 'PUBLISHED RESEARCH PILOT'}</span></header>
     <main id="main"><slot /></main>
     <footer><p>Evidence before conclusions.</p><span>{questionCount} questions · {reportCount} research notes · No general scientific resolution claimed</span><a href="/data/v1/manifest.json">Original frozen data manifest ↗</a></footer>
   </body>

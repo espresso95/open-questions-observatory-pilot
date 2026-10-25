@@ -1,0 +1,24 @@
+{
+  "completed_at": "2026-10-25T18:59:01+00:00",
+  "error": "Command '['docker', '--context', 'colima-oqopilot', 'start', '--attach', 'oqo-68d85542b0d3']' returned non-zero exit status 1.",
+  "error_type": "CalledProcessError",
+  "host_elapsed_seconds": 0.5727,
+  "isolation": {
+    "cap_drop": [
+      "ALL"
+    ],
+    "host_binds": null,
+    "memory_bytes": 268435456,
+    "mounts": [],
+    "network": "none",
+    "pids_limit": 32,
+    "privileged": false,
+    "read_only": true,
+    "user": "65534:65534"
+  },
+  "label": "failure-diagnosis",
+  "outcome": "failed",
+  "plan_sha256": "4f62900ef554197cf0d602bc91fa396076fa073f4f8e633796a4b91ce5773b8f",
+  "started_at": "2026-10-25T18:59:00+00:00",
+  "stderr": "Traceback (most recent call last):\n  File \"/work/entry.py\", line 4, in <module>\n    result=analysis.run(plan)\n  File \"/work/analysis.py\", line 67, in run\n    if len(eligible)<p['minimum_evaluation_stations']:raise ValueError('Insufficient high-flow station coverage; no station substitution allowed')\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Insufficient high-flow station coverage; no station substitution allowed\n"
+}

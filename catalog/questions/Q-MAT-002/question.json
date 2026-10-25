@@ -1,0 +1,84 @@
+{
+  "assessment": {
+    "blockers": [
+      "Independent composition controls and measurements across the 7.40-7.46 gap are absent"
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": false,
+      "precise_bounded_question": true,
+      "qualified_inputs": false,
+      "rights_for_execution": false,
+      "safe_existing_data_or_formal_inputs": false,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": null,
+    "ratings": {
+      "implementation_readiness": 0,
+      "input_readiness": 0,
+      "local_compute_fit": 0,
+      "question_precision": 3,
+      "validation_readiness": 2
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 23.75,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "materials"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-MAT-002",
+  "literature": {
+    "assessment": "Source PDF page 13 visually verified; original abstract and earlier Heusler-threshold references show the idea predates this paper. Exact independent-composition causal answer not located; novelty confidence low.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch2.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "resolved": false,
+  "run_ids": [],
+  "schema_version": "2.0",
+  "scope": "Agent-formulated follow-up to a source-reported uncertainty, not a verbatim author question. Source observes no transition at e/a<7.40 within 10-400 K, but Mn/Ga composition changes together; independent causation is not established.",
+  "source_evidence": [
+    {
+      "end": 29915,
+      "location": "PDF page 13, discussion",
+      "quote": "observations suggest a possible threshold in electron concentration",
+      "source_id": "P-2610-31206v1",
+      "source_sha256": "0cf018ef6ce77f8eff05450a4eb2566a9a94ad30e8504b2616661e5dd1af6546",
+      "start": 29848,
+      "text_sha256": "e4ff895985dd320f2aad767ae74f044bbc2d8e6ebabc05a9d7321ff8d1f7b7d3",
+      "title": "Mn-deficient Ni-Mn-Ga alloys: phase transitions, magnetic properties, and disappearance of martensitic transformation",
+      "url": "https://arxiv.org/pdf/2610.31206v1"
+    }
+  ],
+  "statuses": {
+    "feasibility": "lab_dependent",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "not_started",
+    "validation": "unreviewed"
+  },
+  "title": "Does electron concentration independently determine the loss of martensitic transformation in Mn-deficient Ni-Mn-Ga?"
+}

@@ -1,0 +1,47 @@
+{
+  "adapter": "streamflow",
+  "adapter_sha256": "2d82410893c1082fd678279f076d3e5a19a95ddb81ee8ab90fd5d58dc35265f6",
+  "entry_sha256": "5e36931a77fc0c3689f8e7e85c438f2e5ef503234430aacc3cdef55c45129620",
+  "frozen_at": "2026-10-25T18:58:12+00:00",
+  "input_sha256": "5a3fa791a77f922bd6e642cfccd0f40b503fc1697dbda638df2916af7d4d5bec",
+  "parameters": {
+    "bootstrap_replicates": 3000,
+    "bootstrap_seed": 20261025,
+    "calibration_end": "2012-12-31",
+    "evaluation_end": "2022-12-31",
+    "evaluation_start": "2013-01-01",
+    "flow_bin_edges": [
+      0.8,
+      0.9
+    ],
+    "maximum_coverage_error": 0.05,
+    "minimum_bin_rows": 100,
+    "minimum_calibration_rows": 500,
+    "minimum_evaluation_stations": 8,
+    "minimum_high_rows_per_station": 30,
+    "minimum_score_improvement": 0.05,
+    "novelty": "Specific saved-ensemble calibration transfer check only; related predicted-flow calibration exists; no distribution-free coverage guarantee",
+    "primary_endpoint": "Equal-station high-predicted-flow mean interval score versus global calibration; high flow uses fixed calibration 90th percentile only",
+    "spread_floor": 0.001,
+    "success": "At least 5% interval-score improvement, coverage within 0.05 of 0.90, and positive lower paired catchment-bootstrap limit",
+    "target_coverage": 0.9
+  },
+  "policy": {
+    "credentials": false,
+    "network": "none",
+    "publication": "private_draft",
+    "result_selection": "Retain every attempted row and failure; no tuning after observation",
+    "variants": "Only parameter variants explicitly enumerated here"
+  },
+  "question_id": "Q-GEO-001",
+  "question_sha256": "b6182d762d33de8346d200f40e9edf4a522cc881826d9396a7b8343ccb0526f4",
+  "resources": {
+    "cpu_limit": 1,
+    "max_concurrent_experiments": 1,
+    "max_output_bytes": 4000000,
+    "memory_mib": 256,
+    "wall_seconds": 120
+  },
+  "runtime": "python@sha256:35caba83af2fe6da9a5d922f9b0156f21d1246a48278c58a08bd253303ba42e8",
+  "schema_version": "2.0"
+}

@@ -1,0 +1,91 @@
+{
+  "adapter": "streamflow",
+  "eligible_station_count": 3,
+  "evaluation_rows": 34011,
+  "high_predicted_flow_rows": 1649,
+  "model": {
+    "calibration_rows": 26390,
+    "calibration_rows_by_bin": [
+      21112,
+      2639,
+      2639
+    ],
+    "conditional": [
+      3.3841882686909432,
+      4.2370298947974065,
+      5.148848268862571
+    ],
+    "edges": [
+      2.3183897,
+      5.22968054
+    ],
+    "global": 3.7299686022707963
+  },
+  "primary_endpoint_evaluated": false,
+  "reason": "Insufficient high-flow station coverage under the frozen eligibility rule; no station substitution allowed",
+  "required_station_count": 8,
+  "station_eligibility": [
+    {
+      "eligible": false,
+      "high_rows": 3,
+      "station": "05BK001"
+    },
+    {
+      "eligible": false,
+      "high_rows": 17,
+      "station": "05CA004"
+    },
+    {
+      "eligible": false,
+      "high_rows": 0,
+      "station": "05CE011"
+    },
+    {
+      "eligible": false,
+      "high_rows": 0,
+      "station": "05DF004"
+    },
+    {
+      "eligible": false,
+      "high_rows": 0,
+      "station": "05DF007"
+    },
+    {
+      "eligible": false,
+      "high_rows": 11,
+      "station": "07GB001"
+    },
+    {
+      "eligible": false,
+      "high_rows": 6,
+      "station": "07GG002"
+    },
+    {
+      "eligible": false,
+      "high_rows": 0,
+      "station": "07JF002"
+    },
+    {
+      "eligible": true,
+      "high_rows": 88,
+      "station": "08CD001"
+    },
+    {
+      "eligible": true,
+      "high_rows": 1372,
+      "station": "08HF004"
+    },
+    {
+      "eligible": false,
+      "high_rows": 18,
+      "station": "08LB024"
+    },
+    {
+      "eligible": true,
+      "high_rows": 134,
+      "station": "08NK002"
+    }
+  ],
+  "status": "inconclusive",
+  "success_rule_passed": false
+}

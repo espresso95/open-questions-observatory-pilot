@@ -1,0 +1,856 @@
+{
+  "questions": [
+    {
+      "assessment": {
+        "blockers": [
+          "No specified kinetic/collisional model or matched parameters"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 1,
+          "input_readiness": 1,
+          "local_compute_fit": 1,
+          "question_precision": 3,
+          "validation_readiness": 1
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 32.5,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "astronomy"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-AST-001",
+      "literature": {
+        "assessment": "Source paper plus author publication list; no exact physical-timescale answer located. The list includes a related in-review disk-evolution study that requires future scope comparison.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch1.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "Source explicitly limits interpretation. Compare pressure, velocity dispersion and encounters on a fixed annulus; the paper already demonstrates model quasi-localization.",
+      "source_evidence": [
+        {
+          "end": 64531,
+          "location": "Conclusion, model validity limit",
+          "quote": "processes that the softened secular approximation omits",
+          "source_id": "P-2610-30515v1",
+          "source_sha256": "84fb84eb4cf8fcd2e1eeac9600d16017783e05637ece211f5a184ea2a4add940",
+          "start": 64476,
+          "text_sha256": "b0188067f9ff777df4ce64f8afa9dcf5840c98f175f85bb89bbc99980f62cac0",
+          "title": "Quasi-Localization of Short-Wavelength Perturbations in Softened Laplace-Lagrange Chains",
+          "url": "https://arxiv.org/html/2610.30515v1"
+        }
+      ],
+      "statuses": {
+        "feasibility": "needs_information",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Which omitted processes control sub-softening AMD transport in a specified planetesimal annulus?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "No qualified initial conditions or 4.5 Gyr integration budget"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 1,
+          "input_readiness": 1,
+          "local_compute_fit": 0,
+          "question_precision": 4,
+          "validation_readiness": 2
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 37.5,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "astronomy"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-AST-002",
+      "literature": {
+        "assessment": "Publisher full text confirms the gap; earlier long-term resonance stability work is related but does not settle this classification-specific question.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch1.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "The paper classifies early capture; a long-term stability and type-switching study requires full perturbations, archived initial conditions and convergence tests.",
+      "source_evidence": [
+        {
+          "end": 38646,
+          "location": "Section 4, classification caveat",
+          "quote": "Whether different types of resonators can survive stably to the present day",
+          "source_id": "P-2610-24375v1",
+          "source_sha256": "f46a15e29e6d5189d7f0d782b6ef8cf741b69aaffc00e31d34c70ec72bdfac76",
+          "start": 38571,
+          "text_sha256": "1e26bd3026f66082e24d04557d0d040da54b65a83ca24a0a16d51931b1e40668",
+          "title": "Numerical estimation of the capture ability of Neptunian mean motion resonances II. Influence of eccentricity and inclination",
+          "url": "https://arxiv.org/html/2610.24375v1"
+        }
+      ],
+      "statuses": {
+        "feasibility": "compute_blocked",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Which captured Neptunian resonator types survive and switch under a full Solar System model over 4.5 Gyr?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "1834-1931 local soil-temperature series and recording-effort information missing"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 1,
+          "input_readiness": 0,
+          "local_compute_fit": 3,
+          "question_precision": 3,
+          "validation_readiness": 1
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 35.0,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "ecology"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-ECO-001",
+      "literature": {
+        "assessment": "Source full text; earlier habitat-suitability and seasonal-activity studies are related but use other times or populations. No exact River Test historical explanatory result located.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch3.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "Source finds no significant Oxford air-temperature response and suggests more appropriate variables. Historic local soil-temperature measurements and comparable observation effort are not qualified; the 41-day range alone does not prove an environmental cause.",
+      "source_evidence": [
+        {
+          "end": 14254,
+          "location": "Discussion, Mole Cricket non-response",
+          "quote": "more appropriate climatic variables, such as soil temperatures",
+          "source_id": "P-PMC13586045",
+          "source_sha256": "0ff8982b1f55cf07fef338cae7016ba7934f1be5f09aff840ff1495fab7dfb90",
+          "start": 14192,
+          "text_sha256": "9da3037698ede14cb3be005d833fc7b7061620ffecd973011da032b42a3320fe",
+          "title": "The influence of temperature on river fly phenology based on historic records.",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586045/fullTextXML"
+        }
+      ],
+      "statuses": {
+        "feasibility": "data_blocked",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Can local soil temperature or other environmental variables explain the historic Mole Cricket emergence range at the River Test?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "Matched field movement and establishment data; no approved intervention"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": false,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 1,
+          "input_readiness": 0,
+          "local_compute_fit": 1,
+          "question_precision": 4,
+          "validation_readiness": 2
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 35.0,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "ecology"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-ECO-002",
+      "literature": {
+        "assessment": "Source plus publisher discussion; prior 2010 and 2014 work already establishes seed dispersal by this bird. That known effect is excluded from the question. Regional connectivity hypothesis remains untested in inspected coverage.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch3.json",
+        "status": "partial_answer"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "Source documents known dispersal effectiveness and macroecological associations. The unanswered scope is movement-mediated connectivity and geographic turnover, not whether the bird disperses seeds. Need movement, deposition and establishment observations.",
+      "source_evidence": [
+        {
+          "end": 29541,
+          "location": "Discussion, disperser movement hypothesis",
+          "quote": "Although this hypothesis remains to be tested for P. robustus",
+          "source_id": "P-PMC13577974",
+          "source_sha256": "879f3f00cefddf42c0e8fbe9cd4685315421bf37381e361d0c38051e10aa0fc7",
+          "start": 29480,
+          "text_sha256": "647311ef75e362620db291ef66814a76fbe4af7d2cdd374fd8a07f15d1628b51",
+          "title": "Disentangling biotic and abiotic drivers of a neotropical mistletoe.",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13577974/fullTextXML"
+        }
+      ],
+      "statuses": {
+        "feasibility": "lab_dependent",
+        "literature": "partial_answer",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Does Elaenia cristata movement among host patches explain new Psittacanthus robustus infection sites across its geographic range?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "Only 3 of 12 fixed evaluation stations meet the frozen high-flow support rule; 8 required. A different future protocol needs fresh justification and freeze."
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": true,
+          "precise_bounded_question": true,
+          "qualified_inputs": true,
+          "rights_for_execution": true,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": 120,
+        "prior_assessment": {
+          "dispatch_eligible": true,
+          "reason": "Inputs were computationally usable, but station support for the primary endpoint was overestimated",
+          "score": 87.5
+        },
+        "ratings": {
+          "implementation_readiness": 4,
+          "input_readiness": 4,
+          "local_compute_fit": 4,
+          "question_precision": 4,
+          "validation_readiness": 2
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 87.5,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "geophysics"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-GEO-001",
+      "literature": {
+        "assessment": "Close prior work at SSRN 7506823 already tests predicted-flow-stratified CQR on CAMELS-US and finds incomplete high-flow recovery. This partly addresses the general idea. The Canadian saved-ensemble transfer comparison was not located. No algorithm novelty claim.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch2.json",
+        "status": "partial_answer"
+      },
+      "novelty_certified": false,
+      "outcome_summary": "Inconclusive: the frozen primary-endpoint support requirement failed. No thresholds were lowered and no stations were substituted. Original failures and a diagnostic-only reporting amendment are retained.",
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "report_run_id": "R-b6204486e393",
+      "resolved": false,
+      "run_ids": [
+        "R-4f62900ef554",
+        "R-b6204486e393"
+      ],
+      "schema_version": "2.0",
+      "scope": "Use fixed 24-station hash subset of the Canadian saved 10-member regional LSTM ensemble. Fit 2006-2012 at 12 stations; evaluate 2013-2022 at the other 12. All stations were in original LSTM training. Compare global and three-bin normalized-residual quantiles.",
+      "source_evidence": [
+        {
+          "end": 16364,
+          "location": "Conclusion, calibration follow-up",
+          "quote": "correction should therefore be conditioned on flow",
+          "source_id": "P-2610-20947v1",
+          "source_sha256": "e794bd06b3fe07a1e3a15c422d28195ac8862873dd5695df8f9fe4e63f574e6d",
+          "start": 16314,
+          "text_sha256": "7633b70e9fd0f825a2cd0c143105b5d55329df7d40b4f241fc990cdd8f010741",
+          "title": "Ranked Right, Sized Wrong: Ensemble Spread Fails Silently at Streamflow Extremes",
+          "url": "https://arxiv.org/html/2610.20947v1"
+        }
+      ],
+      "statuses": {
+        "feasibility": "data_blocked",
+        "literature": "partial_answer",
+        "publication": "private_draft",
+        "research": "inconclusive",
+        "validation": "computationally_reproduced"
+      },
+      "title": "Does forecast-flow-conditioned spread calibration transfer to stations and later years held out from posthoc fitting?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "Matched adjoint dataset, preprocessing, retraining cost and usable rights are not yet qualified"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 1,
+          "input_readiness": 1,
+          "local_compute_fit": 1,
+          "question_precision": 4,
+          "validation_readiness": 2
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 42.5,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "geophysics"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-GEO-002",
+      "literature": {
+        "assessment": "Source read and exact-title search documented; no later controlled intervention answering the specified tradeoff located. Existing gradient-informed learning is related and no new method is claimed.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch4.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "A controlled Rayleigh-Benard benchmark needs paired state/adjoint targets, fixed architecture and a loss-weight protocol. The source evaluates fidelity but does not perform this intervention.",
+      "source_evidence": [
+        {
+          "end": 38891,
+          "location": "Conclusion, explicit future work",
+          "quote": "derivative-informed and sensitivity-constrained training",
+          "source_id": "P-2610-15540v1",
+          "source_sha256": "b18599e99f1dfb5af370c5abec3d0cdc28a3df038d714e27bd2f51b7a6c4d120",
+          "start": 38835,
+          "text_sha256": "2e4283751898bcaedbf52ec1c7dc261450617f0eb1393d471e7ec550e0e8dfce",
+          "title": "Sensitivity Fidelity Reveals Physical Dependencies Beyond Forecast Accuracy in Deep-Learning Earth-System Models",
+          "url": "https://arxiv.org/html/2610.15540v1"
+        }
+      ],
+      "statuses": {
+        "feasibility": "data_blocked",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Can derivative-constrained training improve sensitivity fidelity while retaining forecast skill with matched adjoint targets?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "Training dataset and checkpoints not staged; GPU workload not budgeted"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 1,
+          "input_readiness": 1,
+          "local_compute_fit": 0,
+          "question_precision": 4,
+          "validation_readiness": 2
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 37.5,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "materials"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-MAT-001",
+      "literature": {
+        "assessment": "Original full text plus exact-title and discrete-diffusion searches. Related generative reviews are not an answer to this exaCA comparison; no matched later experiment located.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch4.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "Source suggests this as a possible remedy after continuous diffusion and resampling leave artifacts. Need identical exaCA split, training resources, orientation, texture, morphology and property metrics.",
+      "source_evidence": [
+        {
+          "end": 66683,
+          "location": "Section 4.2, artifact discussion",
+          "quote": "a diffusion process natively defined on discrete classes",
+          "source_id": "P-2610-30404v1",
+          "source_sha256": "027673558ac2126e6bf41024e72b44a344f73173e9fa1e3bdea66b117def14b0",
+          "start": 66627,
+          "text_sha256": "b923759dd35c4f887127fd041aed745d28fe97f33b15a21ced1ea8edd327dffe",
+          "title": "Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins",
+          "url": "https://arxiv.org/html/2610.30404v1"
+        }
+      ],
+      "statuses": {
+        "feasibility": "compute_blocked",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Can discrete-state diffusion remove synthetic intragrain orientation artifacts while preserving conditional microstructure fidelity?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "Independent composition controls and measurements across the 7.40-7.46 gap are absent"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": false,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 0,
+          "input_readiness": 0,
+          "local_compute_fit": 0,
+          "question_precision": 3,
+          "validation_readiness": 2
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 23.75,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "materials"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-MAT-002",
+      "literature": {
+        "assessment": "Source PDF page 13 visually verified; original abstract and earlier Heusler-threshold references show the idea predates this paper. Exact independent-composition causal answer not located; novelty confidence low.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch2.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "Agent-formulated follow-up to a source-reported uncertainty, not a verbatim author question. Source observes no transition at e/a<7.40 within 10-400 K, but Mn/Ga composition changes together; independent causation is not established.",
+      "source_evidence": [
+        {
+          "end": 29915,
+          "location": "PDF page 13, discussion",
+          "quote": "observations suggest a possible threshold in electron concentration",
+          "source_id": "P-2610-31206v1",
+          "source_sha256": "0cf018ef6ce77f8eff05450a4eb2566a9a94ad30e8504b2616661e5dd1af6546",
+          "start": 29848,
+          "text_sha256": "e4ff895985dd320f2aad767ae74f044bbc2d8e6ebabc05a9d7321ff8d1f7b7d3",
+          "title": "Mn-deficient Ni-Mn-Ga alloys: phase transitions, magnetic properties, and disappearance of martensitic transformation",
+          "url": "https://arxiv.org/pdf/2610.31206v1"
+        }
+      ],
+      "statuses": {
+        "feasibility": "lab_dependent",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Does electron concentration independently determine the loss of martensitic transformation in Mn-deficient Ni-Mn-Ga?"
+    },
+    {
+      "assessment": {
+        "blockers": [
+          "No proof strategy; finite enumeration cannot answer this claim"
+        ],
+        "dispatch_eligible": false,
+        "gates": {
+          "local_budget_fit": false,
+          "precise_bounded_question": true,
+          "qualified_inputs": false,
+          "rights_for_execution": false,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": false
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": null,
+        "ratings": {
+          "implementation_readiness": 1,
+          "input_readiness": 4,
+          "local_compute_fit": 1,
+          "question_precision": 4,
+          "validation_readiness": 0
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 52.5,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "mathematics"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-MATH-001",
+      "literature": {
+        "assessment": "Original v2 and newer 2610.30892 were read; newer paper proves Conjectures 2-4, not this asymptotic assertion. Author repository records extend only through n=100.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch1.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "resolved": false,
+      "run_ids": [],
+      "schema_version": "2.0",
+      "scope": "The four leading coefficients are 1/13, 1/9, 1/10 and 1/7 for n modulo 4. Computation of finite examples cannot establish O(n) asymptotics.",
+      "source_evidence": [
+        {
+          "end": 59358,
+          "location": "Section 4.1, Conjecture 1",
+          "quote": "Conjecture 1 .",
+          "source_id": "P-2511-16959v2",
+          "source_sha256": "fb55c346bb6878be79b760dae84bc1512ccbba1d612bbacaf767e1f2cf1e9e6d",
+          "start": 59344,
+          "text_sha256": "253eeae319ea959a2ff232ecf33caa6245edb0a77c45068fd78cf151afbe48ba",
+          "title": "Generating the symmetric group by three prefix reversals",
+          "url": "https://arxiv.org/html/2511.16959v2"
+        }
+      ],
+      "statuses": {
+        "feasibility": "needs_information",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "not_started",
+        "validation": "unreviewed"
+      },
+      "title": "Does the residue-dependent asymptotic formula for the number of generating prefix-reversal pairs hold?"
+    },
+    {
+      "assessment": {
+        "blockers": [],
+        "dispatch_eligible": true,
+        "gates": {
+          "local_budget_fit": true,
+          "precise_bounded_question": true,
+          "qualified_inputs": true,
+          "rights_for_execution": true,
+          "safe_existing_data_or_formal_inputs": true,
+          "validation_defined": true
+        },
+        "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+        "predicted_run_seconds_upper_bound": 120,
+        "ratings": {
+          "implementation_readiness": 4,
+          "input_readiness": 4,
+          "local_compute_fit": 4,
+          "question_precision": 4,
+          "validation_readiness": 3
+        },
+        "rubric_version": "1.0",
+        "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+        "score": 93.75,
+        "weights": {
+          "implementation_readiness": 10,
+          "input_readiness": 30,
+          "local_compute_fit": 20,
+          "question_precision": 15,
+          "validation_readiness": 25
+        }
+      },
+      "created_at": "2026-10-25T18:56:42+00:00",
+      "disciplines": [
+        "mathematics"
+      ],
+      "human_scientific_review": false,
+      "id": "Q-MATH-002",
+      "literature": {
+        "assessment": "Source v2 reports n<=100. Newer paper proves Conjectures 2-4 and supplies obstructions; author repository inspected through its current tree, no data beyond 100. No exact answer to these selected rows found.",
+        "checked_at": "2026-10-25T18:56:42+00:00",
+        "coverage_limits": [
+          "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+          "Most source papers are very recent and have little later literature",
+          "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+        ],
+        "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+        "query_log": "discovery/literature-batch1.json",
+        "status": "no_answer_found"
+      },
+      "novelty_certified": false,
+      "outcome_summary": "Nine finite row witnesses found beyond n=100; 513 symmetric certificates and 37 proper-group obstructions independently checked. The general conjecture remains unresolved.",
+      "provenance": {
+        "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+        "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+        "template": "source-gap-v2"
+      },
+      "report_run_id": "R-1afd1ba41d69",
+      "resolved": false,
+      "run_ids": [
+        "R-1afd1ba41d69"
+      ],
+      "schema_version": "2.0",
+      "scope": "Bounded child of max_n |F_k(n)|=k+1 for even k, (k+1)/2 for odd k. Search k=48,50,...,64 at prespecified prime-offset rows; retain certificates and failures. A finite result will not resolve the general conjecture.",
+      "source_evidence": [
+        {
+          "end": 64091,
+          "location": "Section 4.1, Conjecture 5",
+          "quote": "Conjecture 5 .",
+          "source_id": "P-2511-16959v2",
+          "source_sha256": "fb55c346bb6878be79b760dae84bc1512ccbba1d612bbacaf767e1f2cf1e9e6d",
+          "start": 64077,
+          "text_sha256": "253eeae319ea959a2ff232ecf33caa6245edb0a77c45068fd78cf151afbe48ba",
+          "title": "Generating the symmetric group by three prefix reversals",
+          "url": "https://arxiv.org/html/2511.16959v2"
+        }
+      ],
+      "statuses": {
+        "feasibility": "pilot_ready",
+        "literature": "no_answer_found",
+        "publication": "private_draft",
+        "research": "completed",
+        "validation": "computationally_reproduced"
+      },
+      "title": "Can exact attainment witnesses for the proposed maximal prefix-reversal rows be found beyond n=100?"
+    }
+  ]
+}

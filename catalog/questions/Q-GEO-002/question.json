@@ -1,0 +1,84 @@
+{
+  "assessment": {
+    "blockers": [
+      "Matched adjoint dataset, preprocessing, retraining cost and usable rights are not yet qualified"
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": false,
+      "precise_bounded_question": true,
+      "qualified_inputs": false,
+      "rights_for_execution": false,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": null,
+    "ratings": {
+      "implementation_readiness": 1,
+      "input_readiness": 1,
+      "local_compute_fit": 1,
+      "question_precision": 4,
+      "validation_readiness": 2
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 42.5,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "geophysics"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-GEO-002",
+  "literature": {
+    "assessment": "Source read and exact-title search documented; no later controlled intervention answering the specified tradeoff located. Existing gradient-informed learning is related and no new method is claimed.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch4.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "resolved": false,
+  "run_ids": [],
+  "schema_version": "2.0",
+  "scope": "A controlled Rayleigh-Benard benchmark needs paired state/adjoint targets, fixed architecture and a loss-weight protocol. The source evaluates fidelity but does not perform this intervention.",
+  "source_evidence": [
+    {
+      "end": 38891,
+      "location": "Conclusion, explicit future work",
+      "quote": "derivative-informed and sensitivity-constrained training",
+      "source_id": "P-2610-15540v1",
+      "source_sha256": "b18599e99f1dfb5af370c5abec3d0cdc28a3df038d714e27bd2f51b7a6c4d120",
+      "start": 38835,
+      "text_sha256": "2e4283751898bcaedbf52ec1c7dc261450617f0eb1393d471e7ec550e0e8dfce",
+      "title": "Sensitivity Fidelity Reveals Physical Dependencies Beyond Forecast Accuracy in Deep-Learning Earth-System Models",
+      "url": "https://arxiv.org/html/2610.15540v1"
+    }
+  ],
+  "statuses": {
+    "feasibility": "data_blocked",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "not_started",
+    "validation": "unreviewed"
+  },
+  "title": "Can derivative-constrained training improve sensitivity fidelity while retaining forecast skill with matched adjoint targets?"
+}

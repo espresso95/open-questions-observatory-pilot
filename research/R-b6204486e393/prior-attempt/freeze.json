@@ -1,0 +1,12 @@
+{
+  "files": {
+    "Dockerfile": "acb51db67bc43c20e3cef055638cdec66e74965a840cc4a0d4089558eebbf662",
+    "analysis.py": "2d82410893c1082fd678279f076d3e5a19a95ddb81ee8ab90fd5d58dc35265f6",
+    "entry.py": "5e36931a77fc0c3689f8e7e85c438f2e5ef503234430aacc3cdef55c45129620",
+    "input.csv.gz": "5a3fa791a77f922bd6e642cfccd0f40b503fc1697dbda638df2916af7d4d5bec",
+    "plan.json": "4f62900ef554197cf0d602bc91fa396076fa073f4f8e633796a4b91ce5773b8f"
+  },
+  "frozen_at": "2026-10-25T18:58:12+00:00",
+  "outcomes_examined_before_freeze": false,
+  "plan_sha256": "4f62900ef554197cf0d602bc91fa396076fa073f4f8e633796a4b91ce5773b8f"
+}

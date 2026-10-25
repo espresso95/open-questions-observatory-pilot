@@ -1,0 +1,84 @@
+{
+  "assessment": {
+    "blockers": [
+      "1834-1931 local soil-temperature series and recording-effort information missing"
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": false,
+      "precise_bounded_question": true,
+      "qualified_inputs": false,
+      "rights_for_execution": false,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": null,
+    "ratings": {
+      "implementation_readiness": 1,
+      "input_readiness": 0,
+      "local_compute_fit": 3,
+      "question_precision": 3,
+      "validation_readiness": 1
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 35.0,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "ecology"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-ECO-001",
+  "literature": {
+    "assessment": "Source full text; earlier habitat-suitability and seasonal-activity studies are related but use other times or populations. No exact River Test historical explanatory result located.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch3.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "resolved": false,
+  "run_ids": [],
+  "schema_version": "2.0",
+  "scope": "Source finds no significant Oxford air-temperature response and suggests more appropriate variables. Historic local soil-temperature measurements and comparable observation effort are not qualified; the 41-day range alone does not prove an environmental cause.",
+  "source_evidence": [
+    {
+      "end": 14254,
+      "location": "Discussion, Mole Cricket non-response",
+      "quote": "more appropriate climatic variables, such as soil temperatures",
+      "source_id": "P-PMC13586045",
+      "source_sha256": "0ff8982b1f55cf07fef338cae7016ba7934f1be5f09aff840ff1495fab7dfb90",
+      "start": 14192,
+      "text_sha256": "9da3037698ede14cb3be005d833fc7b7061620ffecd973011da032b42a3320fe",
+      "title": "The influence of temperature on river fly phenology based on historic records.",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586045/fullTextXML"
+    }
+  ],
+  "statuses": {
+    "feasibility": "data_blocked",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "not_started",
+    "validation": "unreviewed"
+  },
+  "title": "Can local soil temperature or other environmental variables explain the historic Mole Cricket emergence range at the River Test?"
+}

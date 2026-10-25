@@ -1,0 +1,26 @@
+{
+  "external_scientific_review": false,
+  "human_scientific_review": false,
+  "independent_check": {
+    "bin_edges_identical": true,
+    "eligible_stations": 3,
+    "independent_library": "NumPy 2.3.5",
+    "interpretation": "Insufficient independent station support for the frozen primary endpoint; no thresholds lowered",
+    "max_calibration_multiplier_difference": 0.0,
+    "primary_endpoint_not_evaluated": true,
+    "required_stations": 8,
+    "scientific_review": false,
+    "station_high_flow_counts_identical": true,
+    "verified_at": "2026-10-25T19:03:21+00:00"
+  },
+  "novelty_certified": false,
+  "reproduction": {
+    "fresh_containers": true,
+    "independent_implementation": false,
+    "primary_hash": "d6676b7e25684b4a88b6d022f8056d6451da0fa75e5b43017b84a644190f36ed",
+    "reproduction_hash": "d6676b7e25684b4a88b6d022f8056d6451da0fa75e5b43017b84a644190f36ed",
+    "results_identical": true,
+    "scientific_review": false,
+    "verified_at": "2026-10-25T18:59:54+00:00"
+  }
+}

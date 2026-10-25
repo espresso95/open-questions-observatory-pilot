@@ -1,0 +1,23 @@
+{
+  "completed_at": "2026-10-25T18:58:21+00:00",
+  "error": "Command '['docker', '--context', 'colima-oqopilot', 'start', '--attach', 'oqo-d29715c8fc35']' returned non-zero exit status 1.",
+  "error_type": "CalledProcessError",
+  "host_elapsed_seconds": 0.9258,
+  "isolation": {
+    "cap_drop": [
+      "ALL"
+    ],
+    "host_binds": null,
+    "memory_bytes": 268435456,
+    "mounts": [],
+    "network": "none",
+    "pids_limit": 32,
+    "privileged": false,
+    "read_only": true,
+    "user": "65534:65534"
+  },
+  "label": "primary",
+  "outcome": "failed",
+  "plan_sha256": "4f62900ef554197cf0d602bc91fa396076fa073f4f8e633796a4b91ce5773b8f",
+  "started_at": "2026-10-25T18:58:20+00:00"
+}

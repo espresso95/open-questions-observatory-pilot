@@ -1,0 +1,141 @@
+[
+  {
+    "extraction": "normalized structured full text; equation rendering must be checked against source before formalization",
+    "id": "P-2610-30515v1",
+    "retrieved_at": "2026-10-25T18:24:31+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": "CC BY 4.0 arXiv:2610.30515v1 [astro-ph.EP] 21 Oct 2026 Quasi-Localization of Short-Wavelength Pertur",
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "84fb84eb4cf8fcd2e1eeac9600d16017783e05637ece211f5a184ea2a4add940",
+    "text_sha256": "b0188067f9ff777df4ce64f8afa9dcf5840c98f175f85bb89bbc99980f62cac0",
+    "title": "Quasi-Localization of Short-Wavelength Perturbations in Softened Laplace-Lagrange Chains",
+    "url": "https://arxiv.org/html/2610.30515v1"
+  },
+  {
+    "extraction": "normalized structured full text; equation rendering must be checked against source before formalization",
+    "id": "P-2610-24375v1",
+    "retrieved_at": "2026-10-25T18:24:31+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": "CC BY 4.0 arXiv:2610.24375v1 [astro-ph.EP] 17 Oct 2026 Numerical estimation of the capture ability o",
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "f46a15e29e6d5189d7f0d782b6ef8cf741b69aaffc00e31d34c70ec72bdfac76",
+    "text_sha256": "1e26bd3026f66082e24d04557d0d040da54b65a83ca24a0a16d51931b1e40668",
+    "title": "Numerical estimation of the capture ability of Neptunian mean motion resonances II. Influence of eccentricity and inclination",
+    "url": "https://arxiv.org/html/2610.24375v1"
+  },
+  {
+    "extraction": "normalized structured full text; equation rendering must be checked against source before formalization",
+    "id": "P-PMC13586045",
+    "retrieved_at": "2026-10-25T18:24:32+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": [
+        "Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/ ."
+      ],
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "0ff8982b1f55cf07fef338cae7016ba7934f1be5f09aff840ff1495fab7dfb90",
+    "text_sha256": "9da3037698ede14cb3be005d833fc7b7061620ffecd973011da032b42a3320fe",
+    "title": "The influence of temperature on river fly phenology based on historic records.",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13586045/fullTextXML"
+  },
+  {
+    "extraction": "normalized structured full text; equation rendering must be checked against source before formalization",
+    "id": "P-PMC13577974",
+    "retrieved_at": "2026-10-25T18:24:33+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": [
+        "https://creativecommons.org/licenses/by/4.0/ Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/ ."
+      ],
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "879f3f00cefddf42c0e8fbe9cd4685315421bf37381e361d0c38051e10aa0fc7",
+    "text_sha256": "647311ef75e362620db291ef66814a76fbe4af7d2cdd374fd8a07f15d1628b51",
+    "title": "Disentangling biotic and abiotic drivers of a neotropical mistletoe.",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13577974/fullTextXML"
+  },
+  {
+    "extraction": "normalized structured full text; equation rendering must be checked against source before formalization",
+    "id": "P-2610-20947v1",
+    "retrieved_at": "2026-10-25T18:24:31+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": "CC BY 4.0 arXiv:2610.20947v1 [stat.ML] 14 Oct 2026 Ranked Right, Sized Wrong: Ensemble Spread Fails ",
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "e794bd06b3fe07a1e3a15c422d28195ac8862873dd5695df8f9fe4e63f574e6d",
+    "text_sha256": "7633b70e9fd0f825a2cd0c143105b5d55329df7d40b4f241fc990cdd8f010741",
+    "title": "Ranked Right, Sized Wrong: Ensemble Spread Fails Silently at Streamflow Extremes",
+    "url": "https://arxiv.org/html/2610.20947v1"
+  },
+  {
+    "extraction": "normalized structured full text; equation rendering must be checked against source before formalization",
+    "id": "P-2610-15540v1",
+    "retrieved_at": "2026-10-25T18:24:31+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": "arXiv.org perpetual non-exclusive license arXiv:2610.15540v1 [cs.LG] 11 Oct 2026 Sensitivity Fidelit",
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "b18599e99f1dfb5af370c5abec3d0cdc28a3df038d714e27bd2f51b7a6c4d120",
+    "text_sha256": "2e4283751898bcaedbf52ec1c7dc261450617f0eb1393d471e7ec550e0e8dfce",
+    "title": "Sensitivity Fidelity Reveals Physical Dependencies Beyond Forecast Accuracy in Deep-Learning Earth-System Models",
+    "url": "https://arxiv.org/html/2610.15540v1"
+  },
+  {
+    "extraction": "normalized structured full text; equation rendering must be checked against source before formalization",
+    "id": "P-2610-30404v1",
+    "retrieved_at": "2026-10-25T18:24:31+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": "CC BY 4.0 arXiv:2610.30404v1 [cond-mat.mtrl-sci] 21 Oct 2026 Microstructural Generative Inverse Mode",
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "027673558ac2126e6bf41024e72b44a344f73173e9fa1e3bdea66b117def14b0",
+    "text_sha256": "b923759dd35c4f887127fd041aed745d28fe97f33b15a21ced1ea8edd327dffe",
+    "title": "Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins",
+    "url": "https://arxiv.org/html/2610.30404v1"
+  },
+  {
+    "extraction": "Poppler pdftotext -layout, whitespace normalized; original PDF page 13 visually checked",
+    "id": "P-2610-31206v1",
+    "retrieved_at": "2026-10-25T18:40:43+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": "Public reading; redistribution not assumed",
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "0cf018ef6ce77f8eff05450a4eb2566a9a94ad30e8504b2616661e5dd1af6546",
+    "text_sha256": "e4ff895985dd320f2aad767ae74f044bbc2d8e6ebabc05a9d7321ff8d1f7b7d3",
+    "title": "Mn-deficient Ni-Mn-Ga alloys: phase transitions, magnetic properties, and disappearance of martensitic transformation",
+    "url": "https://arxiv.org/pdf/2610.31206v1"
+  },
+  {
+    "extraction": "Normalized arXiv structured HTML, displayed LaTeX checked against source section 4.1",
+    "id": "P-2511-16959v2",
+    "retrieved_at": "2026-10-25T18:32:18+00:00",
+    "rights": {
+      "analyze": true,
+      "export": true,
+      "license": "CC-BY-4.0",
+      "scope": "Metadata, citation and brief necessary quotation only; original full text excluded"
+    },
+    "source_sha256": "fb55c346bb6878be79b760dae84bc1512ccbba1d612bbacaf767e1f2cf1e9e6d",
+    "text_sha256": "253eeae319ea959a2ff232ecf33caa6245edb0a77c45068fd78cf151afbe48ba",
+    "title": "Generating the symmetric group by three prefix reversals",
+    "url": "https://arxiv.org/html/2511.16959v2"
+  }
+]

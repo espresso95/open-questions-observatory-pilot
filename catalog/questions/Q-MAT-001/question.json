@@ -1,0 +1,84 @@
+{
+  "assessment": {
+    "blockers": [
+      "Training dataset and checkpoints not staged; GPU workload not budgeted"
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": false,
+      "precise_bounded_question": true,
+      "qualified_inputs": false,
+      "rights_for_execution": false,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": null,
+    "ratings": {
+      "implementation_readiness": 1,
+      "input_readiness": 1,
+      "local_compute_fit": 0,
+      "question_precision": 4,
+      "validation_readiness": 2
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 37.5,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "materials"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-MAT-001",
+  "literature": {
+    "assessment": "Original full text plus exact-title and discrete-diffusion searches. Related generative reviews are not an answer to this exaCA comparison; no matched later experiment located.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch4.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "resolved": false,
+  "run_ids": [],
+  "schema_version": "2.0",
+  "scope": "Source suggests this as a possible remedy after continuous diffusion and resampling leave artifacts. Need identical exaCA split, training resources, orientation, texture, morphology and property metrics.",
+  "source_evidence": [
+    {
+      "end": 66683,
+      "location": "Section 4.2, artifact discussion",
+      "quote": "a diffusion process natively defined on discrete classes",
+      "source_id": "P-2610-30404v1",
+      "source_sha256": "027673558ac2126e6bf41024e72b44a344f73173e9fa1e3bdea66b117def14b0",
+      "start": 66627,
+      "text_sha256": "b923759dd35c4f887127fd041aed745d28fe97f33b15a21ced1ea8edd327dffe",
+      "title": "Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins",
+      "url": "https://arxiv.org/html/2610.30404v1"
+    }
+  ],
+  "statuses": {
+    "feasibility": "compute_blocked",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "not_started",
+    "validation": "unreviewed"
+  },
+  "title": "Can discrete-state diffusion remove synthetic intragrain orientation artifacts while preserving conditional microstructure fidelity?"
+}
