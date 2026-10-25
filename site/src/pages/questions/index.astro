@@ -1,11 +1,14 @@
 ---
 import Base from '../../layouts/Base.astro';
 import pilot from '../../content/pilot.json';
+import { newQuestions } from '../../lib/newQuestions';
+const questions = [pilot.question, ...newQuestions];
+const disciplines = [...new Set(questions.flatMap(q => q.disciplines))].sort();
 ---
 <Base title="Question catalog">
-<section class="page-head"><p class="eyebrow">THE CATALOG / 1 QUESTION</p><h1>Start with a question.</h1><p class="lede">Search the pilot's evidence-linked records and research report.</p></section>
-<div class="search-box"><label for="catalog-search">Search questions and reports</label><input id="catalog-search" type="search" placeholder="Try spring, Niño or uncertainty" /><label for="discipline">Discipline</label><select id="discipline"><option value="">All disciplines</option><option value="climate-science">Climate science</option><option value="statistics">Statistics</option></select><p id="search-status" role="status" aria-live="polite">The complete pilot record is shown below.</p><div id="search-results"></div></div>
-<article class="question-card" id="pilot-card"><p class="eyebrow">Q-ENSO-001 · CLIMATE SCIENCE / STATISTICS</p><h2><a href="/questions/Q-ENSO-001/">{pilot.question.title}</a></h2><p>Does adding calendar terms improve spring-initialized six-month forecast error over both simple baselines on the 2015–2026 record?</p><div class="badges"><span class="badge">No answer found in search</span><span class="badge">{pilot.question.statuses.research}</span><span class="badge">Computationally reproduced</span></div></article>
+<section class="page-head"><p class="eyebrow">THE CATALOG / {questions.length} {questions.length===1?'QUESTION':'QUESTIONS'}</p><h1>Start with a question.</h1><p class="lede">Inspect the source evidence, documented search coverage, practical blockers and bounded investigations.</p></section>
+<div class="search-box"><label for="catalog-search">Search questions and reports</label><input id="catalog-search" type="search" placeholder="Try spring, river flow or reversals" /><label for="discipline">Discipline</label><select id="discipline"><option value="">All disciplines</option>{disciplines.map(d => <option value={d}>{d.replaceAll('-',' ')}</option>)}</select><p id="search-status" role="status" aria-live="polite">The complete catalog is shown below.</p><div id="search-results"></div></div>
+{questions.map(q => <article class="question-card" data-disciplines={q.disciplines.join(' ')}><p class="eyebrow">{q.id} · {q.disciplines.join(' / ')}</p><h2><a href={'/questions/'+q.id+'/'}>{q.title}</a></h2><p>{typeof q.scope==='string'?q.scope:q.scope.claim}</p><div class="badges"><span class="badge">{q.statuses.literature.replaceAll('_',' ')}</span><span class="badge">{q.statuses.feasibility.replaceAll('_',' ')}</span><span class="badge">{q.statuses.research.replaceAll('_',' ')}</span></div></article>)}
 <script>
 const input = document.querySelector<HTMLInputElement>('#catalog-search')!;
 const select = document.querySelector<HTMLSelectElement>('#discipline')!;
@@ -16,7 +19,9 @@ const base = import.meta.env.BASE_URL;
 let sequence = 0;
 async function search() {
   const n = ++sequence;
-  if (!input.value.trim()) { results.replaceChildren(); status.textContent = 'The complete pilot record is shown below.'; return; }
+  const cards = [...document.querySelectorAll<HTMLElement>('.question-card')];
+  for (const card of cards) card.hidden = !!select.value && !card.dataset.disciplines?.split(' ').includes(select.value);
+  if (!input.value.trim()) { results.replaceChildren(); status.textContent = `${cards.filter(card=>!card.hidden).length} questions shown.`; return; }
   try {
     index ??= await import(/* @vite-ignore */ `${base}pagefind/pagefind.js`);
     const response = await index.search(input.value, select.value ? { filters: { discipline: select.value } } : {});

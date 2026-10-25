@@ -1,0 +1,19 @@
+{
+  "CITATION.cff": "e113ba6486d77a48c47269c3b12e9af3cc92f5f8dc2c42d1d90c26487c17a45e",
+  "Dockerfile": "acb51db67bc43c20e3cef055638cdec66e74965a840cc4a0d4089558eebbf662",
+  "analysis.py": "dd841d074a48e50f08d4087d6ca0fc204a726672f9aab627343d2df39407c0f6",
+  "entry.py": "5e36931a77fc0c3689f8e7e85c438f2e5ef503234430aacc3cdef55c45129620",
+  "freeze.json": "1893306ddf683fb267c5ee6f1fada8550019f431579dcfa0e410efae4049e343",
+  "independent-requirements.txt": "144a74fc7c362a7db4f4541f863d34f395ed6ebbf8b8171f6e621100c6ea3e25",
+  "independent-verification.json": "71178cd2b1401f074d25770ca6a5f7b50a95187e9c851e31b1511bed5a2a88d6",
+  "independent.py": "ade9069266eaa56ff7b99839d95d175e88bcbec4dcb4dcbac8b64bdf9db74aed",
+  "plan.json": "1afd1ba41d69f707ff6ffb157e0667a989e80147979442819f7bf7b3be57f799",
+  "question.json": "7e9794b67a6a2d37ce2c32d89a2dc8ca34f38332fc3d1fad2f08794988c4d6f9",
+  "report.md": "10c5f6d7683f02efd44f8f6630cae332e9104717c9592b5426396aa72ddf7a82",
+  "reproduce.py": "b3bf1c0929ca1d428b3ceaa7dcf4d7dfa72fafd1b43fb8559e950783c320bb72",
+  "reproduction.json": "c2752af3a98e7293835a72b7861268b9307aa83df7def83fcb7f87abe15aff61",
+  "results.json": "cadcffab4db824521594ffc37515450572c1bb4a621fa5a969e2967e81725aa9",
+  "run-fresh-reproduction.json": "e0ae157e7403594e489a13884d09dcaff8c7ee9497f08922f50e98fbcb44a97e",
+  "run-primary.json": "17e3fb4b68f9bbb337319a89e303dc6448d4232d3fc25d617687f880cbe9ae92",
+  "validation.json": "eda89ae44d296efad9386b8ccf0292fcf63208ec1cc07a4bedec55719f741acb"
+}

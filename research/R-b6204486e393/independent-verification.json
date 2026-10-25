@@ -1,0 +1,12 @@
+{
+  "bin_edges_identical": true,
+  "eligible_stations": 3,
+  "independent_library": "NumPy 2.3.5",
+  "interpretation": "Insufficient independent station support for the frozen primary endpoint; no thresholds lowered",
+  "max_calibration_multiplier_difference": 0.0,
+  "primary_endpoint_not_evaluated": true,
+  "required_stations": 8,
+  "scientific_review": false,
+  "station_high_flow_counts_identical": true,
+  "verified_at": "2026-10-25T19:03:21+00:00"
+}

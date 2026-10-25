@@ -1,0 +1,94 @@
+{
+  "assessment": {
+    "blockers": [
+      "Only 3 of 12 fixed evaluation stations meet the frozen high-flow support rule; 8 required. A different future protocol needs fresh justification and freeze."
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": true,
+      "precise_bounded_question": true,
+      "qualified_inputs": true,
+      "rights_for_execution": true,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": 120,
+    "prior_assessment": {
+      "dispatch_eligible": true,
+      "reason": "Inputs were computationally usable, but station support for the primary endpoint was overestimated",
+      "score": 87.5
+    },
+    "ratings": {
+      "implementation_readiness": 4,
+      "input_readiness": 4,
+      "local_compute_fit": 4,
+      "question_precision": 4,
+      "validation_readiness": 2
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 87.5,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "geophysics"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-GEO-001",
+  "literature": {
+    "assessment": "Close prior work at SSRN 7506823 already tests predicted-flow-stratified CQR on CAMELS-US and finds incomplete high-flow recovery. This partly addresses the general idea. The Canadian saved-ensemble transfer comparison was not located. No algorithm novelty claim.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch2.json",
+    "status": "partial_answer"
+  },
+  "novelty_certified": false,
+  "outcome_summary": "Inconclusive: the frozen primary-endpoint support requirement failed. No thresholds were lowered and no stations were substituted. Original failures and a diagnostic-only reporting amendment are retained.",
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "report_run_id": "R-b6204486e393",
+  "resolved": false,
+  "run_ids": [
+    "R-4f62900ef554",
+    "R-b6204486e393"
+  ],
+  "schema_version": "2.0",
+  "scope": "Use fixed 24-station hash subset of the Canadian saved 10-member regional LSTM ensemble. Fit 2006-2012 at 12 stations; evaluate 2013-2022 at the other 12. All stations were in original LSTM training. Compare global and three-bin normalized-residual quantiles.",
+  "source_evidence": [
+    {
+      "end": 16364,
+      "location": "Conclusion, calibration follow-up",
+      "quote": "correction should therefore be conditioned on flow",
+      "source_id": "P-2610-20947v1",
+      "source_sha256": "e794bd06b3fe07a1e3a15c422d28195ac8862873dd5695df8f9fe4e63f574e6d",
+      "start": 16314,
+      "text_sha256": "7633b70e9fd0f825a2cd0c143105b5d55329df7d40b4f241fc990cdd8f010741",
+      "title": "Ranked Right, Sized Wrong: Ensemble Spread Fails Silently at Streamflow Extremes",
+      "url": "https://arxiv.org/html/2610.20947v1"
+    }
+  ],
+  "statuses": {
+    "feasibility": "data_blocked",
+    "literature": "partial_answer",
+    "publication": "private_draft",
+    "research": "inconclusive",
+    "validation": "computationally_reproduced"
+  },
+  "title": "Does forecast-flow-conditioned spread calibration transfer to stations and later years held out from posthoc fitting?"
+}

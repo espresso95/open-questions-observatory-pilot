@@ -1,0 +1,44 @@
+{
+  "adapter": "prefix",
+  "adapter_sha256": "dd841d074a48e50f08d4087d6ca0fc204a726672f9aab627343d2df39407c0f6",
+  "entry_sha256": "5e36931a77fc0c3689f8e7e85c438f2e5ef503234430aacc3cdef55c45129620",
+  "frozen_at": "2026-10-25T18:58:12+00:00",
+  "input_sha256": null,
+  "parameters": {
+    "k_values": [
+      48,
+      50,
+      52,
+      54,
+      56,
+      58,
+      60,
+      62,
+      64
+    ],
+    "max_rows_per_k": 3,
+    "proof_scope": "No resolution of general Conjecture 5 or asymptotic Conjecture 1; certificates rely on Jordan theorem and independently verified primitivity",
+    "row_rule": "For each even k, use the first three primes p>k+1 with k+p>100 and k+p=3 mod4; stop after the first fully classified row with k+1 symmetric triples; test every m in k+1..n-1",
+    "seed": 20261025,
+    "success": "An exact checked finite row witness for every selected k; unknown classifications never count as proper or symmetric",
+    "words_per_triple": 100
+  },
+  "policy": {
+    "credentials": false,
+    "network": "none",
+    "publication": "private_draft",
+    "result_selection": "Retain every attempted row and failure; no tuning after observation",
+    "variants": "Only parameter variants explicitly enumerated here"
+  },
+  "question_id": "Q-MATH-002",
+  "question_sha256": "7e9794b67a6a2d37ce2c32d89a2dc8ca34f38332fc3d1fad2f08794988c4d6f9",
+  "resources": {
+    "cpu_limit": 1,
+    "max_concurrent_experiments": 1,
+    "max_output_bytes": 4000000,
+    "memory_mib": 256,
+    "wall_seconds": 120
+  },
+  "runtime": "python@sha256:35caba83af2fe6da9a5d922f9b0156f21d1246a48278c58a08bd253303ba42e8",
+  "schema_version": "2.0"
+}

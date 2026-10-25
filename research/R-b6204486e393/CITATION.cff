@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+message: "AI-assisted research pilot; no external scientific review."
+title: "Does forecast-flow-conditioned spread calibration transfer to stations and later years held out from posthoc fitting?"
+authors:
+  - name: "Open Questions Observatory pilot"
+version: "R-b6204486e393"

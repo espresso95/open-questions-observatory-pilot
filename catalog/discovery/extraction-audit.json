@@ -1,0 +1,33 @@
+{
+  "challenge_set": {
+    "bounded_cards_retained": 10,
+    "cases": [
+      {
+        "claim": "Prefix Conjecture 2 remains open",
+        "decision": "reject; newer Theorem 3.4 addresses it"
+      },
+      {
+        "claim": "Prefix Conjecture 3 remains open",
+        "decision": "reject; newer Theorem 3.5 addresses it"
+      },
+      {
+        "claim": "Prefix Conjecture 4 remains open",
+        "decision": "reject; newer Theorem 3.1 addresses it"
+      },
+      {
+        "claim": "E. cristata seed dispersal effectiveness is unknown",
+        "decision": "reject broad claim; source cites established effectiveness; retain regional movement/connectivity hypothesis only"
+      }
+    ],
+    "claims": 14,
+    "known_answer_claims_rejected_or_narrowed": 4
+  },
+  "checked_at": "2026-10-25T19:07:15+00:00",
+  "exact_quotes_matching_retained_text": 10,
+  "independent_human_semantic_labels": 0,
+  "low_confidence_card": "Q-MAT-002 is an agent-formulated causal follow-up to a possible threshold, not a verbatim author question",
+  "metric_limit": "Challenge-set disposition is not an estimated natural extraction error rate; no independent ground truth or random sample of question claims was available",
+  "quote_mismatches": 0,
+  "review_method": "Agent full-text reading and deterministic offset/hash matching; no independent precision estimate",
+  "source_cards_checked": 10
+}

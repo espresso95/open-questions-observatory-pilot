@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"OQO question v2 - scoped questions with optional research attempts",
+  "type":"object",
+  "required":["schema_version","id","title","scope","disciplines","source_evidence","statuses","literature","assessment","run_ids","resolved"],
+  "properties":{
+    "schema_version":{"const":"2.0"},
+    "id":{"type":"string","pattern":"^Q-[A-Z0-9-]+$"},
+    "title":{"type":"string","minLength":10},
+    "scope":{"type":"string","minLength":20},
+    "disciplines":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "source_evidence":{"type":"array","minItems":1,"items":{"type":"object","required":["source_id","source_sha256","text_sha256","quote","start","end","location","url"],"properties":{"source_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"text_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"quote":{"type":"string","minLength":1},"start":{"type":"integer","minimum":0},"end":{"type":"integer","minimum":1},"url":{"type":"string","format":"uri"}}}},
+    "statuses":{"type":"object","required":["literature","feasibility","research","validation","publication"],"additionalProperties":{"type":"string"}},
+    "literature":{"type":"object","required":["assessment","decision_wording","coverage_limits","checked_at"]},
+    "assessment":{"type":"object","required":["ratings","score","blockers","dispatch_eligible","gates"],"properties":{"score":{"type":"number","minimum":0,"maximum":100},"dispatch_eligible":{"type":"boolean"},"gates":{"type":"object","additionalProperties":{"type":"boolean"}},"blockers":{"type":"array","items":{"type":"string"}}}},
+    "run_ids":{"type":"array","items":{"type":"string","pattern":"^R-[a-f0-9]{12}$"}},
+    "resolved":{"const":false}
+  }
+}

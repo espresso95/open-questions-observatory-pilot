@@ -1,0 +1,86 @@
+{
+  "assessment": {
+    "blockers": [],
+    "dispatch_eligible": true,
+    "gates": {
+      "local_budget_fit": true,
+      "precise_bounded_question": true,
+      "qualified_inputs": true,
+      "rights_for_execution": true,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": true
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": 120,
+    "ratings": {
+      "implementation_readiness": 4,
+      "input_readiness": 4,
+      "local_compute_fit": 4,
+      "question_precision": 4,
+      "validation_readiness": 3
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 93.75,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "mathematics"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-MATH-002",
+  "literature": {
+    "assessment": "Source v2 reports n<=100. Newer paper proves Conjectures 2-4 and supplies obstructions; author repository inspected through its current tree, no data beyond 100. No exact answer to these selected rows found.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch1.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "outcome_summary": "Nine finite row witnesses found beyond n=100; 513 symmetric certificates and 37 proper-group obstructions independently checked. The general conjecture remains unresolved.",
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "report_run_id": "R-1afd1ba41d69",
+  "resolved": false,
+  "run_ids": [
+    "R-1afd1ba41d69"
+  ],
+  "schema_version": "2.0",
+  "scope": "Bounded child of max_n |F_k(n)|=k+1 for even k, (k+1)/2 for odd k. Search k=48,50,...,64 at prespecified prime-offset rows; retain certificates and failures. A finite result will not resolve the general conjecture.",
+  "source_evidence": [
+    {
+      "end": 64091,
+      "location": "Section 4.1, Conjecture 5",
+      "quote": "Conjecture 5 .",
+      "source_id": "P-2511-16959v2",
+      "source_sha256": "fb55c346bb6878be79b760dae84bc1512ccbba1d612bbacaf767e1f2cf1e9e6d",
+      "start": 64077,
+      "text_sha256": "253eeae319ea959a2ff232ecf33caa6245edb0a77c45068fd78cf151afbe48ba",
+      "title": "Generating the symmetric group by three prefix reversals",
+      "url": "https://arxiv.org/html/2511.16959v2"
+    }
+  ],
+  "statuses": {
+    "feasibility": "pilot_ready",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "completed",
+    "validation": "computationally_reproduced"
+  },
+  "title": "Can exact attainment witnesses for the proposed maximal prefix-reversal rows be found beyond n=100?"
+}

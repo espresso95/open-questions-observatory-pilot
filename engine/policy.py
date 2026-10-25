@@ -13,6 +13,7 @@ STATUSES = {
 }
 
 def validate_question(q):
+    if q.get('schema_version')=='2.0':return validate_question_v2(q)
     required = {'schema_version','id','title','scope','disciplines','source_evidence','statuses','literature_search','assessment','run_ids'}
     if required-set(q) or q['schema_version'] != '1.0' or not q['id'].startswith('Q-'):
         raise ValueError('Invalid question schema')
@@ -25,6 +26,20 @@ def validate_question(q):
     a = q['assessment']
     if a.get('dispatch_eligible') and (a.get('blockers') or any(v is None for v in a['ratings'].values())):
         raise ValueError('Hard gate or unknown input blocks dispatch')
+
+def validate_question_v2(q):
+    required={'id','title','scope','disciplines','source_evidence','statuses','literature','assessment','run_ids'}
+    if required-set(q) or not re.fullmatch(r'Q-[A-Z0-9-]+',q['id']) or not isinstance(q['scope'],str) or len(q['scope'])<20:raise ValueError('Invalid v2 question schema')
+    if not q['source_evidence'] or not q['literature'].get('coverage_limits'):raise ValueError('Missing source/search evidence')
+    for e in q['source_evidence']:
+        if not e.get('quote') or not e.get('location') or not 0<=e['start']<e['end'] or not re.fullmatch('[a-f0-9]{64}',e.get('source_sha256','')) or not re.fullmatch('[a-f0-9]{64}',e.get('text_sha256','')):raise ValueError('Invalid source evidence')
+        u=urlsplit(e['url'])
+        if u.scheme!='https' or not u.hostname or u.username or u.password:raise ValueError('Unsafe evidence link')
+    for dimension,allowed in STATUSES.items():
+        if q['statuses'].get(dimension) not in allowed:raise ValueError('Invalid status dimension')
+    if q.get('resolved'):raise ValueError('No general resolution claim authorized for these pilots')
+    a=q['assessment']
+    if a.get('dispatch_eligible') and (a.get('blockers') or not a.get('gates') or not all(a['gates'].values())):raise ValueError('Hard gate blocks dispatch')
 
 def validate_sources(sources):
     for s in sources:

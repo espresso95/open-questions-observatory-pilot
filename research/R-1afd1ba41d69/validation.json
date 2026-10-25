@@ -1,0 +1,26 @@
+{
+  "external_scientific_review": false,
+  "human_scientific_review": false,
+  "independent_check": {
+    "all_certificates_valid": true,
+    "cycle_word_check": "independent SymPy permutation multiplication and exponentiation",
+    "general_conjecture_proved": false,
+    "independent_library": "SymPy 1.14.0",
+    "primitive_test": "deterministic stabilizer and minimal-block method",
+    "proper_group_obstructions_checked": 37,
+    "symmetric_certificates_checked": 513,
+    "theorem": "Jordan prime cycle theorem plus odd generator",
+    "verified_at": "2026-10-25T19:00:51+00:00",
+    "wall_seconds": 1.1009929879999163
+  },
+  "novelty_certified": false,
+  "reproduction": {
+    "fresh_containers": true,
+    "independent_implementation": false,
+    "primary_hash": "cadcffab4db824521594ffc37515450572c1bb4a621fa5a969e2967e81725aa9",
+    "reproduction_hash": "cadcffab4db824521594ffc37515450572c1bb4a621fa5a969e2967e81725aa9",
+    "results_identical": true,
+    "scientific_review": false,
+    "verified_at": "2026-10-25T18:58:20+00:00"
+  }
+}

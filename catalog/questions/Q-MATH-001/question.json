@@ -1,0 +1,84 @@
+{
+  "assessment": {
+    "blockers": [
+      "No proof strategy; finite enumeration cannot answer this claim"
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": false,
+      "precise_bounded_question": true,
+      "qualified_inputs": false,
+      "rights_for_execution": false,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": null,
+    "ratings": {
+      "implementation_readiness": 1,
+      "input_readiness": 4,
+      "local_compute_fit": 1,
+      "question_precision": 4,
+      "validation_readiness": 0
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 52.5,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "mathematics"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-MATH-001",
+  "literature": {
+    "assessment": "Original v2 and newer 2610.30892 were read; newer paper proves Conjectures 2-4, not this asymptotic assertion. Author repository records extend only through n=100.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch1.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "resolved": false,
+  "run_ids": [],
+  "schema_version": "2.0",
+  "scope": "The four leading coefficients are 1/13, 1/9, 1/10 and 1/7 for n modulo 4. Computation of finite examples cannot establish O(n) asymptotics.",
+  "source_evidence": [
+    {
+      "end": 59358,
+      "location": "Section 4.1, Conjecture 1",
+      "quote": "Conjecture 1 .",
+      "source_id": "P-2511-16959v2",
+      "source_sha256": "fb55c346bb6878be79b760dae84bc1512ccbba1d612bbacaf767e1f2cf1e9e6d",
+      "start": 59344,
+      "text_sha256": "253eeae319ea959a2ff232ecf33caa6245edb0a77c45068fd78cf151afbe48ba",
+      "title": "Generating the symmetric group by three prefix reversals",
+      "url": "https://arxiv.org/html/2511.16959v2"
+    }
+  ],
+  "statuses": {
+    "feasibility": "needs_information",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "not_started",
+    "validation": "unreviewed"
+  },
+  "title": "Does the residue-dependent asymptotic formula for the number of generating prefix-reversal pairs hold?"
+}

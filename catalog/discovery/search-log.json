@@ -1,0 +1,44 @@
+[
+  {
+    "checked_at": "2026-10-25",
+    "coverage": "Web search; structured source assessments are in question records. Raw copyrighted search extracts are excluded.",
+    "id": "literature-batch1",
+    "queries": [
+      "\"softened Laplace-Lagrange\" \"quasi-localization\" pressure transport",
+      "\"Neptunian\" \"resonators\" \"survive stably\" present",
+      "\"prefix reversals\" \"maximal number\" \"2026\"",
+      "\"Generating the symmetric group by three prefix reversals\" conjecture"
+    ]
+  },
+  {
+    "checked_at": "2026-10-25",
+    "coverage": "Web search; structured source assessments are in question records. Raw copyrighted search extracts are excluded.",
+    "id": "literature-batch2",
+    "queries": [
+      "streamflow ensemble uncertainty flow conditioned calibration held out catchments prediction intervals 2026",
+      "\"Sensitivity Fidelity\" \"derivative-informed\" training 2026",
+      "\"discrete\" diffusion \"microstructural\" \"inverse\" orientation 2026",
+      "\"Mn-deficient\" \"Ni\" \"Ga\" \"threshold\" \"2026\""
+    ]
+  },
+  {
+    "checked_at": "2026-10-25",
+    "coverage": "Web search; structured source assessments are in question records. Raw copyrighted search extracts are excluded.",
+    "id": "literature-batch3",
+    "queries": [
+      "\"Microstructural Generative Inverse Models\" diffusion discrete",
+      "\"Sensitivity Fidelity Reveals\" \"training\"",
+      "\"Gryllotalpa gryllotalpa\" emergence soil temperature historical phenology",
+      "\"Elaenia cristata\" \"Psittacanthus robustus\" dispersal movement 2026"
+    ]
+  },
+  {
+    "checked_at": "2026-10-25",
+    "coverage": "Web search; structured source assessments are in question records. Raw copyrighted search extracts are excluded.",
+    "id": "literature-batch4",
+    "queries": [
+      "\"Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins\"",
+      "\"Sensitivity Fidelity Reveals Physical Dependencies Beyond Forecast Accuracy\""
+    ]
+  }
+]

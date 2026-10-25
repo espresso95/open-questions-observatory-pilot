@@ -1,0 +1,84 @@
+{
+  "assessment": {
+    "blockers": [
+      "No qualified initial conditions or 4.5 Gyr integration budget"
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": false,
+      "precise_bounded_question": true,
+      "qualified_inputs": false,
+      "rights_for_execution": false,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": null,
+    "ratings": {
+      "implementation_readiness": 1,
+      "input_readiness": 1,
+      "local_compute_fit": 0,
+      "question_precision": 4,
+      "validation_readiness": 2
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 37.5,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "astronomy"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-AST-002",
+  "literature": {
+    "assessment": "Publisher full text confirms the gap; earlier long-term resonance stability work is related but does not settle this classification-specific question.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch1.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "resolved": false,
+  "run_ids": [],
+  "schema_version": "2.0",
+  "scope": "The paper classifies early capture; a long-term stability and type-switching study requires full perturbations, archived initial conditions and convergence tests.",
+  "source_evidence": [
+    {
+      "end": 38646,
+      "location": "Section 4, classification caveat",
+      "quote": "Whether different types of resonators can survive stably to the present day",
+      "source_id": "P-2610-24375v1",
+      "source_sha256": "f46a15e29e6d5189d7f0d782b6ef8cf741b69aaffc00e31d34c70ec72bdfac76",
+      "start": 38571,
+      "text_sha256": "1e26bd3026f66082e24d04557d0d040da54b65a83ca24a0a16d51931b1e40668",
+      "title": "Numerical estimation of the capture ability of Neptunian mean motion resonances II. Influence of eccentricity and inclination",
+      "url": "https://arxiv.org/html/2610.24375v1"
+    }
+  ],
+  "statuses": {
+    "feasibility": "compute_blocked",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "not_started",
+    "validation": "unreviewed"
+  },
+  "title": "Which captured Neptunian resonator types survive and switch under a full Solar System model over 4.5 Gyr?"
+}

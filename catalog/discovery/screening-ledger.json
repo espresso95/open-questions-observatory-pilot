@@ -1,0 +1,377 @@
+{
+  "abstract_metadata_count": 30,
+  "coverage": "Budgeted English-language provider sample, heavily recent arXiv and Europe PMC; not representative or exhaustive",
+  "fulltext_count": 11,
+  "papers": [
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-30515v1",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Quasi-Localization of Short-Wavelength Perturbations in Softened Laplace-Lagrange Chains",
+      "url": "https://arxiv.org/abs/2610.30515v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-30494v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Ellipsoidal Modeling Framework for TNOs: the triaxial shape of (50000) Quaoar and its implications for Weywot and the dynamical environment",
+      "url": "https://arxiv.org/abs/2610.30494v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-27484v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Exomoonlight Sonata: On the Fate of Exomoons Around Migrating White Dwarf Planets",
+      "url": "https://arxiv.org/abs/2610.27484v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-27055v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Planets surviving common envelope evolution should be rare, massive, and orbit very close to their host star",
+      "url": "https://arxiv.org/abs/2610.27055v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-25152v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Companions of Hot Jupiters: two decades of radial velocity monitoring with CORALIE",
+      "url": "https://arxiv.org/abs/2610.25152v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-24583v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Robustness of C/O and mean molecular weight under disequilibrium chemistry",
+      "url": "https://arxiv.org/abs/2610.24583v1"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-24375v1",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Numerical estimation of the capture ability of Neptunian mean motion resonances II. Influence of eccentricity and inclination",
+      "url": "https://arxiv.org/abs/2610.24375v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "astronomy",
+      "paper_id": "P-2610-22487v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Four Which I Knew Not: The Hexadecapole Nearly Cancels the Octupole in Librating Kozai-Lidov Cycles",
+      "url": "https://arxiv.org/abs/2610.22487v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-31602v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Triple parabolic cosets have unique Bruhat minima",
+      "url": "https://arxiv.org/abs/2610.31602v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-31589v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "fulltext",
+      "title": "Conway's thrackle conjecture: a new upper bound of $\\frac43n$",
+      "url": "https://arxiv.org/abs/2610.31589v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-31513v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Closing All-Exp Gaps in Local Search for the Traveling Salesman Problem and Maximum Constraint Assignment",
+      "url": "https://arxiv.org/abs/2610.31513v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-30975v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Two refined Wilf-equivalences for patterns of length 4 and a conjecture on Dumont permutations of the first kind",
+      "url": "https://arxiv.org/abs/2610.30975v1"
+    },
+    {
+      "decision": "later_literature_check",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-30892v1",
+      "reason": "Resolves earlier Conjectures 2-4; prevents answered-question false positives",
+      "screening_level": "fulltext",
+      "title": "On the generation of the symmetric group by index relations of three prefix reversals",
+      "url": "https://arxiv.org/abs/2610.30892v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-30719v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Weighted odd-cycle transversals and fractional colorings of planar graphs",
+      "url": "https://arxiv.org/abs/2610.30719v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-30712v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Fuglede's conjecture holds in $\\mathbb{F}_{p}^{d}$ for $p=2,\\,d=8$ and $p=11,\\,d=3$",
+      "url": "https://arxiv.org/abs/2610.30712v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "mathematics",
+      "paper_id": "P-2610-30700v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "On Arithmetic-Progression Biases in Random Partitions: Limiting Laws and the Li-Zhao Conjecture",
+      "url": "https://arxiv.org/abs/2610.30700v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-29630v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Space weather dependence of decameter-scale ionospheric irregularities spatial distribution",
+      "url": "https://arxiv.org/abs/2610.29630v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-27561v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "HypoNet Nankai PS: rapid hypocenter determination for the Nankai Trough using physics-informed neural networks with three-dimensional P- and S-wave velocity models",
+      "url": "https://arxiv.org/abs/2610.27561v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-24665v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Permafrost augmented simulation and forecast using hybrid modeling through spectral neural networks",
+      "url": "https://arxiv.org/abs/2610.24665v1"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-20947v1",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Ranked Right, Sized Wrong: Ensemble Spread Fails Silently at Streamflow Extremes",
+      "url": "https://arxiv.org/abs/2610.20947v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-20519v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Probabilistic AI models outperform numerical weather prediction models on record breaking heat extremes",
+      "url": "https://arxiv.org/abs/2610.20519v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-17404v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Event-Centric Earthquake Monitoring with a Multi-Station Transformer",
+      "url": "https://arxiv.org/abs/2610.17404v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-16422v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Multivariate phase-space interpretation of ensemble forecasts: A comparison of physical and AI models",
+      "url": "https://arxiv.org/abs/2610.16422v1"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "geophysics",
+      "paper_id": "P-2610-15540v1",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Sensitivity Fidelity Reveals Physical Dependencies Beyond Forecast Accuracy in Deep-Learning Earth-System Models",
+      "url": "https://arxiv.org/abs/2610.15540v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-31508v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Spin-Dependent Transport in One-Dimensional Mercury- and Silver-Mediated DNA Nanowires",
+      "url": "https://arxiv.org/abs/2610.31508v1"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-31206v1",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Mn-deficient Ni-Mn-Ga alloys: phase transitions, magnetic properties, and disappearance of martensitic transformation",
+      "url": "https://arxiv.org/abs/2610.31206v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-30930v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Chiroptical Valleytronic in SnSe",
+      "url": "https://arxiv.org/abs/2610.30930v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-30929v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Piezo-Kerr effect in altermagnets and noncollinear antiferromagnets",
+      "url": "https://arxiv.org/abs/2610.30929v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-30870v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Designing sustainable high-entropy alloys directly from mixed oxides: A thermodynamic perspective",
+      "url": "https://arxiv.org/abs/2610.30870v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-30684v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Impact of localized $4f$ magnetism on Berry curvature and the intrinsic anomalous Hall effect in CeRu$_2$Si$_2$",
+      "url": "https://arxiv.org/abs/2610.30684v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-30502v1",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Chiral Cavity Vacua as Local Generators and Probes of Non-Abelian Kitaev Topology",
+      "url": "https://arxiv.org/abs/2610.30502v1"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "materials-science",
+      "paper_id": "P-2610-30404v1",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Microstructural Generative Inverse Models for Additive Manufacturing Digital Twins",
+      "url": "https://arxiv.org/abs/2610.30404v1"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13681247",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Habitat Type and Disturbance Intensity Are Associated With Invasive Plant Community Structure Across an Urbanizing Subtropical Island.",
+      "url": "https://europepmc.org/article/PMC/PMC13681247"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13645862",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Advancing grapevine phenology predictions: a comparison of regression-based statistical learning approach and conventional models in mediterranean environment.",
+      "url": "https://europepmc.org/article/PMC/PMC13645862"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13632678",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Climate overrides prey availability in shaping the decadal population dynamics of two sympatric lady beetles in monsoon farmlands of central China.",
+      "url": "https://europepmc.org/article/PMC/PMC13632678"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13586045",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "The influence of temperature on river fly phenology based on historic records.",
+      "url": "https://europepmc.org/article/PMC/PMC13586045"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13577587",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Mapping coastal forest retreat using convolutional neural networks and different satellite imagery.",
+      "url": "https://europepmc.org/article/PMC/PMC13577587"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13577974",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Disentangling biotic and abiotic drivers of a neotropical mistletoe.",
+      "url": "https://europepmc.org/article/PMC/PMC13577974"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13610136",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Elevational Differences in Plant Growth Traits, Litter Decomposition, and Soil Bacterial Communities During &lt;i&gt;Deyeuxia angustifolia&lt;/i&gt; Encroachment in Alpine Tundra.",
+      "url": "https://europepmc.org/article/PMC/PMC13610136"
+    },
+    {
+      "decision": "not_admitted_this_sample",
+      "discipline": "ecology",
+      "paper_id": "P-PMC13562112",
+      "reason": "Abstract screened; full-text gap validation not completed within this bounded sample; this is not a claim that the paper has no unresolved questions",
+      "screening_level": "abstract_metadata",
+      "title": "Monitoring and Behavioral Control of Lepidopteran Pests in Soybean: Evaluation of Food-Based Attractants, Trap Performance, and Selectivity on Non-Target Organisms.",
+      "url": "https://europepmc.org/article/PMC/PMC13562112"
+    },
+    {
+      "decision": "question_evidence_retained",
+      "discipline": "mathematics",
+      "paper_id": "P-2511-16959v2",
+      "reason": "Exact source passage retained in a scoped question card",
+      "screening_level": "fulltext",
+      "title": "Generating the symmetric group by three prefix reversals",
+      "url": "https://arxiv.org/abs/2511.16959v2"
+    }
+  ],
+  "screened_at": "2026-10-25T19:07:15+00:00"
+}

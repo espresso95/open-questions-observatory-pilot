@@ -1,0 +1,120 @@
+{
+  "checkpoint_count": 0,
+  "completed_at": "2026-10-25T18:59:54+00:00",
+  "host_elapsed_seconds": 0.8298,
+  "isolation": {
+    "cap_drop": [
+      "ALL"
+    ],
+    "host_binds": null,
+    "memory_bytes": 268435456,
+    "mounts": [],
+    "network": "none",
+    "pids_limit": 32,
+    "privileged": false,
+    "read_only": true,
+    "user": "65534:65534"
+  },
+  "label": "primary",
+  "outcome": "completed",
+  "plan_sha256": "b6204486e393e4c61339560aaa92d79591744db95df6ca71b1466d7e23259be2",
+  "resource": {
+    "peak_rss_kib": 81992,
+    "system_cpu_seconds": 0.017005,
+    "user_cpu_seconds": 0.33211599999999997,
+    "wall_seconds": 0.28702001999999993
+  },
+  "results": {
+    "adapter": "streamflow",
+    "eligible_station_count": 3,
+    "evaluation_rows": 34011,
+    "high_predicted_flow_rows": 1649,
+    "model": {
+      "calibration_rows": 26390,
+      "calibration_rows_by_bin": [
+        21112,
+        2639,
+        2639
+      ],
+      "conditional": [
+        3.3841882686909432,
+        4.2370298947974065,
+        5.148848268862571
+      ],
+      "edges": [
+        2.3183897,
+        5.22968054
+      ],
+      "global": 3.7299686022707963
+    },
+    "primary_endpoint_evaluated": false,
+    "reason": "Insufficient high-flow station coverage under the frozen eligibility rule; no station substitution allowed",
+    "required_station_count": 8,
+    "station_eligibility": [
+      {
+        "eligible": false,
+        "high_rows": 3,
+        "station": "05BK001"
+      },
+      {
+        "eligible": false,
+        "high_rows": 17,
+        "station": "05CA004"
+      },
+      {
+        "eligible": false,
+        "high_rows": 0,
+        "station": "05CE011"
+      },
+      {
+        "eligible": false,
+        "high_rows": 0,
+        "station": "05DF004"
+      },
+      {
+        "eligible": false,
+        "high_rows": 0,
+        "station": "05DF007"
+      },
+      {
+        "eligible": false,
+        "high_rows": 11,
+        "station": "07GB001"
+      },
+      {
+        "eligible": false,
+        "high_rows": 6,
+        "station": "07GG002"
+      },
+      {
+        "eligible": false,
+        "high_rows": 0,
+        "station": "07JF002"
+      },
+      {
+        "eligible": true,
+        "high_rows": 88,
+        "station": "08CD001"
+      },
+      {
+        "eligible": true,
+        "high_rows": 1372,
+        "station": "08HF004"
+      },
+      {
+        "eligible": false,
+        "high_rows": 18,
+        "station": "08LB024"
+      },
+      {
+        "eligible": true,
+        "high_rows": 134,
+        "station": "08NK002"
+      }
+    ],
+    "status": "inconclusive",
+    "success_rule_passed": false
+  },
+  "results_sha256": "d6676b7e25684b4a88b6d022f8056d6451da0fa75e5b43017b84a644190f36ed",
+  "started_at": "2026-10-25T18:59:53+00:00"
+}

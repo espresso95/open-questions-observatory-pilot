@@ -1,0 +1,84 @@
+{
+  "assessment": {
+    "blockers": [
+      "No specified kinetic/collisional model or matched parameters"
+    ],
+    "dispatch_eligible": false,
+    "gates": {
+      "local_budget_fit": false,
+      "precise_bounded_question": true,
+      "qualified_inputs": false,
+      "rights_for_execution": false,
+      "safe_existing_data_or_formal_inputs": true,
+      "validation_defined": false
+    },
+    "meaning": "Heuristic implementation readiness, not a probability of success, correctness or novelty",
+    "predicted_run_seconds_upper_bound": null,
+    "ratings": {
+      "implementation_readiness": 1,
+      "input_readiness": 1,
+      "local_compute_fit": 1,
+      "question_precision": 3,
+      "validation_readiness": 1
+    },
+    "rubric_version": "1.0",
+    "scientific_value": "Addresses a specific uncertainty raised by the cited source; practical reach is limited by the stated scope and blockers",
+    "score": 32.5,
+    "weights": {
+      "implementation_readiness": 10,
+      "input_readiness": 30,
+      "local_compute_fit": 20,
+      "question_precision": 15,
+      "validation_readiness": 25
+    }
+  },
+  "created_at": "2026-10-25T18:56:42+00:00",
+  "disciplines": [
+    "astronomy"
+  ],
+  "human_scientific_review": false,
+  "id": "Q-AST-001",
+  "literature": {
+    "assessment": "Source paper plus author publication list; no exact physical-timescale answer located. The list includes a related in-review disk-evolution study that requires future scope comparison.",
+    "checked_at": "2026-10-25T18:56:42+00:00",
+    "coverage_limits": [
+      "English-language web search, original full texts, selected related references and author code; no exhaustive citation graph",
+      "Most source papers are very recent and have little later literature",
+      "Some related full texts inaccessible; abstracts and search extracts are labeled as such"
+    ],
+    "decision_wording": "No answer found to this exact scope within documented coverage, as of 2026-10-25; not certified unsolved",
+    "query_log": "discovery/literature-batch1.json",
+    "status": "no_answer_found"
+  },
+  "novelty_certified": false,
+  "provenance": {
+    "extractor": "Codex GPT-6 family; exact runtime build not exposed",
+    "parser": "structured-text-v1 or Poppler PDF normalization with page check",
+    "template": "source-gap-v2"
+  },
+  "resolved": false,
+  "run_ids": [],
+  "schema_version": "2.0",
+  "scope": "Source explicitly limits interpretation. Compare pressure, velocity dispersion and encounters on a fixed annulus; the paper already demonstrates model quasi-localization.",
+  "source_evidence": [
+    {
+      "end": 64531,
+      "location": "Conclusion, model validity limit",
+      "quote": "processes that the softened secular approximation omits",
+      "source_id": "P-2610-30515v1",
+      "source_sha256": "84fb84eb4cf8fcd2e1eeac9600d16017783e05637ece211f5a184ea2a4add940",
+      "start": 64476,
+      "text_sha256": "b0188067f9ff777df4ce64f8afa9dcf5840c98f175f85bb89bbc99980f62cac0",
+      "title": "Quasi-Localization of Short-Wavelength Perturbations in Softened Laplace-Lagrange Chains",
+      "url": "https://arxiv.org/html/2610.30515v1"
+    }
+  ],
+  "statuses": {
+    "feasibility": "needs_information",
+    "literature": "no_answer_found",
+    "publication": "private_draft",
+    "research": "not_started",
+    "validation": "unreviewed"
+  },
+  "title": "Which omitted processes control sub-softening AMD transport in a specified planetesimal annulus?"
+}
