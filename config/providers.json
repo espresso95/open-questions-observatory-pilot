@@ -1,0 +1,8 @@
+{
+  "schema_version":"1.0",
+  "authorization":"User requested the cross-disciplinary discovery and pilot work; public read-only acquisition only, no paid services or credentials.",
+  "allowed_hosts":["arxiv.org","export.arxiv.org","www.ebi.ac.uk","psl.noaa.gov","www.sciencedirect.com","exoplanetarchive.ipac.caltech.edu"],
+  "budgets":{"requests_per_day":100,"metadata_items_per_day":100,"fulltexts_per_day":20,"bytes_per_day":50000000,"max_response_bytes":5000000,"request_seconds":45},
+  "paid_usage_enabled":false,
+  "redirects":"Only HTTPS, public IPs and configured hosts; at most two redirects, each destination revalidated. No credentials are forwarded."
+}

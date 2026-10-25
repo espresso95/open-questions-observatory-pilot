@@ -14,7 +14,9 @@ def main():
     site=ROOT/'site/dist';checked=0
     for p in site.rglob('*.html'):
         text=p.read_text();links=Links();links.feed(text)
-        assert 'no external scientific review' in text.lower() or 'review' in text.lower()
+        assert '<html lang="en"' in text and '<main id="main"' in text
+        if p.relative_to(site).parts[0]=='research':
+            assert 'no external scientific review' in text.lower()
         assert '.private/' not in text and '/Users/mottbot/' not in text
         for url in links.links:
             parsed=urlsplit(url)
