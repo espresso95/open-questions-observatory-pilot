@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-25T17:30:38+00:00",
+  "maximum_coefficient_difference": 3.4208746946262636e-15,
+  "maximum_prediction_difference": 2.3175905639050143e-15,
+  "method": "Independent NumPy parsing/features and augmented least-squares (LAPACK), not the experiment normal-equation solver",
+  "prose_table_values_generated_from_results": true,
+  "question_schema_passed": true,
+  "scientific_review": false,
+  "source_quote_and_hash_checks_passed": true,
+  "temporal_split_passed": true
+}

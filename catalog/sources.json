@@ -1,0 +1,78 @@
+[
+  {
+    "authors": [
+      "Yanhai Gan",
+      "Yipeng Chen",
+      "Ning Li",
+      "Xingguo Liu",
+      "Junyu Dong",
+      "Xianyao Chen"
+    ],
+    "bytes": 126452,
+    "extraction_method": "html.parser normalized whitespace v1",
+    "id": "S-PAPER",
+    "kind": "html",
+    "retrieved_at": "2026-10-25T17:23:07+00:00",
+    "rights": {
+      "analyze": true,
+      "export": "brief_excerpt_and_link",
+      "license": "CC-BY-4.0"
+    },
+    "sha256": "6c99bcfff0d521b89ec20a30ab9b6e6442f725e4e2a55e4853dd9d18a5904182",
+    "text_sha256": "bf6f2a8e969b54943fd2b159b16ab839b801beb676b298d831a209bb8a539f72",
+    "title": "Explore the Ideology of Deep Learning in ENSO Forecasts",
+    "url": "https://arxiv.org/html/2601.02050v1",
+    "version": "2026-01-05 / arXiv v1 (preprint)"
+  },
+  {
+    "bytes": 34045,
+    "extraction_method": "html.parser normalized whitespace v1",
+    "id": "S-DATA-DOC",
+    "kind": "html",
+    "retrieved_at": "2026-10-25T17:23:07+00:00",
+    "rights": {
+      "analyze": true,
+      "export": "metadata_and_link",
+      "license": "NOAA government data; source attribution required"
+    },
+    "sha256": "dcdedd47e0e7efd0053cf853e13f946048034007b849ca7748e9a1522547676c",
+    "text_sha256": "74438e3844680055f47e9f12bb46ca672c4bcf7b48574131f54750f59cfd8b45",
+    "title": "Niño 3.4 SST Index from NOAA ERSST V5",
+    "url": "https://psl.noaa.gov/data/timeseries/month/Nino34_CPC/",
+    "version": "snapshot_at_retrieval"
+  },
+  {
+    "bytes": 34187,
+    "extraction_method": "html.parser normalized whitespace v1",
+    "id": "S-RIGHTS",
+    "kind": "html",
+    "retrieved_at": "2026-10-25T17:23:07+00:00",
+    "rights": {
+      "analyze": true,
+      "export": "metadata_and_link",
+      "license": "NOAA government page"
+    },
+    "sha256": "fab365ca4933b018d036e6e97ca6aa391687fca9f2ca7cf4d0416cfc18587eae",
+    "text_sha256": "a8c6c07e730f45aa5d48e6e2a68182a9722cac64f0538cce15be23e688526295",
+    "title": "NOAA PSL Disclaimer and use of information",
+    "url": "https://psl.noaa.gov/disclaimer/",
+    "version": "snapshot_at_retrieval"
+  },
+  {
+    "bytes": 8362,
+    "extraction_method": "html.parser normalized whitespace v1",
+    "id": "D-NINO34",
+    "kind": "data",
+    "retrieved_at": "2026-10-25T17:23:07+00:00",
+    "rights": {
+      "analyze": true,
+      "credit": "NOAA Climate Prediction Center; provided by NOAA Physical Sciences Laboratory, Boulder, Colorado, USA",
+      "export": "attributed_government_data",
+      "license": "US government public data"
+    },
+    "sha256": "879cf3cb31d71e576f639ea88af9498f622662bbcaf6c74e79ad5394614696dd",
+    "title": "NOAA CPC ERSSTv5 monthly Niño 3.4 anomalies (1981–2010 base)",
+    "url": "https://psl.noaa.gov/data/correlation/nina34.anom.data",
+    "version": "ERSSTv5 / snapshot_at_retrieval"
+  }
+]

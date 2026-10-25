@@ -1,0 +1,1908 @@
+{
+  "manifest": {
+    "files": {
+      "catalog/questions/Q-ENSO-001/question.json": "f75d0f50d94fd5c5db6356928d9be2fb41e83a913215da9634e2000c080c00a2",
+      "catalog/sources.json": "16259bb005d2d037ad82defaf7476a08660b3bc092d47ad19737807f1945b17d",
+      "research/R-37cd1717a83c/CITATION.cff": "7487b7be78c5b8841d04288b497c1a9ccfcfedb2b27d16e8cbb1b4890377ddb1",
+      "research/R-37cd1717a83c/analysis.py": "2b6490c5aa8ba2ab4d6839982644564b1fc977355fce1b131720f3e221ea7f92",
+      "research/R-37cd1717a83c/artifacts.sha256.json": "e8a980488df90c2514fe8b310b06add70f1a3713bcbc6a7614fa39b046d3e5d1",
+      "research/R-37cd1717a83c/data-manifest.json": "b1843510553af89214b0f733641e65601e0f45f44a473dd310a30c10b706cb82",
+      "research/R-37cd1717a83c/environment.lock": "e9196a9f16b9db21ce58cf3e0a31f27c61c740f36b0a7e5dc3bb3831f301ba16",
+      "research/R-37cd1717a83c/figures/holdout-series.png": "9a63c165818102692a4b6f03bd841edd468fde2f714e7f84277ad64379fbcca7",
+      "research/R-37cd1717a83c/figures/holdout-series.svg": "b962e763a0bad2c3d8168631c319a1e7c8fad671ce8753581cf3608f2a7223c9",
+      "research/R-37cd1717a83c/figures/primary-rmse.png": "5605485e1460c8db71ceb2449d34dcd44607a60ebd58c68d80a3fafc06e7328a",
+      "research/R-37cd1717a83c/figures/primary-rmse.svg": "1f6d2278803f7315bfee807b87f224729eea2be6b35976c7983fa4b5ed5afd88",
+      "research/R-37cd1717a83c/independent-verification.json": "c79dd112c6aaf1590fd258978f7ad970ba1d24f5fcf75f7ed3e6cb7b122817a5",
+      "research/R-37cd1717a83c/literature-search.json": "742a82070d28ed8e896739e5784102b8ca3af2780002379c1f80f4690fbe5089",
+      "research/R-37cd1717a83c/nino34.data": "879cf3cb31d71e576f639ea88af9498f622662bbcaf6c74e79ad5394614696dd",
+      "research/R-37cd1717a83c/plan.json": "37cd1717a83cf4d252e24f57b2e19474e1d628beee2e275738988ee099b8b6f5",
+      "research/R-37cd1717a83c/references.bib": "ebc2ce8ed83eb449c0b51ae7fc42480bda85e5e4b0fef5e0a840cd0ef96cb41c",
+      "research/R-37cd1717a83c/report.md": "ecd63dd088ac63bf8dddf53cba941006d06cff4bb10a864c51a1c198a0a70b06",
+      "research/R-37cd1717a83c/reproduce.py": "2268987b62bb0159e04672c7da6147fe57f2533fe5d0aa93acc2c4f5806b0d7f",
+      "research/R-37cd1717a83c/reproduce.sh": "33292d28a3abab25b198299cae7d76a9df92bcf8403dce5d027635d9d19d03b9",
+      "research/R-37cd1717a83c/results.json": "be505ef18d840781f8770baec9ace1276fd3498f1a4b25452e928a2d4909f8d0",
+      "research/R-37cd1717a83c/validation.json": "40505c831c3d35ee4b764ce5e7af7b3a722be89574e4bef8e9454d784ebf1ac0"
+    },
+    "human_disclosure_approval": false,
+    "publication_status": "private_draft",
+    "schema_version": "1.0",
+    "sha256": "4930b91376c38717bbac90126bd5d7b0d1ca3dbaa98bbfc5c6be2267ce6e2ae7"
+  },
+  "plan": {
+    "analysis_sha256": "2b6490c5aa8ba2ab4d6839982644564b1fc977355fce1b131720f3e221ea7f92",
+    "base_image": "python@sha256:35caba83af2fe6da9a5d922f9b0156f21d1246a48278c58a08bd253303ba42e8",
+    "bootstrap_block_years": [
+      2,
+      3,
+      4
+    ],
+    "bootstrap_repeats": 2000,
+    "budget": {
+      "cpus": 1,
+      "memory_mib": 128,
+      "network": "none",
+      "wall_seconds_per_container": 45
+    },
+    "claim": "A fixed season-aware direct six-month ridge AR6 forecast reduces February–April initialized Niño 3.4 RMSE by at least 5% against both persistence and fixed non-seasonal ridge AR6 on held-out issue dates from 2015 onward through the October 25, 2026 data cutoff, with positive paired skill intervals under all prespecified block lengths.",
+    "data_cutoff": "2026-09",
+    "exclusions": "Exclude missing sentinel values; internal missing months, duplicate dates, non-finite values, insufficient coverage or missing source evidence stop the run. Use only targets available by cutoff. No imputation.",
+    "frozen_at": "2026-10-25T17:25:33+00:00",
+    "inputs": {
+      "nino34.data": "879cf3cb31d71e576f639ea88af9498f622662bbcaf6c74e79ad5394614696dd"
+    },
+    "interpretation": "Retrospective pseudo-out-of-sample experiment; no historical-vintage reconstruction, no external preregistration, no physical causal claim. Failure to meet the frozen rule is inconclusive or no demonstrated advantage. Do not change models after inspecting outcomes.",
+    "lags": 6,
+    "lead_months": 6,
+    "literature_search_sha256": "d8fcd3bcf3f3bc89f10e6225479dadfb92ccae784eda67200d8d615a33bba84d",
+    "maximum_fitted_variants": 2,
+    "minimum_relative_rmse_improvement": 0.05,
+    "primary_issue_months": [
+      2,
+      3,
+      4
+    ],
+    "question_id": "Q-ENSO-001",
+    "registration": "Internal timestamped protocol; not external preregistration",
+    "ridge": 1.0,
+    "schema_version": "1.0",
+    "seasonal_features": [
+      "sin(issue_month)",
+      "cos(issue_month)",
+      "latest_anomaly*sin(issue_month)",
+      "latest_anomaly*cos(issue_month)"
+    ],
+    "seed": 20261025,
+    "stop_conditions": [
+      "input hash mismatch",
+      "unverified source quotation",
+      "unknown input rights",
+      "resource limit",
+      "invalid data",
+      "reproduction mismatch"
+    ],
+    "test_issue_start": "2015-01",
+    "train_start": "1950-06",
+    "train_target_end": "2014-12",
+    "validation": "Temporal label cutoff, no model selection using holdout, linear-system residual checks, fresh container reproduction, independent host numerical recomputation and safety probes."
+  },
+  "question": {
+    "assessment": {
+      "blockers": [],
+      "dispatch_eligible": true,
+      "evidence": {
+        "implementation_readiness": "Small standard-library adapter with bounded container resources",
+        "input_readiness": "NOAA format, units, rights and content hash checked",
+        "local_compute_fit": [
+          0.2791,
+          0.2492
+        ],
+        "question_precision": "Frozen exact six-month metric and comparator contract",
+        "validation_readiness": "Temporal holdout, paired block uncertainty, residual check and clean reproduction; few climate cycles and revised data are limitations"
+      },
+      "hardware": {
+        "host_architecture": "arm64",
+        "vm_cpu_count": 2,
+        "vm_memory_gib": 2,
+        "vm_profile": "oqopilot"
+      },
+      "meaning": "Heuristic readiness score; not a probability of success or correctness",
+      "ratings": {
+        "implementation_readiness": 4,
+        "input_readiness": 4,
+        "local_compute_fit": 4,
+        "question_precision": 4,
+        "validation_readiness": 3
+      },
+      "rubric_version": "1.0",
+      "score": 93.75,
+      "weights": {
+        "implementation_readiness": 10,
+        "input_readiness": 30,
+        "local_compute_fit": 20,
+        "question_precision": 15,
+        "validation_readiness": 25
+      }
+    },
+    "created_at": "2026-10-25T17:25:33+00:00",
+    "disciplines": [
+      "climate-science",
+      "statistics"
+    ],
+    "id": "Q-ENSO-001",
+    "literature_search": {
+      "assessed_sources": [
+        {
+          "coverage": "full HTML; sections III-C and IV",
+          "finding": "Recent preprint identifies persistent spring skill limitations and suggests extending predictor information; it does not evaluate this small model or the 2015–2026 comparison.",
+          "relationship": "motivates bounded follow-up",
+          "url": "https://arxiv.org/html/2601.02050v1"
+        },
+        {
+          "coverage": "search-provider extracted passages; direct full text unavailable (HTTP error)",
+          "finding": "2026 score-driven seasonal forecasting study compares AR benchmarks on 1982–2024 OISST with additional predictors. Strong evidence this general method family is established; no claim of a new algorithm is justified.",
+          "relationship": "closely related, not exact answer",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0169207026001019"
+        },
+        {
+          "coverage": "abstract and search-provider extracted passages",
+          "finding": "Studies similarity of persistence and predictability barriers with observations and dynamical models; does not answer the exact frozen comparison.",
+          "relationship": "related barrier characterization",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL111885"
+        },
+        {
+          "coverage": "abstract and search-provider extracted passages",
+          "finding": "Shows persistence is not equivalent to predictability. The pilot must not interpret its persistence benchmark as a bound on physical predictability.",
+          "relationship": "related mechanism and earlier statistical theory",
+          "url": "https://journals.ametsoc.org/view/journals/clim/35/18/JCLI-D-22-0013.1.xml"
+        }
+      ],
+      "decision": "no_answer_found_within_documented_coverage",
+      "exact_question": "Does a fixed season-aware direct six-month AR6 forecast improve February–April initialized Niño 3.4 RMSE by at least 5% over both persistence and non-seasonal AR6 in the 2015–2026 observational record, with positive paired skill intervals under prespecified 2–4-year block bootstraps?",
+      "extraction_template_version": "oqo-pilot-source-gap-v1",
+      "limitations": [
+        "English-language web search only, five targeted query formulations; no exhaustive scholarly corpus or citation graph.",
+        "Some related full texts were inaccessible; titles and abstracts cannot establish absence of an answer.",
+        "The precise model/data-window comparison appears unanswered in this coverage, but independent scientific novelty is not established.",
+        "Seasonal autoregression and ENSO benchmarking are well established; a positive result would be a bounded empirical finding, not a new forecasting method."
+      ],
+      "model_identifier": "GPT-6 family; exact runtime build not exposed",
+      "operator": "Codex, agent-assisted web search and full-text reading",
+      "parent_problem": "ENSO spring predictability barrier; the pilot does not attempt to resolve the full physical problem.",
+      "queries": [
+        "ENSO spring predictability barrier remains challenge 2024 2025 review",
+        "ENSO spring predictability barrier seasonal autoregressive model 2025 2026 persistence out of sample",
+        "\"Niño\" \"2015\" \"2026\" \"seasonal\" autoregressive spring forecast",
+        "\"ENSO\" \"spring\" \"autoregressive\" \"calendar\" forecast 2026",
+        "\"ENSO\" \"seasonal autoregressive\" six month forecast persistence"
+      ],
+      "rejected_candidates": [
+        {
+          "reason": "Later SILSO observations explicitly answer the question; user requires an unanswered question.",
+          "topic": "Solar Cycle 25 amplitude forecast"
+        },
+        {
+          "reason": "A 2026 paper supplies calibration, making an unqualified no-answer claim inappropriate.",
+          "topic": "General WSO/HMI scalar calibration gap",
+          "url": "https://doi.org/10.3847/1538-4357/ae4d38"
+        }
+      ],
+      "schema_version": "1.0",
+      "searched_at": "2026-10-25"
+    },
+    "resolved": false,
+    "run_ids": [
+      "R-37cd1717a83c"
+    ],
+    "schema_version": "1.0",
+    "scope": {
+      "claim": "A fixed season-aware direct six-month ridge AR6 forecast reduces February–April initialized Niño 3.4 RMSE by at least 5% against both persistence and fixed non-seasonal ridge AR6 on held-out issue dates from 2015 onward through the October 25, 2026 data cutoff, with positive paired skill intervals under all prespecified block lengths.",
+      "data_window": "Train targets through 2014; holdout issue dates 2015 onward, observed targets through 2026-09",
+      "parent_problem": "ENSO spring predictability barrier",
+      "relationship": "Bounded agent-formulated follow-up, motivated by source; not a verbatim author question",
+      "system": "Niño 3.4 monthly SST anomaly, 5N–5S / 170–120W"
+    },
+    "source_evidence": [
+      {
+        "end": 2961,
+        "location": "Abstract, final sentence; normalized text character offsets retained privately",
+        "quote": "These results suggest that incorporating additional ocean-atmosphere variables may help transcend SPB limitations and advance long-range ENSO prediction.",
+        "source_hash": "6c99bcfff0d521b89ec20a30ab9b6e6442f725e4e2a55e4853dd9d18a5904182",
+        "source_id": "S-PAPER",
+        "start": 2808,
+        "text_hash": "bf6f2a8e969b54943fd2b159b16ab839b801beb676b298d831a209bb8a539f72"
+      }
+    ],
+    "statuses": {
+      "feasibility": "pilot_ready",
+      "literature": "no_answer_found",
+      "publication": "private_draft",
+      "research": "inconclusive",
+      "validation": "computationally_reproduced"
+    },
+    "title": "Can calendar information improve six-month spring ENSO forecasts?"
+  },
+  "result": {
+    "claim_supported_under_frozen_rule": false,
+    "disposition": "inconclusive_or_no_demonstrated_advantage",
+    "first_input": "1948-01",
+    "first_test_issue": "2015-01",
+    "input_months": 945,
+    "last_input": "2026-09",
+    "last_test_issue": "2026-03",
+    "last_test_target": "2026-09",
+    "last_training_target": "2014-12",
+    "notes": [
+      "Retrospective pseudo-out-of-sample analysis using a single currently revised data vintage.",
+      "Not an operational forecast comparison; historical data-release lags and revisions are not reconstructed.",
+      "Primary spring initialization means February–April; this does not equate to every published definition of the spring barrier.",
+      "Few ENSO cycles limit inference; circular block bootstrap intervals are descriptive and not proof of future skill.",
+      "No conclusion about physical causes or resolution of the general spring predictability barrier."
+    ],
+    "parameters": {
+      "ar6": [
+        -0.09655927937470571,
+        0.9088719007628988,
+        -0.11994235157487329,
+        -0.091735567827486,
+        -0.20795666437136587,
+        -0.1477212934014136,
+        -0.018368025660964016
+      ],
+      "seasonal_ar6": [
+        -0.07283314024478821,
+        0.9718190316310997,
+        0.0067620420977331785,
+        -0.041151601227833526,
+        -0.22499694042362742,
+        -0.22483837509536786,
+        -0.006993688339990464,
+        0.003412394012196047,
+        -0.10557185789345705,
+        0.26735389382131186,
+        -0.5037752371077565
+      ]
+    },
+    "predictions": [
+      {
+        "ar6": 0.1632878031317337,
+        "issue_date": "2015-01",
+        "issue_month": 1,
+        "issue_year": 2015,
+        "observed": 1.35,
+        "persistence": 0.63,
+        "seasonal_ar6": -0.08482793250488224,
+        "spring_initialized": false,
+        "target_date": "2015-07"
+      },
+      {
+        "ar6": 0.118415201681345,
+        "issue_date": "2015-02",
+        "issue_month": 2,
+        "issue_year": 2015,
+        "observed": 1.49,
+        "persistence": 0.67,
+        "seasonal_ar6": -0.034362495645473175,
+        "spring_initialized": true,
+        "target_date": "2015-08"
+      },
+      {
+        "ar6": 0.14329344768907148,
+        "issue_date": "2015-03",
+        "issue_month": 3,
+        "issue_year": 2015,
+        "observed": 1.67,
+        "persistence": 0.74,
+        "seasonal_ar6": 0.19251754270528104,
+        "spring_initialized": true,
+        "target_date": "2015-09"
+      },
+      {
+        "ar6": 0.46404903486950133,
+        "issue_date": "2015-04",
+        "issue_month": 4,
+        "issue_year": 2015,
+        "observed": 1.91,
+        "persistence": 1.07,
+        "seasonal_ar6": 0.9109299190842982,
+        "spring_initialized": true,
+        "target_date": "2015-10"
+      },
+      {
+        "ar6": 0.4602547350997714,
+        "issue_date": "2015-05",
+        "issue_month": 5,
+        "issue_year": 2015,
+        "observed": 2.21,
+        "persistence": 1.1,
+        "seasonal_ar6": 1.2626061108795106,
+        "spring_initialized": false,
+        "target_date": "2015-11"
+      },
+      {
+        "ar6": 0.5268264598757241,
+        "issue_date": "2015-06",
+        "issue_month": 6,
+        "issue_year": 2015,
+        "observed": 2.13,
+        "persistence": 1.23,
+        "seasonal_ar6": 1.5585486316936745,
+        "spring_initialized": false,
+        "target_date": "2015-12"
+      },
+      {
+        "ar6": 0.5378456044206257,
+        "issue_date": "2015-07",
+        "issue_month": 7,
+        "issue_year": 2015,
+        "observed": 2.13,
+        "persistence": 1.35,
+        "seasonal_ar6": 1.5760286358640725,
+        "spring_initialized": false,
+        "target_date": "2016-01"
+      },
+      {
+        "ar6": 0.5824964759709984,
+        "issue_date": "2015-08",
+        "issue_month": 8,
+        "issue_year": 2015,
+        "observed": 1.87,
+        "persistence": 1.49,
+        "seasonal_ar6": 1.3810439501430485,
+        "spring_initialized": false,
+        "target_date": "2016-02"
+      },
+      {
+        "ar6": 0.6807657671101015,
+        "issue_date": "2015-09",
+        "issue_month": 9,
+        "issue_year": 2015,
+        "observed": 1.5,
+        "persistence": 1.67,
+        "seasonal_ar6": 1.0568928691974555,
+        "spring_initialized": false,
+        "target_date": "2016-03"
+      },
+      {
+        "ar6": 0.8197528118772953,
+        "issue_date": "2015-10",
+        "issue_month": 10,
+        "issue_year": 2015,
+        "observed": 1.08,
+        "persistence": 1.91,
+        "seasonal_ar6": 0.6312694753202642,
+        "spring_initialized": false,
+        "target_date": "2016-04"
+      },
+      {
+        "ar6": 0.997887483963162,
+        "issue_date": "2015-11",
+        "issue_month": 11,
+        "issue_year": 2015,
+        "observed": 0.63,
+        "persistence": 2.21,
+        "seasonal_ar6": 0.24759404278653255,
+        "spring_initialized": false,
+        "target_date": "2016-05"
+      },
+      {
+        "ar6": 0.8068611464087116,
+        "issue_date": "2015-12",
+        "issue_month": 12,
+        "issue_year": 2015,
+        "observed": 0.37,
+        "persistence": 2.13,
+        "seasonal_ar6": -0.09385658779747261,
+        "spring_initialized": false,
+        "target_date": "2016-06"
+      },
+      {
+        "ar6": 0.7098649083325386,
+        "issue_date": "2016-01",
+        "issue_month": 1,
+        "issue_year": 2016,
+        "observed": 0.01,
+        "persistence": 2.13,
+        "seasonal_ar6": -0.0736584430938434,
+        "spring_initialized": false,
+        "target_date": "2016-07"
+      },
+      {
+        "ar6": 0.37975070521366155,
+        "issue_date": "2016-02",
+        "issue_month": 2,
+        "issue_year": 2016,
+        "observed": -0.1,
+        "persistence": 1.87,
+        "seasonal_ar6": 0.0772612441722489,
+        "spring_initialized": true,
+        "target_date": "2016-08"
+      },
+      {
+        "ar6": 0.04256493231150961,
+        "issue_date": "2016-03",
+        "issue_month": 3,
+        "issue_year": 2016,
+        "observed": -0.21,
+        "persistence": 1.5,
+        "seasonal_ar6": 0.24003403741651888,
+        "spring_initialized": true,
+        "target_date": "2016-09"
+      },
+      {
+        "ar6": -0.2646240525172345,
+        "issue_date": "2016-04",
+        "issue_month": 4,
+        "issue_year": 2016,
+        "observed": -0.39,
+        "persistence": 1.08,
+        "seasonal_ar6": 0.22847030881972452,
+        "spring_initialized": true,
+        "target_date": "2016-10"
+      },
+      {
+        "ar6": -0.5337602853134902,
+        "issue_date": "2016-05",
+        "issue_month": 5,
+        "issue_year": 2016,
+        "observed": -0.37,
+        "persistence": 0.63,
+        "seasonal_ar6": -0.06926055563947049,
+        "spring_initialized": false,
+        "target_date": "2016-11"
+      },
+      {
+        "ar6": -0.5622124807138338,
+        "issue_date": "2016-06",
+        "issue_month": 6,
+        "issue_year": 2016,
+        "observed": -0.17,
+        "persistence": 0.37,
+        "seasonal_ar6": -0.22226449469108,
+        "spring_initialized": false,
+        "target_date": "2016-12"
+      },
+      {
+        "ar6": -0.6701659837902942,
+        "issue_date": "2016-07",
+        "issue_month": 7,
+        "issue_year": 2016,
+        "observed": -0.23,
+        "persistence": 0.01,
+        "seasonal_ar6": -0.5692613483576681,
+        "spring_initialized": false,
+        "target_date": "2017-01"
+      },
+      {
+        "ar6": -0.5406917869818474,
+        "issue_date": "2016-08",
+        "issue_month": 8,
+        "issue_year": 2016,
+        "observed": 0.22,
+        "persistence": -0.1,
+        "seasonal_ar6": -0.5207763722889501,
+        "spring_initialized": false,
+        "target_date": "2017-02"
+      },
+      {
+        "ar6": -0.4661913474298391,
+        "issue_date": "2016-09",
+        "issue_month": 9,
+        "issue_year": 2016,
+        "observed": 0.18,
+        "persistence": -0.21,
+        "seasonal_ar6": -0.46489637022676583,
+        "spring_initialized": false,
+        "target_date": "2017-03"
+      },
+      {
+        "ar6": -0.4849661714274083,
+        "issue_date": "2016-10",
+        "issue_month": 10,
+        "issue_year": 2016,
+        "observed": 0.35,
+        "persistence": -0.39,
+        "seasonal_ar6": -0.4381379985642585,
+        "spring_initialized": false,
+        "target_date": "2017-04"
+      },
+      {
+        "ar6": -0.35427761229043986,
+        "issue_date": "2016-11",
+        "issue_month": 11,
+        "issue_year": 2016,
+        "observed": 0.4,
+        "persistence": -0.37,
+        "seasonal_ar6": -0.2856125788625516,
+        "spring_initialized": false,
+        "target_date": "2017-05"
+      },
+      {
+        "ar6": -0.1126526123674573,
+        "issue_date": "2016-12",
+        "issue_month": 12,
+        "issue_year": 2016,
+        "observed": 0.45,
+        "persistence": -0.17,
+        "seasonal_ar6": -0.15107300946343988,
+        "spring_initialized": false,
+        "target_date": "2017-06"
+      },
+      {
+        "ar6": -0.1373060834010482,
+        "issue_date": "2017-01",
+        "issue_month": 1,
+        "issue_year": 2017,
+        "observed": 0.38,
+        "persistence": -0.23,
+        "seasonal_ar6": -0.13631429121168945,
+        "spring_initialized": false,
+        "target_date": "2017-07"
+      },
+      {
+        "ar6": 0.2849868818187846,
+        "issue_date": "2017-02",
+        "issue_month": 2,
+        "issue_year": 2017,
+        "observed": 0.05,
+        "persistence": 0.22,
+        "seasonal_ar6": 0.16251719881240206,
+        "spring_initialized": true,
+        "target_date": "2017-08"
+      },
+      {
+        "ar6": 0.15892256752589692,
+        "issue_date": "2017-03",
+        "issue_month": 3,
+        "issue_year": 2017,
+        "observed": -0.2,
+        "persistence": 0.18,
+        "seasonal_ar6": 0.18371988721145868,
+        "spring_initialized": true,
+        "target_date": "2017-09"
+      },
+      {
+        "ar6": 0.2595132598649959,
+        "issue_date": "2017-04",
+        "issue_month": 4,
+        "issue_year": 2017,
+        "observed": -0.12,
+        "persistence": 0.35,
+        "seasonal_ar6": 0.44901307773266375,
+        "spring_initialized": true,
+        "target_date": "2017-10"
+      },
+      {
+        "ar6": 0.1998452513532892,
+        "issue_date": "2017-05",
+        "issue_month": 5,
+        "issue_year": 2017,
+        "observed": -0.44,
+        "persistence": 0.4,
+        "seasonal_ar6": 0.5633666271279242,
+        "spring_initialized": false,
+        "target_date": "2017-11"
+      },
+      {
+        "ar6": 0.16664244836589423,
+        "issue_date": "2017-06",
+        "issue_month": 6,
+        "issue_year": 2017,
+        "observed": -0.65,
+        "persistence": 0.45,
+        "seasonal_ar6": 0.6140475398056506,
+        "spring_initialized": false,
+        "target_date": "2017-12"
+      },
+      {
+        "ar6": 0.05472812658786385,
+        "issue_date": "2017-07",
+        "issue_month": 7,
+        "issue_year": 2017,
+        "observed": -0.64,
+        "persistence": 0.38,
+        "seasonal_ar6": 0.45928837012204704,
+        "spring_initialized": false,
+        "target_date": "2018-01"
+      },
+      {
+        "ar6": -0.27616614651539595,
+        "issue_date": "2017-08",
+        "issue_month": 8,
+        "issue_year": 2017,
+        "observed": -0.48,
+        "persistence": 0.05,
+        "seasonal_ar6": -0.10528993040718165,
+        "spring_initialized": false,
+        "target_date": "2018-02"
+      },
+      {
+        "ar6": -0.4782881181894913,
+        "issue_date": "2017-09",
+        "issue_month": 9,
+        "issue_year": 2017,
+        "observed": -0.49,
+        "persistence": -0.2,
+        "seasonal_ar6": -0.4303679789768165,
+        "spring_initialized": false,
+        "target_date": "2018-03"
+      },
+      {
+        "ar6": -0.33906754029879393,
+        "issue_date": "2017-10",
+        "issue_month": 10,
+        "issue_year": 2017,
+        "observed": -0.11,
+        "persistence": -0.12,
+        "seasonal_ar6": -0.35366492076498723,
+        "spring_initialized": false,
+        "target_date": "2018-04"
+      },
+      {
+        "ar6": -0.5385202562144384,
+        "issue_date": "2017-11",
+        "issue_month": 11,
+        "issue_year": 2017,
+        "observed": 0.18,
+        "persistence": -0.44,
+        "seasonal_ar6": -0.43588530887038085,
+        "spring_initialized": false,
+        "target_date": "2018-05"
+      },
+      {
+        "ar6": -0.5963176935853112,
+        "issue_date": "2017-12",
+        "issue_month": 12,
+        "issue_year": 2017,
+        "observed": 0.31,
+        "persistence": -0.65,
+        "seasonal_ar6": -0.394113442258181,
+        "spring_initialized": false,
+        "target_date": "2018-06"
+      },
+      {
+        "ar6": -0.506330460373401,
+        "issue_date": "2018-01",
+        "issue_month": 1,
+        "issue_year": 2018,
+        "observed": 0.39,
+        "persistence": -0.64,
+        "seasonal_ar6": -0.39262402600355545,
+        "spring_initialized": false,
+        "target_date": "2018-07"
+      },
+      {
+        "ar6": -0.2835254749813489,
+        "issue_date": "2018-02",
+        "issue_month": 2,
+        "issue_year": 2018,
+        "observed": 0.35,
+        "persistence": -0.48,
+        "seasonal_ar6": -0.3339786599740404,
+        "spring_initialized": true,
+        "target_date": "2018-08"
+      },
+      {
+        "ar6": -0.22325005456567043,
+        "issue_date": "2018-03",
+        "issue_month": 3,
+        "issue_year": 2018,
+        "observed": 0.5,
+        "persistence": -0.49,
+        "seasonal_ar6": -0.3197751374865238,
+        "spring_initialized": true,
+        "target_date": "2018-09"
+      },
+      {
+        "ar6": 0.1434626735696738,
+        "issue_date": "2018-04",
+        "issue_month": 4,
+        "issue_year": 2018,
+        "observed": 1.01,
+        "persistence": -0.11,
+        "seasonal_ar6": 0.10392980848181986,
+        "spring_initialized": true,
+        "target_date": "2018-10"
+      },
+      {
+        "ar6": 0.3314817930261072,
+        "issue_date": "2018-05",
+        "issue_month": 5,
+        "issue_year": 2018,
+        "observed": 1.15,
+        "persistence": 0.18,
+        "seasonal_ar6": 0.520713001986768,
+        "spring_initialized": false,
+        "target_date": "2018-11"
+      },
+      {
+        "ar6": 0.35825282183700397,
+        "issue_date": "2018-06",
+        "issue_month": 6,
+        "issue_year": 2018,
+        "observed": 1.1,
+        "persistence": 0.31,
+        "seasonal_ar6": 0.7266429135444924,
+        "spring_initialized": false,
+        "target_date": "2018-12"
+      },
+      {
+        "ar6": 0.3082815498904723,
+        "issue_date": "2018-07",
+        "issue_month": 7,
+        "issue_year": 2018,
+        "observed": 0.88,
+        "persistence": 0.39,
+        "seasonal_ar6": 0.7411868649326347,
+        "spring_initialized": false,
+        "target_date": "2019-01"
+      },
+      {
+        "ar6": 0.1341478180127696,
+        "issue_date": "2018-08",
+        "issue_month": 8,
+        "issue_year": 2018,
+        "observed": 0.87,
+        "persistence": 0.35,
+        "seasonal_ar6": 0.44047693616654016,
+        "spring_initialized": false,
+        "target_date": "2019-02"
+      },
+      {
+        "ar6": 0.19108406055814667,
+        "issue_date": "2018-09",
+        "issue_month": 9,
+        "issue_year": 2018,
+        "observed": 0.92,
+        "persistence": 0.5,
+        "seasonal_ar6": 0.3499501988914338,
+        "spring_initialized": false,
+        "target_date": "2019-03"
+      },
+      {
+        "ar6": 0.599119771190521,
+        "issue_date": "2018-10",
+        "issue_month": 10,
+        "issue_year": 2018,
+        "observed": 0.82,
+        "persistence": 1.01,
+        "seasonal_ar6": 0.46553464860404953,
+        "spring_initialized": false,
+        "target_date": "2019-04"
+      },
+      {
+        "ar6": 0.6455436225868346,
+        "issue_date": "2018-11",
+        "issue_month": 11,
+        "issue_year": 2018,
+        "observed": 0.83,
+        "persistence": 1.15,
+        "seasonal_ar6": 0.2507312056015027,
+        "spring_initialized": false,
+        "target_date": "2019-05"
+      },
+      {
+        "ar6": 0.5097688687636643,
+        "issue_date": "2018-12",
+        "issue_month": 12,
+        "issue_year": 2018,
+        "observed": 0.8,
+        "persistence": 1.1,
+        "seasonal_ar6": 0.04837246785950929,
+        "spring_initialized": false,
+        "target_date": "2019-06"
+      },
+      {
+        "ar6": 0.175489816865552,
+        "issue_date": "2019-01",
+        "issue_month": 1,
+        "issue_year": 2019,
+        "observed": 0.65,
+        "persistence": 0.88,
+        "seasonal_ar6": -0.14852644235674953,
+        "spring_initialized": false,
+        "target_date": "2019-07"
+      },
+      {
+        "ar6": 0.09016819709991271,
+        "issue_date": "2019-02",
+        "issue_month": 2,
+        "issue_year": 2019,
+        "observed": 0.35,
+        "persistence": 0.87,
+        "seasonal_ar6": -0.10898507480149347,
+        "spring_initialized": true,
+        "target_date": "2019-08"
+      },
+      {
+        "ar6": 0.137342199631132,
+        "issue_date": "2019-03",
+        "issue_month": 3,
+        "issue_year": 2019,
+        "observed": 0.18,
+        "persistence": 0.92,
+        "seasonal_ar6": 0.20923066997923948,
+        "spring_initialized": true,
+        "target_date": "2019-09"
+      },
+      {
+        "ar6": 0.0919402548936095,
+        "issue_date": "2019-04",
+        "issue_month": 4,
+        "issue_year": 2019,
+        "observed": 0.78,
+        "persistence": 0.82,
+        "seasonal_ar6": 0.4637579765313988,
+        "spring_initialized": true,
+        "target_date": "2019-10"
+      },
+      {
+        "ar6": 0.14393308314242437,
+        "issue_date": "2019-05",
+        "issue_month": 5,
+        "issue_year": 2019,
+        "observed": 0.82,
+        "persistence": 0.83,
+        "seasonal_ar6": 0.7571460332172739,
+        "spring_initialized": false,
+        "target_date": "2019-11"
+      },
+      {
+        "ar6": 0.11976140474739524,
+        "issue_date": "2019-06",
+        "issue_month": 6,
+        "issue_year": 2019,
+        "observed": 0.73,
+        "persistence": 0.8,
+        "seasonal_ar6": 0.8168306376338421,
+        "spring_initialized": false,
+        "target_date": "2019-12"
+      },
+      {
+        "ar6": -0.000295183474392717,
+        "issue_date": "2019-07",
+        "issue_month": 7,
+        "issue_year": 2019,
+        "observed": 0.84,
+        "persistence": 0.65,
+        "seasonal_ar6": 0.5656954918971056,
+        "spring_initialized": false,
+        "target_date": "2020-01"
+      },
+      {
+        "ar6": -0.2404391725188273,
+        "issue_date": "2019-08",
+        "issue_month": 8,
+        "issue_year": 2019,
+        "observed": 0.67,
+        "persistence": 0.35,
+        "seasonal_ar6": 0.0568619818368759,
+        "spring_initialized": false,
+        "target_date": "2020-02"
+      },
+      {
+        "ar6": -0.33860606543871197,
+        "issue_date": "2019-09",
+        "issue_month": 9,
+        "issue_year": 2019,
+        "observed": 0.65,
+        "persistence": 0.18,
+        "seasonal_ar6": -0.24114163583077167,
+        "spring_initialized": false,
+        "target_date": "2020-03"
+      },
+      {
+        "ar6": 0.2900694033361393,
+        "issue_date": "2019-10",
+        "issue_month": 10,
+        "issue_year": 2019,
+        "observed": 0.66,
+        "persistence": 0.78,
+        "seasonal_ar6": 0.1281279077086564,
+        "spring_initialized": false,
+        "target_date": "2020-04"
+      },
+      {
+        "ar6": 0.35515014904385456,
+        "issue_date": "2019-11",
+        "issue_month": 11,
+        "issue_year": 2019,
+        "observed": 0.05,
+        "persistence": 0.82,
+        "seasonal_ar6": 0.0392888342555382,
+        "spring_initialized": false,
+        "target_date": "2020-05"
+      },
+      {
+        "ar6": 0.295936868028408,
+        "issue_date": "2019-12",
+        "issue_month": 12,
+        "issue_year": 2019,
+        "observed": -0.05,
+        "persistence": 0.73,
+        "seasonal_ar6": -0.02290165047058894,
+        "spring_initialized": false,
+        "target_date": "2020-06"
+      },
+      {
+        "ar6": 0.308887194994676,
+        "issue_date": "2020-01",
+        "issue_month": 1,
+        "issue_year": 2020,
+        "observed": 0.08,
+        "persistence": 0.84,
+        "seasonal_ar6": -0.0324725449807075,
+        "spring_initialized": false,
+        "target_date": "2020-07"
+      },
+      {
+        "ar6": 0.055613036042882105,
+        "issue_date": "2020-02",
+        "issue_month": 2,
+        "issue_year": 2020,
+        "observed": -0.29,
+        "persistence": 0.67,
+        "seasonal_ar6": -0.0996724322323576,
+        "spring_initialized": true,
+        "target_date": "2020-08"
+      },
+      {
+        "ar6": 0.049521317995117005,
+        "issue_date": "2020-03",
+        "issue_month": 3,
+        "issue_year": 2020,
+        "observed": -0.66,
+        "persistence": 0.65,
+        "seasonal_ar6": 0.11168240289488296,
+        "spring_initialized": true,
+        "target_date": "2020-09"
+      },
+      {
+        "ar6": 0.06628889286375457,
+        "issue_date": "2020-04",
+        "issue_month": 4,
+        "issue_year": 2020,
+        "observed": -0.9,
+        "persistence": 0.66,
+        "seasonal_ar6": 0.36639287089261985,
+        "spring_initialized": true,
+        "target_date": "2020-10"
+      },
+      {
+        "ar6": -0.4667312657823493,
+        "issue_date": "2020-05",
+        "issue_month": 5,
+        "issue_year": 2020,
+        "observed": -0.89,
+        "persistence": 0.05,
+        "seasonal_ar6": -0.3113330663597502,
+        "spring_initialized": false,
+        "target_date": "2020-11"
+      },
+      {
+        "ar6": -0.4581197067332798,
+        "issue_date": "2020-06",
+        "issue_month": 6,
+        "issue_year": 2020,
+        "observed": -1.02,
+        "persistence": -0.05,
+        "seasonal_ar6": -0.38637431446229553,
+        "spring_initialized": false,
+        "target_date": "2020-12"
+      },
+      {
+        "ar6": -0.26801600451517066,
+        "issue_date": "2020-07",
+        "issue_month": 7,
+        "issue_year": 2020,
+        "observed": -1.12,
+        "persistence": 0.08,
+        "seasonal_ar6": -0.15093811869787782,
+        "spring_initialized": false,
+        "target_date": "2021-01"
+      },
+      {
+        "ar6": -0.4849738438736898,
+        "issue_date": "2020-08",
+        "issue_month": 8,
+        "issue_year": 2020,
+        "observed": -1.0,
+        "persistence": -0.29,
+        "seasonal_ar6": -0.5142849839437934,
+        "spring_initialized": false,
+        "target_date": "2021-02"
+      },
+      {
+        "ar6": -0.6780814257354433,
+        "issue_date": "2020-09",
+        "issue_month": 9,
+        "issue_year": 2020,
+        "observed": -0.64,
+        "persistence": -0.66,
+        "seasonal_ar6": -0.6876965725260163,
+        "spring_initialized": false,
+        "target_date": "2021-03"
+      },
+      {
+        "ar6": -0.8189475931146141,
+        "issue_date": "2020-10",
+        "issue_month": 10,
+        "issue_year": 2020,
+        "observed": -0.47,
+        "persistence": -0.9,
+        "seasonal_ar6": -0.7099006626103469,
+        "spring_initialized": false,
+        "target_date": "2021-04"
+      },
+      {
+        "ar6": -0.6875535493915277,
+        "issue_date": "2020-11",
+        "issue_month": 11,
+        "issue_year": 2020,
+        "observed": -0.25,
+        "persistence": -0.89,
+        "seasonal_ar6": -0.49456091585144546,
+        "spring_initialized": false,
+        "target_date": "2021-05"
+      },
+      {
+        "ar6": -0.6556767826878536,
+        "issue_date": "2020-12",
+        "issue_month": 12,
+        "issue_year": 2020,
+        "observed": -0.03,
+        "persistence": -1.02,
+        "seasonal_ar6": -0.3317045403025712,
+        "spring_initialized": false,
+        "target_date": "2021-06"
+      },
+      {
+        "ar6": -0.6205261752354775,
+        "issue_date": "2021-01",
+        "issue_month": 1,
+        "issue_year": 2021,
+        "observed": -0.18,
+        "persistence": -1.12,
+        "seasonal_ar6": -0.31996766228850104,
+        "spring_initialized": false,
+        "target_date": "2021-07"
+      },
+      {
+        "ar6": -0.44737197490168656,
+        "issue_date": "2021-02",
+        "issue_month": 2,
+        "issue_year": 2021,
+        "observed": -0.36,
+        "persistence": -1.0,
+        "seasonal_ar6": -0.3901498845378719,
+        "spring_initialized": true,
+        "target_date": "2021-08"
+      },
+      {
+        "ar6": -0.09543213644038444,
+        "issue_date": "2021-03",
+        "issue_month": 3,
+        "issue_year": 2021,
+        "observed": -0.49,
+        "persistence": -0.64,
+        "seasonal_ar6": -0.25637741867220953,
+        "spring_initialized": true,
+        "target_date": "2021-09"
+      },
+      {
+        "ar6": 0.04470432630576643,
+        "issue_date": "2021-04",
+        "issue_month": 4,
+        "issue_year": 2021,
+        "observed": -0.74,
+        "persistence": -0.47,
+        "seasonal_ar6": -0.1274520284156118,
+        "spring_initialized": true,
+        "target_date": "2021-10"
+      },
+      {
+        "ar6": 0.1834463132394835,
+        "issue_date": "2021-05",
+        "issue_month": 5,
+        "issue_year": 2021,
+        "observed": -0.69,
+        "persistence": -0.25,
+        "seasonal_ar6": 0.1262058777326022,
+        "spring_initialized": false,
+        "target_date": "2021-11"
+      },
+      {
+        "ar6": 0.25066161571441153,
+        "issue_date": "2021-06",
+        "issue_month": 6,
+        "issue_year": 2021,
+        "observed": -0.89,
+        "persistence": -0.03,
+        "seasonal_ar6": 0.3683677136314535,
+        "spring_initialized": false,
+        "target_date": "2021-12"
+      },
+      {
+        "ar6": -0.022974773315499124,
+        "issue_date": "2021-07",
+        "issue_month": 7,
+        "issue_year": 2021,
+        "observed": -0.56,
+        "persistence": -0.18,
+        "seasonal_ar6": 0.03385559871983189,
+        "spring_initialized": false,
+        "target_date": "2022-01"
+      },
+      {
+        "ar6": -0.2662377629165247,
+        "issue_date": "2021-08",
+        "issue_month": 8,
+        "issue_year": 2021,
+        "observed": -0.55,
+        "persistence": -0.36,
+        "seasonal_ar6": -0.27548753962004946,
+        "spring_initialized": false,
+        "target_date": "2022-02"
+      },
+      {
+        "ar6": -0.4304128666304768,
+        "issue_date": "2021-09",
+        "issue_month": 9,
+        "issue_year": 2021,
+        "observed": -0.67,
+        "persistence": -0.49,
+        "seasonal_ar6": -0.4379469219323379,
+        "spring_initialized": false,
+        "target_date": "2022-03"
+      },
+      {
+        "ar6": -0.6308720844455387,
+        "issue_date": "2021-10",
+        "issue_month": 10,
+        "issue_year": 2021,
+        "observed": -0.74,
+        "persistence": -0.74,
+        "seasonal_ar6": -0.5370555378079849,
+        "spring_initialized": false,
+        "target_date": "2022-04"
+      },
+      {
+        "ar6": -0.4879678497444564,
+        "issue_date": "2021-11",
+        "issue_month": 11,
+        "issue_year": 2021,
+        "observed": -0.78,
+        "persistence": -0.69,
+        "seasonal_ar6": -0.3287276418914345,
+        "spring_initialized": false,
+        "target_date": "2022-05"
+      },
+      {
+        "ar6": -0.5964260524892318,
+        "issue_date": "2021-12",
+        "issue_month": 12,
+        "issue_year": 2021,
+        "observed": -0.52,
+        "persistence": -0.89,
+        "seasonal_ar6": -0.30538703162003356,
+        "spring_initialized": false,
+        "target_date": "2022-06"
+      },
+      {
+        "ar6": -0.20259745445987612,
+        "issue_date": "2022-01",
+        "issue_month": 1,
+        "issue_year": 2022,
+        "observed": -0.5,
+        "persistence": -0.56,
+        "seasonal_ar6": -0.13894686817848378,
+        "spring_initialized": false,
+        "target_date": "2022-07"
+      },
+      {
+        "ar6": -0.18582226443874764,
+        "issue_date": "2022-02",
+        "issue_month": 2,
+        "issue_year": 2022,
+        "observed": -0.8,
+        "persistence": -0.55,
+        "seasonal_ar6": -0.17272908280653324,
+        "spring_initialized": true,
+        "target_date": "2022-08"
+      },
+      {
+        "ar6": -0.2875617788096711,
+        "issue_date": "2022-03",
+        "issue_month": 3,
+        "issue_year": 2022,
+        "observed": -0.93,
+        "persistence": -0.67,
+        "seasonal_ar6": -0.380259664132175,
+        "spring_initialized": true,
+        "target_date": "2022-09"
+      },
+      {
+        "ar6": -0.37770692719768023,
+        "issue_date": "2022-04",
+        "issue_month": 4,
+        "issue_year": 2022,
+        "observed": -0.83,
+        "persistence": -0.74,
+        "seasonal_ar6": -0.6373758131708473,
+        "spring_initialized": true,
+        "target_date": "2022-10"
+      },
+      {
+        "ar6": -0.4418115588126441,
+        "issue_date": "2022-05",
+        "issue_month": 5,
+        "issue_year": 2022,
+        "observed": -0.74,
+        "persistence": -0.78,
+        "seasonal_ar6": -0.8737308327636962,
+        "spring_initialized": false,
+        "target_date": "2022-11"
+      },
+      {
+        "ar6": -0.17686954248093983,
+        "issue_date": "2022-06",
+        "issue_month": 6,
+        "issue_year": 2022,
+        "observed": -0.63,
+        "persistence": -0.52,
+        "seasonal_ar6": -0.4779203469199863,
+        "spring_initialized": false,
+        "target_date": "2022-12"
+      },
+      {
+        "ar6": -0.15410785170449384,
+        "issue_date": "2022-07",
+        "issue_month": 7,
+        "issue_year": 2022,
+        "observed": -0.57,
+        "persistence": -0.5,
+        "seasonal_ar6": -0.35549045383949485,
+        "spring_initialized": false,
+        "target_date": "2023-01"
+      },
+      {
+        "ar6": -0.43215659640773807,
+        "issue_date": "2022-08",
+        "issue_month": 8,
+        "issue_year": 2022,
+        "observed": -0.47,
+        "persistence": -0.8,
+        "seasonal_ar6": -0.6380692227946618,
+        "spring_initialized": false,
+        "target_date": "2023-02"
+      },
+      {
+        "ar6": -0.5630360685952338,
+        "issue_date": "2022-09",
+        "issue_month": 9,
+        "issue_year": 2022,
+        "observed": -0.08,
+        "persistence": -0.93,
+        "seasonal_ar6": -0.6330079825899293,
+        "spring_initialized": false,
+        "target_date": "2023-03"
+      },
+      {
+        "ar6": -0.47086765101132083,
+        "issue_date": "2022-10",
+        "issue_month": 10,
+        "issue_year": 2022,
+        "observed": 0.25,
+        "persistence": -0.83,
+        "seasonal_ar6": -0.39944951464113565,
+        "spring_initialized": false,
+        "target_date": "2023-04"
+      },
+      {
+        "ar6": -0.33448090451104323,
+        "issue_date": "2022-11",
+        "issue_month": 11,
+        "issue_year": 2022,
+        "observed": 0.49,
+        "persistence": -0.74,
+        "seasonal_ar6": -0.16127548749783854,
+        "spring_initialized": false,
+        "target_date": "2023-05"
+      },
+      {
+        "ar6": -0.1834899699761292,
+        "issue_date": "2022-12",
+        "issue_month": 12,
+        "issue_year": 2022,
+        "observed": 0.86,
+        "persistence": -0.63,
+        "seasonal_ar6": 0.0026276116955150476,
+        "spring_initialized": false,
+        "target_date": "2023-06"
+      },
+      {
+        "ar6": -0.14648900630472864,
+        "issue_date": "2023-01",
+        "issue_month": 1,
+        "issue_year": 2023,
+        "observed": 0.97,
+        "persistence": -0.57,
+        "seasonal_ar6": -0.01755576256723065,
+        "spring_initialized": false,
+        "target_date": "2023-07"
+      },
+      {
+        "ar6": -0.10398965558159362,
+        "issue_date": "2023-02",
+        "issue_month": 2,
+        "issue_year": 2023,
+        "observed": 1.2,
+        "persistence": -0.47,
+        "seasonal_ar6": -0.09539648986467417,
+        "spring_initialized": true,
+        "target_date": "2023-08"
+      },
+      {
+        "ar6": 0.19496506443572653,
+        "issue_date": "2023-03",
+        "issue_month": 3,
+        "issue_year": 2023,
+        "observed": 1.41,
+        "persistence": -0.08,
+        "seasonal_ar6": 0.13543030083017382,
+        "spring_initialized": true,
+        "target_date": "2023-09"
+      },
+      {
+        "ar6": 0.40856185334460976,
+        "issue_date": "2023-04",
+        "issue_month": 4,
+        "issue_year": 2023,
+        "observed": 1.51,
+        "persistence": 0.25,
+        "seasonal_ar6": 0.5342445360629161,
+        "spring_initialized": true,
+        "target_date": "2023-10"
+      },
+      {
+        "ar6": 0.5196538351913503,
+        "issue_date": "2023-05",
+        "issue_month": 5,
+        "issue_year": 2023,
+        "observed": 1.86,
+        "persistence": 0.49,
+        "seasonal_ar6": 0.939271644561654,
+        "spring_initialized": false,
+        "target_date": "2023-11"
+      },
+      {
+        "ar6": 0.6999002267279509,
+        "issue_date": "2023-06",
+        "issue_month": 6,
+        "issue_year": 2023,
+        "observed": 1.76,
+        "persistence": 0.86,
+        "seasonal_ar6": 1.4669158550653605,
+        "spring_initialized": false,
+        "target_date": "2023-12"
+      },
+      {
+        "ar6": 0.6054071232153716,
+        "issue_date": "2023-07",
+        "issue_month": 7,
+        "issue_year": 2023,
+        "observed": 1.64,
+        "persistence": 0.97,
+        "seasonal_ar6": 1.4147410983492896,
+        "spring_initialized": false,
+        "target_date": "2024-01"
+      },
+      {
+        "ar6": 0.6614906853420621,
+        "issue_date": "2023-08",
+        "issue_month": 8,
+        "issue_year": 2023,
+        "observed": 1.39,
+        "persistence": 1.2,
+        "seasonal_ar6": 1.3514678632981605,
+        "spring_initialized": false,
+        "target_date": "2024-02"
+      },
+      {
+        "ar6": 0.6962176064771638,
+        "issue_date": "2023-09",
+        "issue_month": 9,
+        "issue_year": 2023,
+        "observed": 1.04,
+        "persistence": 1.41,
+        "seasonal_ar6": 1.0387400262122894,
+        "spring_initialized": false,
+        "target_date": "2024-03"
+      },
+      {
+        "ar6": 0.658877284324404,
+        "issue_date": "2023-10",
+        "issue_month": 10,
+        "issue_year": 2023,
+        "observed": 0.98,
+        "persistence": 1.51,
+        "seasonal_ar6": 0.5326144396406688,
+        "spring_initialized": false,
+        "target_date": "2024-04"
+      },
+      {
+        "ar6": 0.8748482006160331,
+        "issue_date": "2023-11",
+        "issue_month": 11,
+        "issue_year": 2023,
+        "observed": 0.5,
+        "persistence": 1.86,
+        "seasonal_ar6": 0.23792534998201692,
+        "spring_initialized": false,
+        "target_date": "2024-05"
+      },
+      {
+        "ar6": 0.6531403508827708,
+        "issue_date": "2023-12",
+        "issue_month": 12,
+        "issue_year": 2023,
+        "observed": 0.37,
+        "persistence": 1.76,
+        "seasonal_ar6": -0.10209090187096043,
+        "spring_initialized": false,
+        "target_date": "2024-06"
+      },
+      {
+        "ar6": 0.4679207252556349,
+        "issue_date": "2024-01",
+        "issue_month": 1,
+        "issue_year": 2024,
+        "observed": 0.4,
+        "persistence": 1.64,
+        "seasonal_ar6": -0.14061387424385702,
+        "spring_initialized": false,
+        "target_date": "2024-07"
+      },
+      {
+        "ar6": 0.17285514177772165,
+        "issue_date": "2024-02",
+        "issue_month": 2,
+        "issue_year": 2024,
+        "observed": 0.19,
+        "persistence": 1.39,
+        "seasonal_ar6": -0.0615460620428042,
+        "spring_initialized": true,
+        "target_date": "2024-08"
+      },
+      {
+        "ar6": -0.13699975627573072,
+        "issue_date": "2024-03",
+        "issue_month": 3,
+        "issue_year": 2024,
+        "observed": -0.1,
+        "persistence": 1.04,
+        "seasonal_ar6": -0.01598235499913349,
+        "spring_initialized": true,
+        "target_date": "2024-09"
+      },
+      {
+        "ar6": -0.09332023523005961,
+        "issue_date": "2024-04",
+        "issue_month": 4,
+        "issue_year": 2024,
+        "observed": -0.01,
+        "persistence": 0.98,
+        "seasonal_ar6": 0.31708173601074646,
+        "spring_initialized": true,
+        "target_date": "2024-10"
+      },
+      {
+        "ar6": -0.4187222338950311,
+        "issue_date": "2024-05",
+        "issue_month": 5,
+        "issue_year": 2024,
+        "observed": -0.03,
+        "persistence": 0.5,
+        "seasonal_ar6": -0.019431472223112214,
+        "spring_initialized": false,
+        "target_date": "2024-11"
+      },
+      {
+        "ar6": -0.3618797992089725,
+        "issue_date": "2024-06",
+        "issue_month": 6,
+        "issue_year": 2024,
+        "observed": -0.52,
+        "persistence": 0.37,
+        "seasonal_ar6": -0.004180480113761448,
+        "spring_initialized": false,
+        "target_date": "2024-12"
+      },
+      {
+        "ar6": -0.20621620495614096,
+        "issue_date": "2024-07",
+        "issue_month": 7,
+        "issue_year": 2024,
+        "observed": -0.64,
+        "persistence": 0.4,
+        "seasonal_ar6": 0.14085244159953172,
+        "spring_initialized": false,
+        "target_date": "2025-01"
+      },
+      {
+        "ar6": -0.27364066536234494,
+        "issue_date": "2024-08",
+        "issue_month": 8,
+        "issue_year": 2024,
+        "observed": -0.42,
+        "persistence": 0.19,
+        "seasonal_ar6": -0.09360561049237598,
+        "spring_initialized": false,
+        "target_date": "2025-02"
+      },
+      {
+        "ar6": -0.41573502104707283,
+        "issue_date": "2024-09",
+        "issue_month": 9,
+        "issue_year": 2024,
+        "observed": 0.04,
+        "persistence": -0.1,
+        "seasonal_ar6": -0.3399172924040276,
+        "spring_initialized": false,
+        "target_date": "2025-03"
+      },
+      {
+        "ar6": -0.2581070782496211,
+        "issue_date": "2024-10",
+        "issue_month": 10,
+        "issue_year": 2024,
+        "observed": -0.05,
+        "persistence": -0.01,
+        "seasonal_ar6": -0.2684710132028761,
+        "spring_initialized": false,
+        "target_date": "2025-04"
+      },
+      {
+        "ar6": -0.21884890918477698,
+        "issue_date": "2024-11",
+        "issue_month": 11,
+        "issue_year": 2024,
+        "observed": 0.07,
+        "persistence": -0.03,
+        "seasonal_ar6": -0.2744510672732456,
+        "spring_initialized": false,
+        "target_date": "2025-05"
+      },
+      {
+        "ar6": -0.5792756311194097,
+        "issue_date": "2024-12",
+        "issue_month": 12,
+        "issue_year": 2024,
+        "observed": 0.15,
+        "persistence": -0.52,
+        "seasonal_ar6": -0.39774283034929847,
+        "spring_initialized": false,
+        "target_date": "2025-06"
+      },
+      {
+        "ar6": -0.5997534349009304,
+        "issue_date": "2025-01",
+        "issue_month": 1,
+        "issue_year": 2025,
+        "observed": 0.14,
+        "persistence": -0.64,
+        "seasonal_ar6": -0.45682973435799634,
+        "spring_initialized": false,
+        "target_date": "2025-07"
+      },
+      {
+        "ar6": -0.34426716198566004,
+        "issue_date": "2025-02",
+        "issue_month": 2,
+        "issue_year": 2025,
+        "observed": -0.15,
+        "persistence": -0.42,
+        "seasonal_ar6": -0.4168558742773009,
+        "spring_initialized": true,
+        "target_date": "2025-08"
+      },
+      {
+        "ar6": 0.16163493225861036,
+        "issue_date": "2025-03",
+        "issue_month": 3,
+        "issue_year": 2025,
+        "observed": -0.32,
+        "persistence": 0.04,
+        "seasonal_ar6": 0.06270528204916626,
+        "spring_initialized": true,
+        "target_date": "2025-09"
+      },
+      {
+        "ar6": 0.1021867485479367,
+        "issue_date": "2025-04",
+        "issue_month": 4,
+        "issue_year": 2025,
+        "observed": -0.42,
+        "persistence": -0.05,
+        "seasonal_ar6": 0.14729856926529922,
+        "spring_initialized": true,
+        "target_date": "2025-10"
+      },
+      {
+        "ar6": 0.1608242487009211,
+        "issue_date": "2025-05",
+        "issue_month": 5,
+        "issue_year": 2025,
+        "observed": -0.54,
+        "persistence": 0.07,
+        "seasonal_ar6": 0.3248227694084225,
+        "spring_initialized": false,
+        "target_date": "2025-11"
+      },
+      {
+        "ar6": 0.1014425325976183,
+        "issue_date": "2025-06",
+        "issue_month": 6,
+        "issue_year": 2025,
+        "observed": -0.39,
+        "persistence": 0.15,
+        "seasonal_ar6": 0.3440068108418909,
+        "spring_initialized": false,
+        "target_date": "2025-12"
+      },
+      {
+        "ar6": 0.018473496508061772,
+        "issue_date": "2025-07",
+        "issue_month": 7,
+        "issue_year": 2025,
+        "observed": -0.4,
+        "persistence": 0.14,
+        "seasonal_ar6": 0.24264927062098304,
+        "spring_initialized": false,
+        "target_date": "2026-01"
+      },
+      {
+        "ar6": -0.27134795174610915,
+        "issue_date": "2025-08",
+        "issue_month": 8,
+        "issue_year": 2025,
+        "observed": -0.02,
+        "persistence": -0.15,
+        "seasonal_ar6": -0.18428873096740273,
+        "spring_initialized": false,
+        "target_date": "2026-02"
+      },
+      {
+        "ar6": -0.422865503289206,
+        "issue_date": "2025-09",
+        "issue_month": 9,
+        "issue_year": 2025,
+        "observed": 0.22,
+        "persistence": -0.32,
+        "seasonal_ar6": -0.3964113482173314,
+        "spring_initialized": false,
+        "target_date": "2026-03"
+      },
+      {
+        "ar6": -0.47870147883551156,
+        "issue_date": "2025-10",
+        "issue_month": 10,
+        "issue_year": 2025,
+        "observed": 0.74,
+        "persistence": -0.42,
+        "seasonal_ar6": -0.4338268915316071,
+        "spring_initialized": false,
+        "target_date": "2026-04"
+      },
+      {
+        "ar6": -0.4998616216900664,
+        "issue_date": "2025-11",
+        "issue_month": 11,
+        "issue_year": 2025,
+        "observed": 1.09,
+        "persistence": -0.54,
+        "seasonal_ar6": -0.3807566396654776,
+        "spring_initialized": false,
+        "target_date": "2026-05"
+      },
+      {
+        "ar6": -0.2615887093177464,
+        "issue_date": "2025-12",
+        "issue_month": 12,
+        "issue_year": 2025,
+        "observed": 1.58,
+        "persistence": -0.39,
+        "seasonal_ar6": -0.20431479081532233,
+        "spring_initialized": false,
+        "target_date": "2026-06"
+      },
+      {
+        "ar6": -0.2264254991652516,
+        "issue_date": "2026-01",
+        "issue_month": 1,
+        "issue_year": 2026,
+        "observed": 1.73,
+        "persistence": -0.4,
+        "seasonal_ar6": -0.17854179944322862,
+        "spring_initialized": false,
+        "target_date": "2026-07"
+      },
+      {
+        "ar6": 0.14923440489334494,
+        "issue_date": "2026-02",
+        "issue_month": 2,
+        "issue_year": 2026,
+        "observed": 1.89,
+        "persistence": -0.02,
+        "seasonal_ar6": 0.055573622670049165,
+        "spring_initialized": true,
+        "target_date": "2026-08"
+      },
+      {
+        "ar6": 0.31107278127482485,
+        "issue_date": "2026-03",
+        "issue_month": 3,
+        "issue_year": 2026,
+        "observed": 2.09,
+        "persistence": 0.22,
+        "seasonal_ar6": 0.31508309770343135,
+        "spring_initialized": true,
+        "target_date": "2026-09"
+      }
+    ],
+    "primary_comparisons": {
+      "ar6": {
+        "intervals": [
+          {
+            "block_years": 2,
+            "lower_95": -0.07053194046793743,
+            "method": "paired circular calendar-year block bootstrap; descriptive finite-record uncertainty",
+            "repetitions": 2000,
+            "seed": 20261027,
+            "upper_95": 0.034114987827897236
+          },
+          {
+            "block_years": 3,
+            "lower_95": -0.06158766015611539,
+            "method": "paired circular calendar-year block bootstrap; descriptive finite-record uncertainty",
+            "repetitions": 2000,
+            "seed": 20261028,
+            "upper_95": 0.02909218221712928
+          },
+          {
+            "block_years": 4,
+            "lower_95": -0.05359502237761227,
+            "method": "paired circular calendar-year block bootstrap; descriptive finite-record uncertainty",
+            "repetitions": 2000,
+            "seed": 20261029,
+            "upper_95": 0.023012574685919995
+          }
+        ],
+        "rmse_skill": -0.002929228764767533
+      },
+      "persistence": {
+        "intervals": [
+          {
+            "block_years": 2,
+            "lower_95": 0.02208577743758533,
+            "method": "paired circular calendar-year block bootstrap; descriptive finite-record uncertainty",
+            "repetitions": 2000,
+            "seed": 20261027,
+            "upper_95": 0.4246560630472902
+          },
+          {
+            "block_years": 3,
+            "lower_95": 0.040572860099293284,
+            "method": "paired circular calendar-year block bootstrap; descriptive finite-record uncertainty",
+            "repetitions": 2000,
+            "seed": 20261028,
+            "upper_95": 0.3743188409801962
+          },
+          {
+            "block_years": 4,
+            "lower_95": 0.1252856919098877,
+            "method": "paired circular calendar-year block bootstrap; descriptive finite-record uncertainty",
+            "repetitions": 2000,
+            "seed": 20261029,
+            "upper_95": 0.355672988390499
+          }
+        ],
+        "rmse_skill": 0.21802277945720583
+      }
+    },
+    "question_id": "Q-ENSO-001",
+    "schema_version": "1.0",
+    "scores": {
+      "all": {
+        "ar6": {
+          "bias": -0.2888533422731041,
+          "mae": 0.628128326063971,
+          "n": 135,
+          "rmse": 0.7643507420694972
+        },
+        "persistence": {
+          "bias": -0.027259259259259254,
+          "mae": 0.7328888888888889,
+          "n": 135,
+          "rmse": 0.8973689938431744
+        },
+        "seasonal_ar6": {
+          "bias": -0.2092587330207215,
+          "mae": 0.5599983129388764,
+          "n": 135,
+          "rmse": 0.6965526235436716
+        }
+      },
+      "other_months": {
+        "ar6": {
+          "bias": -0.3162237758985298,
+          "mae": 0.619354195189296,
+          "n": 100,
+          "rmse": 0.7432816554071201
+        },
+        "persistence": {
+          "bias": -0.0512,
+          "mae": 0.6792,
+          "n": 100,
+          "rmse": 0.835765517355197
+        },
+        "seasonal_ar6": {
+          "bias": -0.21505904574064694,
+          "mae": 0.525646308813594,
+          "n": 100,
+          "rmse": 0.6460408521612333
+        }
+      },
+      "spring_initialized": {
+        "ar6": {
+          "bias": -0.2106521033433165,
+          "mae": 0.6531972714201849,
+          "n": 35,
+          "rmse": 0.8215762855688862
+        },
+        "persistence": {
+          "bias": 0.04114285714285717,
+          "mae": 0.8862857142857142,
+          "n": 35,
+          "rmse": 1.0537172296209265
+        },
+        "seasonal_ar6": {
+          "bias": -0.19268641096379172,
+          "mae": 0.658146896153969,
+          "n": 35,
+          "rmse": 0.8239828704570253
+        }
+      }
+    },
+    "solver_residuals": {
+      "ar6": 7.105427357601002e-14,
+      "seasonal_ar6": 1.1368683772161603e-13
+    },
+    "trailing_missing_values": 3,
+    "training_examples": 769
+  },
+  "run_id": "R-37cd1717a83c",
+  "validation": {
+    "analysis_image_id": "sha256:735dbd4f9a9bd259ea33d8d461508c79d45b87d248193017a4380cbd6a25344b",
+    "base_image": "python@sha256:35caba83af2fe6da9a5d922f9b0156f21d1246a48278c58a08bd253303ba42e8",
+    "external_scientific_review": false,
+    "fresh_container_reproduction": true,
+    "identical_structured_outputs": true,
+    "isolation": {
+      "credential_env_absent": true,
+      "docker_socket_absent": true,
+      "elapsed_seconds": 0.1408,
+      "external_network_denied": true,
+      "host_home_absent": true,
+      "interfaces": [
+        "lo"
+      ],
+      "root_write_denied": true,
+      "uid": 65534
+    },
+    "review_type": "automated_computational_checks",
+    "run_seconds": [
+      0.2791,
+      0.2492
+    ]
+  }
+}
